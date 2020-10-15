@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using System.Linq;
 
 public class Settings : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class Settings : MonoBehaviour
 
     void Start()
     {
-        resolutions = Screen.resolutions;
+        //resolutions = Screen.resolutions;
+        resolutions = Screen.resolutions.Select(resolution => new Resolution { width = resolution.width, height = resolution.height }).Distinct().ToArray();
 
         resolutionDropdown.ClearOptions();
 
