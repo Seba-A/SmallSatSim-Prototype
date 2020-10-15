@@ -19,6 +19,8 @@ public class FollowChac : MonoBehaviour
     {
         characterPos = character.transform.position;
 
-        transform.position = characterPos;
+        transform.position = characterPos + new Vector3(0, -3, 0);
+
+        
     }
 }
