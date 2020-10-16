@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using CodeMonkey.Utils;
+using UnityEngine.SceneManagement;
 
 public class UI_Assistant : MonoBehaviour
 {
@@ -11,10 +12,12 @@ public class UI_Assistant : MonoBehaviour
 
     private void Awake()
     {
+        int i = 0; //just added
         messageText = transform.Find("message").Find("messageText").GetComponent<Text>();
 
         transform.Find("message").GetComponent<Button_UI>().ClickFunc = () =>
         {
+
             if (textWriterSingle != null && textWriterSingle.IsActive())
             {
                 //Currently active text writer
@@ -31,8 +34,21 @@ public class UI_Assistant : MonoBehaviour
                     "5) shrek lives",
                 };
 
-                string message = messageArray[Random.Range(0, messageArray.Length)];
-                textWriterSingle = TextWriter.AddWriter_Static(messageText, message, .05f, true, true);
+                //just added
+                if (i < messageArray.Length)
+                {
+                    string message = messageArray[i];
+                    textWriterSingle = TextWriter.AddWriter_Static(messageText, message, .05f, true, true);
+                    i++;
+                }
+                else
+                {
+                    SceneManager.LoadScene("In_Game_Layout");
+                }
+
+                //this is no longer needed but is left here just because
+                //string message = messageArray[Random.Range(0, messageArray.Length)];
+                //textWriterSingle = TextWriter.AddWriter_Static(messageText, message, .05f, true, true);
             }
         };
     }

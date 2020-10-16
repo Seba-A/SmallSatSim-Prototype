@@ -762,7 +762,9 @@ MonoBehaviour:
     Hakuna Matata!
 
     Ain''t
-    no passing craze'
+    no passing craze
+
+    hello'
 --- !u!222 &2099251428
 CanvasRenderer:
   m_ObjectHideFlags: 0
