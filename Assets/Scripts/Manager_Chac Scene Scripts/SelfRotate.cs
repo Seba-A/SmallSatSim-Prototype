@@ -60,7 +60,6 @@ public class SelfRotate : MonoBehaviour
         if (CompareTag("Character"))
         {
             transform.rotation = initialRot;
-            transform.position = initialPos;
         }
     }
 

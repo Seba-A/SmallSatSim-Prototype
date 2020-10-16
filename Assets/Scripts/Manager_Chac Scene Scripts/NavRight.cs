@@ -9,6 +9,8 @@ public class NavRight : MonoBehaviour
     private GameObject rightArrowSelect;
     private GameObject leftArrowSelect;
 
+    private GameObject[] chacObj;
+
     private float navDist = 7.0f;
 
     // Start is called before the first frame update
@@ -17,6 +19,8 @@ public class NavRight : MonoBehaviour
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
         rightArrowSelect = GameObject.FindGameObjectWithTag("RightNavArrow");
         leftArrowSelect = GameObject.FindGameObjectWithTag("LeftNavArrow");
+
+        chacObj = GameObject.FindGameObjectsWithTag("Character");
 
     }
 
@@ -42,8 +46,15 @@ public class NavRight : MonoBehaviour
     
     private void OnMouseDown()
     {
+        foreach (GameObject character in chacObj)
+        {
+            character.transform.Translate(Vector3.right * navDist);
+
+        }
+        /*
         mainCamera.transform.Translate(Vector3.right * navDist);
         rightArrowSelect.transform.Translate(Vector3.up * navDist);
         leftArrowSelect.transform.Translate(Vector3.down * navDist);
+        */
     }
 }
