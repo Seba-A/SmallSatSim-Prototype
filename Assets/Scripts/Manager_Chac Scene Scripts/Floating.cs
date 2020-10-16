@@ -8,8 +8,6 @@ public class Floating : MonoBehaviour
      * HOW. HOW TO MAKE IT FLOAT. GOD DAMN IT.
      */
 
-
-
     private Rigidbody chacRb;
 
     private Vector3 initialPos;
@@ -57,5 +55,7 @@ public class Floating : MonoBehaviour
 
         chacRb.useGravity = false;
     }
+
+
 
 }
