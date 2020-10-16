@@ -7,6 +7,7 @@ public class FollowChac : MonoBehaviour
     public GameObject character;
 
     private Vector3 characterPos;
+    private Vector3 offset = new Vector3(0, -3, 0);
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class FollowChac : MonoBehaviour
     {
         characterPos = character.transform.position;
 
-        transform.position = characterPos + new Vector3(0, -3, 0);
+        transform.position = characterPos + offset;
 
         
     }

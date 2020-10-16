@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - NavArrow
   - Character
+  - RightNavArrow
+  - LeftNavArrow
   layers:
   - Default
   - TransparentFX

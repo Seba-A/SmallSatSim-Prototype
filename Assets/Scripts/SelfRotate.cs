@@ -26,7 +26,7 @@ public class SelfRotate : MonoBehaviour
 
     private void OnMouseOver()
     {
-        if (CompareTag("NavArrow"))
+        if (CompareTag("RightNavArrow") || CompareTag("LeftNavArrow"))
         {
             transform.Rotate(Vector3.up, Time.deltaTime * rotateSpeed);
         }
@@ -52,10 +52,9 @@ public class SelfRotate : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (CompareTag("NavArrow"))
+        if (CompareTag("RightNavArrow") || CompareTag("LeftNavArrow"))
         {
             transform.rotation = initialRot;
-            transform.position = initialPos;
         }
 
         if (CompareTag("Character"))
