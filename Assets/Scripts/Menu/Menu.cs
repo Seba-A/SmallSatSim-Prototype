@@ -13,7 +13,7 @@ public class Menu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("In_Game_Layout");
+        SceneManager.LoadScene("Story_Line");
     }
 
     public void Credits()
