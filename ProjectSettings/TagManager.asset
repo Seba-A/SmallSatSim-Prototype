@@ -7,6 +7,8 @@ TagManager:
   - Character
   - RightNavArrow
   - LeftNavArrow
+  - ChacName
+  - ChacKeyStat
   layers:
   - Default
   - TransparentFX

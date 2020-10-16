@@ -11,6 +11,8 @@ public class NavLeft : MonoBehaviour
 
     private float navDist = 7.0f;
 
+    private float initialCamPosX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,7 @@ public class NavLeft : MonoBehaviour
         rightArrowSelect = GameObject.FindGameObjectWithTag("RightNavArrow");
         leftArrowSelect = GameObject.FindGameObjectWithTag("LeftNavArrow");
 
+        initialCamPosX = mainCamera.transform.position.x;
     }
 
     // Update is called once per frame
@@ -25,9 +28,13 @@ public class NavLeft : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            mainCamera.transform.Translate(Vector3.right * navDist);
-            rightArrowSelect.transform.Translate(Vector3.up * navDist);
-            leftArrowSelect.transform.Translate(Vector3.down * navDist);
+            for(int i = 1; i < 8; i++)
+            {
+                mainCamera.transform.Translate(Vector3.right);
+                rightArrowSelect.transform.Translate(Vector3.up);
+                leftArrowSelect.transform.Translate(Vector3.down);
+                
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
