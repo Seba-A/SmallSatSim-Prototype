@@ -24,8 +24,11 @@ public class CameraControllerV2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleZoom();
-        HandlePan();
+        if(PauseMenu.GameIsPause != true)
+        {
+            HandleZoom();
+            HandlePan();
+        }
     }
 
     private void HandlePan()
