@@ -6,7 +6,7 @@ public class CameraControllerV2 : MonoBehaviour
 {
     public Transform target;
 
-    public float ZoomSpeed;
+    public float ZoomSpeed = 5.0f;
     public float PanSpeed = 10.0f;
     public float PanBuffer = 50.0f;
 
@@ -24,8 +24,11 @@ public class CameraControllerV2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleZoom();
-        HandlePan();
+        if(PauseMenu.GameIsPause != true)
+        {
+            HandleZoom();
+            HandlePan();
+        }
     }
 
     private void HandlePan()
@@ -34,7 +37,9 @@ public class CameraControllerV2 : MonoBehaviour
         Vector3 dRight = transform.right.XZ();
         Vector3 dUp = transform.up.XZ();
 
-        if(mousePos.x < PanBuffer || Input.GetKey("a"))
+        var pos = transform.position;
+
+        if (mousePos.x < PanBuffer || Input.GetKey("a"))
         {
             transform.position -= dRight * Time.fixedDeltaTime * PanSpeed;
         }
@@ -51,6 +56,9 @@ public class CameraControllerV2 : MonoBehaviour
         {
             transform.position += dUp * Time.fixedDeltaTime * PanSpeed;
         }
+
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -panLimit.x, panLimit.x),
+            transform.position.y, Mathf.Clamp(transform.position.z, -panLimit.y, panLimit.y));
     }
 
     private void HandleZoom()
@@ -64,7 +72,7 @@ public class CameraControllerV2 : MonoBehaviour
                 //Rotation
                 Vector3 center = GetCenter();
                 Vector3 dToCenter = transform.position - center;
-                Vector3 angles = new Vector3(0, scrollValue, 0);
+                Vector3 angles = new Vector3(0, scrollValue * ZoomSpeed, 0);
                 Quaternion newRot = Quaternion.Euler(angles);
                 Vector3 newDir = newRot * dToCenter;
                 transform.position = center + newDir;
@@ -73,7 +81,7 @@ public class CameraControllerV2 : MonoBehaviour
             else
             {
                 //Zoom
-                float newSize = Camera.main.orthographicSize - scrollValue;
+                float newSize = Camera.main.orthographicSize - scrollValue * ZoomSpeed;
                 Camera.main.orthographicSize = Mathf.Clamp(newSize, 10.0f, 70.0f);
             }
         }
