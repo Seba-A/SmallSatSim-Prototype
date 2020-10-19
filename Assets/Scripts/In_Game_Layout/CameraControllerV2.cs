@@ -34,7 +34,9 @@ public class CameraControllerV2 : MonoBehaviour
         Vector3 dRight = transform.right.XZ();
         Vector3 dUp = transform.up.XZ();
 
-        if(mousePos.x < PanBuffer || Input.GetKey("a"))
+        var pos = transform.position;
+
+        if (mousePos.x < PanBuffer || Input.GetKey("a"))
         {
             transform.position -= dRight * Time.fixedDeltaTime * PanSpeed;
         }
@@ -51,6 +53,9 @@ public class CameraControllerV2 : MonoBehaviour
         {
             transform.position += dUp * Time.fixedDeltaTime * PanSpeed;
         }
+
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -panLimit.x, panLimit.x),
+            transform.position.y, Mathf.Clamp(transform.position.z, -panLimit.y, panLimit.y));
     }
 
     private void HandleZoom()
