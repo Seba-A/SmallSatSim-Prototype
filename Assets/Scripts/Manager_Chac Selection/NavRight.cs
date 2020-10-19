@@ -13,6 +13,9 @@ public class NavRight : MonoBehaviour
 
     private float navDist = 7.0f;
 
+    private float initialPosY;
+    private float initialPosZ;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,26 +25,29 @@ public class NavRight : MonoBehaviour
 
         chacObj = GameObject.FindGameObjectsWithTag("Character");
 
+        initialPosY = transform.position.y;
+        initialPosZ = transform.position.z;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /* already present in NavLeft script
+
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            mainCamera.transform.Translate(Vector3.right * navDist);
-            rightArrowSelect.transform.Translate(Vector3.up * navDist);
-            leftArrowSelect.transform.Translate(Vector3.down * navDist);
-        }
+            foreach (GameObject character in chacObj)
+            {
+                character.transform.Translate(Vector3.right * navDist);
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            mainCamera.transform.Translate(Vector3.left * navDist);
-            rightArrowSelect.transform.Translate(Vector3.down * navDist);
-            leftArrowSelect.transform.Translate(Vector3.up * navDist);
+                character.transform.position = new Vector3(character.transform.position.x, initialPosY, initialPosZ);
+            }
+            /*
+              mainCamera.transform.Translate(Vector3.right * navDist);
+              rightArrowSelect.transform.Translate(Vector3.up * navDist);
+              leftArrowSelect.transform.Translate(Vector3.down * navDist);
+            */
         }
-        */
+        
     }
     
     private void OnMouseDown()
@@ -49,6 +55,8 @@ public class NavRight : MonoBehaviour
         foreach (GameObject character in chacObj)
         {
             character.transform.Translate(Vector3.right * navDist);
+
+            character.transform.position = new Vector3(character.transform.position.x, initialPosY, initialPosZ);
 
         }
         /*

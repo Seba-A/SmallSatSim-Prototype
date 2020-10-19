@@ -10,57 +10,60 @@ public class SelfRotate : MonoBehaviour
     private Vector3 initialPos;
     private Quaternion initialRot;
 
+    public bool isObjectClicked;
+    public string nameObjectClicked;
+
+    private GameObject gameObject;
+
     // Start is called before the first frame update
     void Start()
     {
+        //gameObject = GameObject.Find("Character Manager").GetComponent<ViewFullStats>();
+
         initialPos = transform.position;
         initialRot = transform.rotation;
-        
+
+        isObjectClicked = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void OnMouseOver()
     {
-        if (CompareTag("RightNavArrow") || CompareTag("LeftNavArrow"))
-        {
-            transform.Rotate(Vector3.up, Time.deltaTime * rotateSpeed);
-        }
-        
-        if (CompareTag("Character"))
-        {
-            transform.Rotate(Vector3.up, Time.deltaTime * rotateSpeed);
-
-            /*
-            // does not work!! How do you only make the Character have a "Rigid body" and not the NavArrow?
-
-            Rigidbody chacRb = GetComponent<Rigidbody>();
-
-            chacRb.useGravity = true;
-            if (initialPos.y - transform.position.y > 0)
-            {
-                chacRb.AddForce(Vector3.up * upwardForce, ForceMode.Force);
-            }
-            */
-        }
-        
+        transform.Rotate(Vector3.up, Time.deltaTime * rotateSpeed);
     }
 
     private void OnMouseExit()
     {
-        if (CompareTag("RightNavArrow") || CompareTag("LeftNavArrow"))
-        {
-            transform.rotation = initialRot;
-        }
+        transform.rotation = initialRot;
+    }
 
+    private void OnMouseUpAsButton()
+    {
         if (CompareTag("Character"))
         {
-            transform.rotation = initialRot;
+            isObjectClicked = true;
         }
+
+        findNameObjectClicked();
+
+        gameObject.View
+
+    }
+
+    public string findNameObjectClicked()
+    {
+        if (isObjectClicked == true)
+        {
+            nameObjectClicked = this.name;
+        }
+
+        return nameObjectClicked;
+
     }
 
 }

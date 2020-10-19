@@ -1,19 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ViewFullStats : MonoBehaviour
 {
     //public GameObject managerChac;
-    public GameObject fullStats;
-
-    private GameObject selectedChac;
-    private GameObject selectedChacName;
-    private GameObject selectedChacKeyStat;
+    public GameObject chacSelectScreen;
 
     private GameObject[] managerChac;
-    private GameObject[] managerName;
-    private GameObject[] managerKeyStat;
+    private GameObject selectedChac;
 
     private float initialPosY;
     private float initialPosZ;
@@ -22,8 +18,6 @@ public class ViewFullStats : MonoBehaviour
     void Start()
     {
         managerChac = GameObject.FindGameObjectsWithTag("Character");
-        managerName = GameObject.FindGameObjectsWithTag("ChacName");
-        managerKeyStat = GameObject.FindGameObjectsWithTag("ChacKeyStat");
 
         initialPosY = transform.position.y;
         initialPosZ = transform.position.z;
@@ -35,32 +29,22 @@ public class ViewFullStats : MonoBehaviour
         
     }
 
-    private void OnMouseDown()
+    public void ViewFullChacStats(string chacName)
     {
-        selectedChac = GameObject.Find("Manager2_Chac");
-        selectedChacName = GameObject.Find("Manager2_Name");
-        selectedChacKeyStat = GameObject.Find("Manager2_KeyStat");
+        selectedChac = GameObject.Find(chacName).GetComponent<GameObject>();
 
         foreach (GameObject character in managerChac)
         {
             character.SetActive(false);
         }
-        foreach (GameObject character in managerName)
-        {
-            character.SetActive(false);
-        }
-        foreach (GameObject character in managerKeyStat)
-        {
-            character.SetActive(false);
-        }
 
         transform.position = new Vector3(-7, initialPosY, initialPosZ);
-
         selectedChac.SetActive(true);
-        selectedChacName.SetActive(true);
-        selectedChacKeyStat.SetActive(true);
 
-        fullStats.SetActive(true);
+        // show the Character Selection Screen
+        chacSelectScreen.SetActive(true);
 
     }
+
+    
 }

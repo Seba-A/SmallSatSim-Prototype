@@ -13,6 +13,9 @@ public class NavLeft : MonoBehaviour
 
     private float navDist = 7.0f;
 
+    private float initialPosY;
+    private float initialPosZ;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,30 +24,22 @@ public class NavLeft : MonoBehaviour
         leftArrowSelect = GameObject.FindGameObjectWithTag("LeftNavArrow");
 
         chacObj = GameObject.FindGameObjectsWithTag("Character");
+
+        initialPosY = transform.position.y;
+        initialPosZ = transform.position.z;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            foreach (GameObject character in chacObj) 
-            {
-                character.transform.Translate(Vector3.right * navDist);
-                
-            }
-            /*
-              mainCamera.transform.Translate(Vector3.right * navDist);
-              rightArrowSelect.transform.Translate(Vector3.up * navDist);
-              leftArrowSelect.transform.Translate(Vector3.down * navDist);
-            */
-        }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             foreach (GameObject character in chacObj)
             {
                 character.transform.Translate(Vector3.left * navDist);
+
+                character.transform.position = new Vector3(character.transform.position.x, initialPosY, initialPosZ);
 
             }
             /*
@@ -61,6 +56,7 @@ public class NavLeft : MonoBehaviour
         {
             character.transform.Translate(Vector3.left * navDist);
 
+            character.transform.position = new Vector3(character.transform.position.x, initialPosY, initialPosZ);
         }
         /*
         mainCamera.transform.Translate(Vector3.left * navDist);
