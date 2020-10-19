@@ -31,5 +31,7 @@ public class FollowChac : MonoBehaviour
             transform.position = characterPos + offsetKeyStat;
         }
 
+        
+
     }
 }
