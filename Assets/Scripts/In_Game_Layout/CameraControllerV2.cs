@@ -6,7 +6,7 @@ public class CameraControllerV2 : MonoBehaviour
 {
     public Transform target;
 
-    public float ZoomSpeed;
+    public float ZoomSpeed = 5.0f;
     public float PanSpeed = 10.0f;
     public float PanBuffer = 50.0f;
 
@@ -72,7 +72,7 @@ public class CameraControllerV2 : MonoBehaviour
                 //Rotation
                 Vector3 center = GetCenter();
                 Vector3 dToCenter = transform.position - center;
-                Vector3 angles = new Vector3(0, scrollValue, 0);
+                Vector3 angles = new Vector3(0, scrollValue * ZoomSpeed, 0);
                 Quaternion newRot = Quaternion.Euler(angles);
                 Vector3 newDir = newRot * dToCenter;
                 transform.position = center + newDir;
@@ -81,7 +81,7 @@ public class CameraControllerV2 : MonoBehaviour
             else
             {
                 //Zoom
-                float newSize = Camera.main.orthographicSize - scrollValue;
+                float newSize = Camera.main.orthographicSize - scrollValue * ZoomSpeed;
                 Camera.main.orthographicSize = Mathf.Clamp(newSize, 10.0f, 70.0f);
             }
         }
