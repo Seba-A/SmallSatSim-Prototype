@@ -9,9 +9,9 @@ public class NavLeft : MonoBehaviour
     private GameObject rightArrowSelect;
     private GameObject leftArrowSelect;
 
-    private float navDist = 7.0f;
+    private GameObject[] chacObj;
 
-    private float initialCamPosX;
+    private float navDist = 7.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +20,7 @@ public class NavLeft : MonoBehaviour
         rightArrowSelect = GameObject.FindGameObjectWithTag("RightNavArrow");
         leftArrowSelect = GameObject.FindGameObjectWithTag("LeftNavArrow");
 
-        initialCamPosX = mainCamera.transform.position.x;
+        chacObj = GameObject.FindGameObjectsWithTag("Character");
     }
 
     // Update is called once per frame
@@ -28,27 +28,44 @@ public class NavLeft : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            for(int i = 1; i < 8; i++)
+            foreach (GameObject character in chacObj) 
             {
-                mainCamera.transform.Translate(Vector3.right);
-                rightArrowSelect.transform.Translate(Vector3.up);
-                leftArrowSelect.transform.Translate(Vector3.down);
+                character.transform.Translate(Vector3.right * navDist);
                 
             }
+            /*
+              mainCamera.transform.Translate(Vector3.right * navDist);
+              rightArrowSelect.transform.Translate(Vector3.up * navDist);
+              leftArrowSelect.transform.Translate(Vector3.down * navDist);
+            */
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            foreach (GameObject character in chacObj)
+            {
+                character.transform.Translate(Vector3.left * navDist);
+
+            }
+            /*
             mainCamera.transform.Translate(Vector3.left * navDist);
             rightArrowSelect.transform.Translate(Vector3.down * navDist);
             leftArrowSelect.transform.Translate(Vector3.up * navDist);
+            */
         }
     }
     
     private void OnMouseDown()
     {
+        foreach (GameObject character in chacObj)
+        {
+            character.transform.Translate(Vector3.left * navDist);
+
+        }
+        /*
         mainCamera.transform.Translate(Vector3.left * navDist);
         rightArrowSelect.transform.Translate(Vector3.down * navDist);
         leftArrowSelect.transform.Translate(Vector3.up * navDist);
+        */
     }
 }
