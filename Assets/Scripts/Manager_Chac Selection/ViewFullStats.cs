@@ -1,32 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ViewFullStats : MonoBehaviour
 {
     //public GameObject managerChac;
-    public GameObject fullStats;
-
-    private GameObject selectedChac;
-    private GameObject selectedChacName;
-    private GameObject selectedChacKeyStat;
+    public GameObject chacSelectScreen;
 
     private GameObject[] managerChac;
-    private GameObject[] managerName;
-    private GameObject[] managerKeyStat;
+    private GameObject[] navObjects;
 
-    private float initialPosY;
-    private float initialPosZ;
+    public GameObject selectedChac;    
 
     // Start is called before the first frame update
     void Start()
     {
         managerChac = GameObject.FindGameObjectsWithTag("Character");
-        managerName = GameObject.FindGameObjectsWithTag("ChacName");
-        managerKeyStat = GameObject.FindGameObjectsWithTag("ChacKeyStat");
+        navObjects = GameObject.FindGameObjectsWithTag("NavArrow");
 
-        initialPosY = transform.position.y;
-        initialPosZ = transform.position.z;
+        //initialPosY = transform.position.y;
+        //initialPosZ = transform.position.z;
     }
 
     // Update is called once per frame
@@ -35,32 +29,30 @@ public class ViewFullStats : MonoBehaviour
         
     }
 
-    private void OnMouseDown()
+    public void ViewFullChacStats(string chacName)
     {
-        selectedChac = GameObject.Find("Manager2_Chac");
-        selectedChacName = GameObject.Find("Manager2_Name");
-        selectedChacKeyStat = GameObject.Find("Manager2_KeyStat");
+        selectedChac = GameObject.Find(chacName);
+        Debug.Log("Selected character is now " + chacName);
 
         foreach (GameObject character in managerChac)
         {
             character.SetActive(false);
         }
-        foreach (GameObject character in managerName)
+
+        foreach (GameObject arrow in navObjects)
         {
-            character.SetActive(false);
-        }
-        foreach (GameObject character in managerKeyStat)
-        {
-            character.SetActive(false);
+            arrow.SetActive(false);
         }
 
-        transform.position = new Vector3(-7, initialPosY, initialPosZ);
-
+        selectedChac.transform.position = new Vector3(-7.0f, 6.0f, 0.0f);
         selectedChac.SetActive(true);
-        selectedChacName.SetActive(true);
-        selectedChacKeyStat.SetActive(true);
 
-        fullStats.SetActive(true);
+        // show the Character Selection Screen
+        chacSelectScreen.SetActive(true);
+        chacSelectScreen.GetComponent<CharacterSelection>().DisplayChacFullStats(chacName);
+        Debug.Log("Full Stats of " + chacName + " has been displayed.");
 
     }
+
+    
 }
