@@ -43,7 +43,7 @@ public class UI_Assistant : MonoBehaviour
                 }
                 else
                 {
-                    SceneManager.LoadScene("In_Game_Layout");
+                    SceneManager.LoadScene("Manager_Character_Selection");
                 }
 
                 //this is no longer needed but is left here just because
