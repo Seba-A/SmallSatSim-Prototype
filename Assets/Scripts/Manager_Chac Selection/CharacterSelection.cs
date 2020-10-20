@@ -7,9 +7,18 @@ public class CharacterSelection : MonoBehaviour
 {
     public List<GameObject> characterFullStats;
 
+    /*
+    private GameObject[] managerChac;
+    private GameObject[] navObjects;
+    */
+
     // Start is called before the first frame update
     void Start()
     {
+        /*
+        managerChac = GameObject.FindGameObjectsWithTag("Character");
+        navObjects = GameObject.FindGameObjectsWithTag("NavArrow");
+        */
     }
 
     // Update is called once per frame
@@ -43,8 +52,29 @@ public class CharacterSelection : MonoBehaviour
         }
     }
 
-    public void Confirm()
+    public void ConfirmCharacter()
     {
         SceneManager.LoadScene("Team_Character_Selection");
+    }
+
+    public void BackFunction()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        /* To improve the code, consider going back to:
+         * the last known position of all characters + selected character to go back its original position.
+         * 
+         * Code below is incomplete.
+         
+        foreach (GameObject character in managerChac)
+        {
+            character.SetActive(true);
+        }
+
+        foreach (GameObject arrow in navObjects)
+        {
+            arrow.SetActive(true);
+        }
+        */
     }
 }

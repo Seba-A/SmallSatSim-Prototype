@@ -11,7 +11,8 @@ public class ViewFullStats : MonoBehaviour
     private GameObject[] managerChac;
     private GameObject[] navObjects;
 
-    public GameObject selectedChac;    
+    public GameObject selectedChac;
+    private Vector3 selectedChacPos = new Vector3(-7.0f, 6.0f, 0.0f);
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +32,11 @@ public class ViewFullStats : MonoBehaviour
 
     public void ViewFullChacStats(string chacName)
     {
+        // find selected character
         selectedChac = GameObject.Find(chacName);
         Debug.Log("Selected character is now " + chacName);
 
+        // hide all other unselected objects
         foreach (GameObject character in managerChac)
         {
             character.SetActive(false);
@@ -44,7 +47,8 @@ public class ViewFullStats : MonoBehaviour
             arrow.SetActive(false);
         }
 
-        selectedChac.transform.position = new Vector3(-7.0f, 6.0f, 0.0f);
+        // move selected character to one side of the screen
+        selectedChac.transform.position = selectedChacPos;
         selectedChac.SetActive(true);
 
         // show the Character Selection Screen
