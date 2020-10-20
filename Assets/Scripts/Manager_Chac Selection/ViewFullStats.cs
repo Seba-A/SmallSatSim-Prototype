@@ -9,18 +9,18 @@ public class ViewFullStats : MonoBehaviour
     public GameObject chacSelectScreen;
 
     private GameObject[] managerChac;
-    private GameObject selectedChac;
+    private GameObject[] navObjects;
 
-    private float initialPosY;
-    private float initialPosZ;
+    public GameObject selectedChac;    
 
     // Start is called before the first frame update
     void Start()
     {
         managerChac = GameObject.FindGameObjectsWithTag("Character");
+        navObjects = GameObject.FindGameObjectsWithTag("NavArrow");
 
-        initialPosY = transform.position.y;
-        initialPosZ = transform.position.z;
+        //initialPosY = transform.position.y;
+        //initialPosZ = transform.position.z;
     }
 
     // Update is called once per frame
@@ -39,11 +39,17 @@ public class ViewFullStats : MonoBehaviour
             character.SetActive(false);
         }
 
-        transform.position = new Vector3(-7, initialPosY, initialPosZ);
+        foreach (GameObject arrow in navObjects)
+        {
+            arrow.SetActive(false);
+        }
+
+        selectedChac.transform.position = new Vector3(-7.0f, 6.0f, 0.0f);
         selectedChac.SetActive(true);
 
         // show the Character Selection Screen
         chacSelectScreen.SetActive(true);
+        chacSelectScreen.GetComponent<CharacterSelection>().DisplayChacFullStats(chacName);
         Debug.Log("Full Stats of " + chacName + " has been displayed.");
 
     }

@@ -13,8 +13,8 @@ public class NavRight : MonoBehaviour
 
     private float navDist = 7.0f;
 
-    private float initialPosY;
-    private float initialPosZ;
+    private const float initialPosY = 6.0f;
+    private const float initialPosZ = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +25,6 @@ public class NavRight : MonoBehaviour
 
         chacObj = GameObject.FindGameObjectsWithTag("Character");
 
-        initialPosY = transform.position.y;
-        initialPosZ = transform.position.z;
     }
 
     // Update is called once per frame
@@ -39,7 +37,8 @@ public class NavRight : MonoBehaviour
             {
                 character.transform.Translate(Vector3.right * navDist);
 
-                character.transform.position = new Vector3(character.transform.position.x, initialPosY, initialPosZ);
+                //float posX = character.transform.position.x;
+                //character.transform.position = new Vector3(posX, initialPosY, initialPosZ);
             }
             /*
               mainCamera.transform.Translate(Vector3.right * navDist);

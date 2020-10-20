@@ -5,10 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Character
-  - RightNavArrow
-  - LeftNavArrow
   - ChacName
   - ChacKeyStat
+  - NavArrow
   layers:
   - Default
   - TransparentFX
