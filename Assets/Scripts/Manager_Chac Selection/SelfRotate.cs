@@ -13,17 +13,18 @@ public class SelfRotate : MonoBehaviour
     public bool isObjectClicked;
     public string nameObjectClicked;
 
-    private GameObject gameObject;
+    private GameObject chacManager;
 
     // Start is called before the first frame update
     void Start()
-    {
-        //gameObject = GameObject.Find("Character Manager").GetComponent<ViewFullStats>();
-
+    { 
         initialPos = transform.position;
         initialRot = transform.rotation;
 
         isObjectClicked = false;
+
+        chacManager = GameObject.Find("Character Manager");
+
     }
 
     // Update is called once per frame
@@ -50,8 +51,9 @@ public class SelfRotate : MonoBehaviour
         }
 
         findNameObjectClicked();
+        Debug.Log(nameObjectClicked + " is clicked.");
 
-        gameObject.View
+        chacManager.GetComponent<ViewFullStats>().ViewFullChacStats(nameObjectClicked);
 
     }
 

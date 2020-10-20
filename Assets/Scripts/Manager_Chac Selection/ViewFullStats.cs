@@ -31,7 +31,8 @@ public class ViewFullStats : MonoBehaviour
 
     public void ViewFullChacStats(string chacName)
     {
-        selectedChac = GameObject.Find(chacName).GetComponent<GameObject>();
+        selectedChac = GameObject.Find(chacName);
+        Debug.Log("Selected character is now " + chacName);
 
         foreach (GameObject character in managerChac)
         {
@@ -43,6 +44,7 @@ public class ViewFullStats : MonoBehaviour
 
         // show the Character Selection Screen
         chacSelectScreen.SetActive(true);
+        Debug.Log("Full Stats of " + chacName + " has been displayed.");
 
     }
 
