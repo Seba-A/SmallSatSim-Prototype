@@ -30,25 +30,23 @@ public class CharacterSelection : MonoBehaviour
 
     public void DisplayChacFullStats(string chacName)
     {
-        if (chacName == "Manager1_Chac")
+        switch(chacName)
         {
-            characterFullStats[0].SetActive(true);
-        }
-        else if (chacName == "Manager2_Chac")
-        {
-            characterFullStats[1].SetActive(true);
-        }
-        else if (chacName == "Manager3_Chac")
-        {
-            characterFullStats[2].SetActive(true);
-        }
-        else if (chacName == "Manager4_Chac")
-        {
-            characterFullStats[3].SetActive(true);
-        }
-        else if (chacName == "Manager5_Chac")
-        {
-            characterFullStats[4].SetActive(true);
+            case "Manager1_Chac":
+                characterFullStats[0].SetActive(true);
+                break;
+            case "Manager2_Chac":
+                characterFullStats[1].SetActive(true);
+                break;
+            case "Manager3_Chac":
+                characterFullStats[2].SetActive(true);
+                break;
+            case "Manager4_Chac":
+                characterFullStats[3].SetActive(true);
+                break;
+            case "Manager5_Chac":
+                characterFullStats[4].SetActive(true);
+                break;
         }
     }
 

@@ -11,6 +11,8 @@ public class NavigationManager : MonoBehaviour
     private GameObject clickedArrow;
 
     private float navDist = 7.0f;
+    private float lowerBound = -14.0f;
+    private float upperBound = 14.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,14 +23,14 @@ public class NavigationManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            chacManager.transform.Translate(Vector3.left * navDist);
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && chacManager.transform.position.x < upperBound)
         {
             chacManager.transform.Translate(Vector3.right * navDist);
+        }
+
+        if (Input.GetKeyDown(KeyCode.RightArrow) && chacManager.transform.position.x > lowerBound)
+        {
+            chacManager.transform.Translate(Vector3.left * navDist);
         }
     }
 
@@ -36,14 +38,14 @@ public class NavigationManager : MonoBehaviour
     {
         clickedArrow = GameObject.Find(arrowName);
 
-        if (clickedArrow == leftNavArrow)
-        {
-            chacManager.transform.Translate(Vector3.left * navDist);
-        }
-
-        else if (clickedArrow == rightNavArrow)
+        if (clickedArrow == leftNavArrow && chacManager.transform.position.x < upperBound)
         {
             chacManager.transform.Translate(Vector3.right * navDist);
+        }
+
+        else if (clickedArrow == rightNavArrow && chacManager.transform.position.x > lowerBound)
+        {
+            chacManager.transform.Translate(Vector3.left * navDist);
         }
 
     }
