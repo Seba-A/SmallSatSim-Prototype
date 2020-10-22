@@ -23,14 +23,17 @@ public class NavigationManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && chacManager.transform.position.x < upperBound)
+        if (leftNavArrow.activeSelf == true)
         {
-            chacManager.transform.Translate(Vector3.right * navDist);
-        }
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && chacManager.transform.position.x < upperBound)
+            {
+                chacManager.transform.Translate(Vector3.right * navDist);
+            }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) && chacManager.transform.position.x > lowerBound)
-        {
-            chacManager.transform.Translate(Vector3.left * navDist);
+            if (Input.GetKeyDown(KeyCode.RightArrow) && chacManager.transform.position.x > lowerBound)
+            {
+                chacManager.transform.Translate(Vector3.left * navDist);
+            }
         }
     }
 

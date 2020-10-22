@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class CharacterSelection : MonoBehaviour
 {
     public List<GameObject> characterFullStats;
+    private readonly string selectedCharacter = "SelectedCharacter";
 
     /*
     private GameObject[] managerChac;
@@ -30,22 +31,31 @@ public class CharacterSelection : MonoBehaviour
 
     public void DisplayChacFullStats(string chacName)
     {
-        switch(chacName)
+        switch (chacName)
         {
             case "Manager1_Chac":
+                PlayerPrefs.SetInt(selectedCharacter, 0);
                 characterFullStats[0].SetActive(true);
                 break;
             case "Manager2_Chac":
+                PlayerPrefs.SetInt(selectedCharacter, 1);
                 characterFullStats[1].SetActive(true);
                 break;
             case "Manager3_Chac":
+                PlayerPrefs.SetInt(selectedCharacter, 2);
                 characterFullStats[2].SetActive(true);
                 break;
             case "Manager4_Chac":
+                PlayerPrefs.SetInt(selectedCharacter, 3);
                 characterFullStats[3].SetActive(true);
                 break;
             case "Manager5_Chac":
+                PlayerPrefs.SetInt(selectedCharacter, 4);
                 characterFullStats[4].SetActive(true);
+                break;
+            default:
+                PlayerPrefs.SetInt(selectedCharacter, 1);
+                characterFullStats[1].SetActive(true);
                 break;
         }
     }
