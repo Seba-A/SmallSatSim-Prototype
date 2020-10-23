@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TeamConfirmation : MonoBehaviour
 {
@@ -14,5 +15,10 @@ public class TeamConfirmation : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ConfirmTeamComposition()
+    {
+        SceneManager.LoadScene("In_Game_Layout");
     }
 }
