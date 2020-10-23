@@ -9,17 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 2849db72183addf489f6090942681663
   - enabled: 1
-    path: Assets/Scenes/In_Game_Layout.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/Story_Line.unity
+    guid: a1b748d087c4ae749981b027aa0ac8ef
   - enabled: 1
     path: Assets/Scenes/Manager_Character_Selection.unity
     guid: adf87dc8d93232a46b3bdaee9829b24e
   - enabled: 1
-    path: Assets/Scenes/Story_Line.unity
-    guid: a1b748d087c4ae749981b027aa0ac8ef
-  - enabled: 1
     path: Assets/Scenes/Team_Character_Selection.unity
     guid: 7c9c545941e48174885fc486852af9ed
+  - enabled: 1
+    path: Assets/Scenes/In_Game_Layout.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/End_Screen.unity
     guid: b3f12db7f5c2bfa4c946ee311cecce2d

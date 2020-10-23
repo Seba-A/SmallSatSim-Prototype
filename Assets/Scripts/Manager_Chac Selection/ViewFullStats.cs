@@ -12,7 +12,7 @@ public class ViewFullStats : MonoBehaviour
     private GameObject[] navObjects;
 
     public GameObject selectedChac;
-    private Vector3 selectedChacPos = new Vector3(-7.0f, 6.0f, 0.0f);
+    private Vector3 selectedChacPos = new Vector3(-8.0f, 6.0f, 0.0f);
 
     // Start is called before the first frame update
     void Start()
