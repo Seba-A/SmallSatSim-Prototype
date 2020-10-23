@@ -19,9 +19,6 @@ public class ViewFullStats : MonoBehaviour
     {
         managerChac = GameObject.FindGameObjectsWithTag("Character");
         navObjects = GameObject.FindGameObjectsWithTag("NavArrow");
-
-        //initialPosY = transform.position.y;
-        //initialPosZ = transform.position.z;
     }
 
     // Update is called once per frame
