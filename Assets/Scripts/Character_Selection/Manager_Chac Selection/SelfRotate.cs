@@ -53,7 +53,14 @@ public class SelfRotate : MonoBehaviour
             findNameObjectClicked();
             Debug.Log(nameObjectClicked + " is clicked.");
 
+            // Viewing the Manager's Full Stat 
             chacManager.GetComponent<ViewFullStats>().ViewFullChacStats(nameObjectClicked);
+            /* 
+             * This function is only meant to work during Manager Selection.
+             * There will be an error during Team Selection, and that is okay!
+             * 
+             * The Full stats will show again when player views the 'Overall Full Stats' during Team Selection.
+             */
         }
 
         if (CompareTag("NavArrow"))

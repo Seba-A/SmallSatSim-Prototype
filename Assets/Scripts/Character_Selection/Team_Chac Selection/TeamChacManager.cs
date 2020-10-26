@@ -18,7 +18,6 @@ public class TeamChacManager : MonoBehaviour
     public GameObject reselectManagerUI;
     public GameObject managerObjects, teamObjects, managerSelection, teamSelection, managerInstructions, teamInstructions;
     public GameObject selectedManager;
-    private bool isManagerReSelected = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,13 +36,6 @@ public class TeamChacManager : MonoBehaviour
         {
             shuffleButton.gameObject.SetActive(false);
         }
-        /*
-        // hide re-select Manager button after player used it once
-        if (isManagerReSelected == true)
-        {
-            reselectManagerButton.gameObject.SetActive(false);
-        }*/
-
     }
 
     public void RandomTeamShuffle()
@@ -67,8 +59,6 @@ public class TeamChacManager : MonoBehaviour
 
     public void ReSelectManager()
     {
-        //SceneManager.LoadScene("Manager_Character_Selection");
-
         // switch back to manager selection
         managerObjects.SetActive(true);
         teamObjects.SetActive(false);
@@ -78,6 +68,7 @@ public class TeamChacManager : MonoBehaviour
         teamInstructions.SetActive(false);
         Debug.Log("Now time to select your manager, again.");
 
+        // hide all Re-select Manager UI and destroy previously imported Manager
         reselectManagerUI.SetActive(false);
         selectedManager.GetComponent<GetMainChac>().DeleteOldCharacter();
     }
