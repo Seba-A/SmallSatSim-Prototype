@@ -15,6 +15,10 @@ public class TeamChacManager : MonoBehaviour
 
     private int[] teamIndex = new int[3];
 
+    public GameObject reselectManagerUI;
+    public GameObject managerObjects, teamObjects, managerSelection, teamSelection, managerInstructions, teamInstructions;
+    public GameObject selectedManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +36,6 @@ public class TeamChacManager : MonoBehaviour
         {
             shuffleButton.gameObject.SetActive(false);
         }
-
     }
 
     public void RandomTeamShuffle()
@@ -56,6 +59,17 @@ public class TeamChacManager : MonoBehaviour
 
     public void ReSelectManager()
     {
-        SceneManager.LoadScene("Manager_Character_Selection");
+        // switch back to manager selection
+        managerObjects.SetActive(true);
+        teamObjects.SetActive(false);
+        managerSelection.SetActive(true);
+        teamSelection.SetActive(false);
+        managerInstructions.SetActive(true);
+        teamInstructions.SetActive(false);
+        Debug.Log("Now time to select your manager, again.");
+
+        // hide all Re-select Manager UI and destroy previously imported Manager
+        reselectManagerUI.SetActive(false);
+        selectedManager.GetComponent<GetMainChac>().DeleteOldCharacter();
     }
 }

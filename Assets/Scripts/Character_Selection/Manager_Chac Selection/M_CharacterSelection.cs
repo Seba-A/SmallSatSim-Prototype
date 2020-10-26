@@ -3,23 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CharacterSelection : MonoBehaviour
+public class M_CharacterSelection : MonoBehaviour
 {
     public List<GameObject> characterFullStats;
     private readonly string selectedCharacter = "SelectedCharacter";
 
-    /*
-    private GameObject[] managerChac;
-    private GameObject[] navObjects;
-    */
+    private GameObject selectedManager;
+
+    public GameObject teamStatsUI;
+    public GameObject managerObjects, teamObjects, managerSelection, teamSelection, managerInstructions, teamInstructions;
+    public GameObject chacManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        /*
-        managerChac = GameObject.FindGameObjectsWithTag("Character");
-        navObjects = GameObject.FindGameObjectsWithTag("NavArrow");
-        */
     }
 
     // Update is called once per frame
@@ -60,12 +57,31 @@ public class CharacterSelection : MonoBehaviour
 
     public void ConfirmCharacter()
     {
-        SceneManager.LoadScene("Team_Character_Selection");
+        // switch to team selection
+        managerObjects.SetActive(false);
+        teamObjects.SetActive(true);
+        teamStatsUI.SetActive(true);
+        managerSelection.SetActive(false);
+        teamSelection.SetActive(true);
+        managerInstructions.SetActive(false);
+        teamInstructions.SetActive(true);
+        Debug.Log("Now time to select your team.");
+
+        // get the selected character as the main character
+        selectedManager = GameObject.Find("MainChac");
+        selectedManager.GetComponent<GetMainChac>().GetMainCharacter();
     }
 
     public void BackFunction()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        foreach (GameObject statsWindow in characterFullStats)
+        {
+            statsWindow.SetActive(false);
+        }
+
+        chacManager.GetComponent<ViewFullStats>().HideFullChacStats();
+
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         /* To improve the code, consider going back to:
          * the last known position of all characters + selected character to go back its original position.

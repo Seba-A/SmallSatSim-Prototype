@@ -8,12 +8,11 @@ public class GetMainChac : MonoBehaviour
     private GameObject myManager;
 
     private readonly string selectedCharacter = "SelectedCharacter";
-
+    
     // Start is called before the first frame update
     void Start()
     {
         myManager = this.GetComponent<GameObject>();
-        GetMainCharacter();
     }
 
     // Update is called once per frame
@@ -21,7 +20,7 @@ public class GetMainChac : MonoBehaviour
     {
     }
 
-    private void GetMainCharacter()
+    public void GetMainCharacter()
     {
         int getCharacter;
 
@@ -51,11 +50,16 @@ public class GetMainChac : MonoBehaviour
 
         Debug.Log(myManager.name + " is now the selected Manager.");
 
-
         //making the instantiated manager a child of myManager
         myManager.transform.parent = this.transform;
-
     }
 
-    
+    public void DeleteOldCharacter()
+    {
+        foreach (Transform child in this.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+        Debug.Log("Previously selected manager is deleted.");
+    }
 }
