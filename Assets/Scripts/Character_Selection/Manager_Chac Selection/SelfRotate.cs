@@ -76,7 +76,6 @@ public class SelfRotate : MonoBehaviour
         }
 
         return nameObjectClicked;
-
     }
 
 }

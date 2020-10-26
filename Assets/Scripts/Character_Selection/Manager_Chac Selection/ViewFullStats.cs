@@ -12,6 +12,7 @@ public class ViewFullStats : MonoBehaviour
     private GameObject[] navObjects;
 
     public GameObject selectedChac;
+    private Vector3 selectedChacPosOri;
     private Vector3 selectedChacPos = new Vector3(-8.0f, 6.0f, 0.0f);
 
     // Start is called before the first frame update
@@ -31,6 +32,7 @@ public class ViewFullStats : MonoBehaviour
     {
         // find selected character
         selectedChac = GameObject.Find(chacName);
+        selectedChacPosOri = selectedChac.transform.position;
         Debug.Log("Selected character is now " + chacName);
 
         // hide all other unselected objects
@@ -50,10 +52,28 @@ public class ViewFullStats : MonoBehaviour
 
         // show the Character Selection Screen
         chacSelectScreen.SetActive(true);
-        chacSelectScreen.GetComponent<CharacterSelection>().DisplayChacFullStats(chacName);
+        chacSelectScreen.GetComponent<M_CharacterSelection>().DisplayChacFullStats(chacName);
         Debug.Log("Full Stats of " + chacName + " has been displayed.");
-
     }
 
+    public void HideFullChacStats()
+    {
+        // hide the Character Selection Screen
+        chacSelectScreen.SetActive(false);
+
+        // move back the character to original position
+        selectedChac.transform.position = selectedChacPosOri;
+
+        //show all other unselected objects
+        foreach (GameObject character in managerChac)
+        {
+            character.SetActive(true);
+        }
+
+        foreach (GameObject arrow in navObjects)
+        {
+            arrow.SetActive(true);
+        }
+    }
     
 }
