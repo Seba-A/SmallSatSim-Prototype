@@ -8,6 +8,9 @@ TagManager:
   - ChacName
   - ChacKeyStat
   - NavArrow
+  - Teammate Stats
+  - Teammate
+  - Environment
   layers:
   - Default
   - TransparentFX
