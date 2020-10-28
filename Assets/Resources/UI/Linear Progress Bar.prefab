@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7066391733255911143}
   - component: {fileID: 7066391733255911141}
   m_Layer: 5
-  m_Name: Progress Bar
+  m_Name: Linear Progress Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,8 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -88,9 +88,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8622406be39ec2342becbe305b3f1da7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minimum: 100
+  minimum: 0
   maximum: 150
-  current: 125
+  current: 50
   mask: {fileID: 7066391734339129208}
   fill: {fileID: 7066391733665302224}
   color: {r: 0.24098714, g: 0.8490566, b: 0.15619439, a: 1}
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 7066391734339129209}
   - component: {fileID: 7066391734339129215}
   - component: {fileID: 7066391734339129208}
-  - component: {fileID: 7066391734339129214}
+  - component: {fileID: 2917614976200437902}
   m_Layer: 5
   m_Name: Mask
   m_TagString: Untagged
@@ -234,17 +234,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c33871c8638eb4c41bfb4577f3b58627, type: 3}
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.5
+  m_FillAmount: 0.33333334
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7066391734339129214
+--- !u!114 &2917614976200437902
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -256,4 +256,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
+  m_ShowMaskGraphic: 0
