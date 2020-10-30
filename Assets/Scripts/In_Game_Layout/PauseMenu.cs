@@ -30,6 +30,9 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPause = false;
+
+        //enable camera movement
+
     }
 
     void Pause()
@@ -37,6 +40,9 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPause = true;
+
+        // disable camera movement
+        //this.GetComponent<CameraControllerV2>().enabled = false;
     }
 
     public void LoadMenu()
