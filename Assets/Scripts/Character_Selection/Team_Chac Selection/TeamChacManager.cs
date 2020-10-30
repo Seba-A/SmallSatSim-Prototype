@@ -9,13 +9,15 @@ public class TeamChacManager : MonoBehaviour
 {
     public Button confirmTeamButton;
     public Button shuffleButton;
-    //public Button selectButton;
 
     // T_Chac/Panel_TeamStats Section
+    public List<GameObject> teamMembersList;
+    public List<GameObject> memberPlaceholders;
+    private List<GameObject> randomTeamMember;
+
+    // Shuffling Button & Text Section
     public TextMeshProUGUI shuffleTriesText;
     private int shuffleTries = 4;
-
-    private int[] teamIndex = new int[3];
 
     // Team Member Key (to store player preferences)
     private readonly string[] selectedMembers = new string[4];
@@ -23,7 +25,7 @@ public class TeamChacManager : MonoBehaviour
     public int noOfMemberSelected = 0;
 
     // T_Chac/ChosenManager Section
-    public GameObject managerObjects, teamObjects, managerSelection, teamSelection, managerInstructions, teamInstructions;
+    public GameObject[] managerAndTeam; //managerObjects, teamObjects, managerSelection, teamSelection, managerInstructions, teamInstructions;
     public GameObject selectedManager;
 
 
@@ -31,7 +33,10 @@ public class TeamChacManager : MonoBehaviour
     void Start()
     {
         confirmTeamButton.interactable = false;
-        
+
+        randomTeamMember = this.GetComponent<List<GameObject>>();     // there is a plural for getting component(s) for an array        
+
+        // defining Keys for storing team members' name
         selectedMembers[0] = "SelectedMember1";
         selectedMembers[1] = "SelectedMember2";
         selectedMembers[2] = "SelectedMember3";
@@ -61,15 +66,21 @@ public class TeamChacManager : MonoBehaviour
         }
     }
 
+
     #region T_Chac/Panel_TeamStats Section
 
     public void RandomTeamShuffle()
     {
-        /*foreach (int element in teamIndex)
-        { 
-            element = Random.Range(1, 30);
+        //Debug.Log(randomTeamIndex[0]);
+
+        for (int i = 0; i < 4; i++)
+        {
+            int randomTeamIndex = Random.Range(0, teamMembersList.Count - 1);
+            randomTeamMember[i] = Instantiate(teamMembersList[randomTeamIndex], memberPlaceholders[i].transform.position, memberPlaceholders[i].transform.rotation);
+
+            randomTeamMember[i].transform.parent = memberPlaceholders[i].transform;
         }
-        */
+        Debug.Log(randomTeamMember);
 
         UpdateShuffleTries();
     }
@@ -82,6 +93,7 @@ public class TeamChacManager : MonoBehaviour
         Debug.Log("Times left to reshuffle team: " + shuffleTries);
     }
 
+    // Selecting Team Members and Saving Team Data
     public void SaveSelectedMember(string selectedObjName)
     {
         int memberIndex;
@@ -109,12 +121,12 @@ public class TeamChacManager : MonoBehaviour
     public void ReSelectManager()
     {
         // switch back to manager selection
-        managerObjects.SetActive(true);
-        teamObjects.SetActive(false);
-        managerSelection.SetActive(true);
-        teamSelection.SetActive(false);
-        managerInstructions.SetActive(true);
-        teamInstructions.SetActive(false);
+        managerAndTeam[0].SetActive(true);
+        managerAndTeam[1].SetActive(false);
+        managerAndTeam[2].SetActive(true);
+        managerAndTeam[3].SetActive(false);
+        managerAndTeam[4].SetActive(true);
+        managerAndTeam[5].SetActive(false);
         Debug.Log("Now time to select your manager, again.");
 
         // Destroy previously imported Manager

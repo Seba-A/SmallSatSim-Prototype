@@ -10,8 +10,7 @@ public class M_CharacterSelection : MonoBehaviour
 
     private GameObject mainCharacter;
 
-    public GameObject teamStatsUI;
-    public GameObject managerObjects, teamObjects, managerSelection, teamSelection, managerInstructions, teamInstructions;
+    public GameObject[] managerAndTeam; // managerObjects, teamObjects, teamStatsUI, managerSelection, teamSelection, managerInstructions, teamInstructions;
     public GameObject chacManager;
 
     // Start is called before the first frame update
@@ -58,13 +57,13 @@ public class M_CharacterSelection : MonoBehaviour
     public void ConfirmCharacter()
     {
         // switch to team selection
-        managerObjects.SetActive(false);
-        teamObjects.SetActive(true);
-        teamStatsUI.SetActive(true);
-        managerSelection.SetActive(false);
-        teamSelection.SetActive(true);
-        managerInstructions.SetActive(false);
-        teamInstructions.SetActive(true);
+        managerAndTeam[0].SetActive(false);
+        managerAndTeam[1].SetActive(true);
+        managerAndTeam[2].SetActive(true);
+        managerAndTeam[3].SetActive(false);
+        managerAndTeam[4].SetActive(true);
+        managerAndTeam[5].SetActive(false);
+        managerAndTeam[6].SetActive(true);
         Debug.Log("Now time to select your team.");
 
         // get the selected character as the main character

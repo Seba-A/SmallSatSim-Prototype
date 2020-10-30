@@ -14,6 +14,7 @@ public class TeamConfirmation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Debug.Log("Rise my bois. Hail to me!");
     }
 
     // Update is called once per frame
