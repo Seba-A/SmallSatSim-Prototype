@@ -12,7 +12,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         Debug.Log("OnBeginDrag");
 
         parentToReturnTo = this.transform.parent;
-        this.transform.SetParent(this.transform.parent.parent.parent.parent.parent.parent);
+        this.transform.SetParent(this.transform.parent.parent.parent.parent.parent);
 
         GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
