@@ -121,7 +121,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 72673712}
-        m_MethodName: SelectUnselectButton
+        m_MethodName: SelectUnselectMemberFunction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1346,8 +1346,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 706586860}
-        m_MethodName: SetActive
+      - m_Target: {fileID: 706586862}
+        m_MethodName: set_interactable
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1955,7 +1955,8 @@ MonoBehaviour:
   confirmTeamButton: {fileID: 1495064952}
   shuffleButton: {fileID: 901562566}
   shuffleTriesText: {fileID: 810313555}
-  reselectManagerUI: {fileID: 909915883}
+  selectionAttempts: 0
+  noOfMemberSelected: 0
   managerObjects: {fileID: 1052026645}
   teamObjects: {fileID: 239488036}
   managerSelection: {fileID: 1760193689}
@@ -2178,8 +2179,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 706586860}
-        m_MethodName: SetActive
+      - m_Target: {fileID: 706586862}
+        m_MethodName: set_interactable
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3839,6 +3840,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932e331b5085b4404acc71eaed95e5ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  confirmFullTeamButton: {fileID: 1432104394}
+  selectionTeamManager: {fileID: 592159096}
+  teamMembers: 0
 --- !u!224 &1203843762 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 190764561168828949, guid: c304c35163bf444f7b7579c8c97e47e1,
@@ -4426,7 +4430,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1432104395}
   m_OnClick:
     m_PersistentCalls:
@@ -4689,7 +4693,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1495064953}
   m_OnClick:
     m_PersistentCalls:
@@ -5984,6 +5988,17 @@ MonoBehaviour:
       - m_Target: {fileID: 592159098}
         m_MethodName: ReSelectManager
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1413618824}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
