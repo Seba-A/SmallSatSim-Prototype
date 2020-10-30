@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class M_CharacterSelection : MonoBehaviour
 {
     public List<GameObject> characterFullStats;
-    private readonly string selectedCharacter = "SelectedCharacter";
+    private readonly string selectedManager = "SelectedManager";
 
-    private GameObject selectedManager;
+    private GameObject mainCharacter;
 
     public GameObject teamStatsUI;
     public GameObject managerObjects, teamObjects, managerSelection, teamSelection, managerInstructions, teamInstructions;
@@ -29,27 +29,27 @@ public class M_CharacterSelection : MonoBehaviour
         switch (chacName)
         {
             case "Manager1_Chac":
-                PlayerPrefs.SetInt(selectedCharacter, 0);
+                PlayerPrefs.SetInt(selectedManager, 0);
                 characterFullStats[0].SetActive(true);
                 break;
             case "Manager2_Chac":
-                PlayerPrefs.SetInt(selectedCharacter, 1);
+                PlayerPrefs.SetInt(selectedManager, 1);
                 characterFullStats[1].SetActive(true);
                 break;
             case "Manager3_Chac":
-                PlayerPrefs.SetInt(selectedCharacter, 2);
+                PlayerPrefs.SetInt(selectedManager, 2);
                 characterFullStats[2].SetActive(true);
                 break;
             case "Manager4_Chac":
-                PlayerPrefs.SetInt(selectedCharacter, 3);
+                PlayerPrefs.SetInt(selectedManager, 3);
                 characterFullStats[3].SetActive(true);
                 break;
             case "Manager5_Chac":
-                PlayerPrefs.SetInt(selectedCharacter, 4);
+                PlayerPrefs.SetInt(selectedManager, 4);
                 characterFullStats[4].SetActive(true);
                 break;
             default:
-                PlayerPrefs.SetInt(selectedCharacter, 1);
+                PlayerPrefs.SetInt(selectedManager, 1);
                 characterFullStats[1].SetActive(true);
                 break;
         }
@@ -68,8 +68,8 @@ public class M_CharacterSelection : MonoBehaviour
         Debug.Log("Now time to select your team.");
 
         // get the selected character as the main character
-        selectedManager = GameObject.Find("MainChac");
-        selectedManager.GetComponent<GetMainChac>().GetMainCharacter();
+        mainCharacter = GameObject.Find("MainChac");
+        mainCharacter.GetComponent<GetMainChac>().GetMainCharacter();
     }
 
     public void BackFunction()
@@ -80,23 +80,5 @@ public class M_CharacterSelection : MonoBehaviour
         }
 
         chacManager.GetComponent<ViewFullStats>().HideFullChacStats();
-
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-        /* To improve the code, consider going back to:
-         * the last known position of all characters + selected character to go back its original position.
-         * 
-         * Code below is incomplete.
-         
-        foreach (GameObject character in managerChac)
-        {
-            character.SetActive(true);
-        }
-
-        foreach (GameObject arrow in navObjects)
-        {
-            arrow.SetActive(true);
-        }
-        */
     }
 }
