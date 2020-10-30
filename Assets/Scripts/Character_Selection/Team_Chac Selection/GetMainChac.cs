@@ -7,7 +7,7 @@ public class GetMainChac : MonoBehaviour
     public GameObject[] managerChac;
     private GameObject myManager;
 
-    private readonly string selectedCharacter = "SelectedCharacter";
+    private readonly string selectedManager = "SelectedManager";
     
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class GetMainChac : MonoBehaviour
     {
         int getCharacter;
 
-        getCharacter = PlayerPrefs.GetInt(selectedCharacter);
+        getCharacter = PlayerPrefs.GetInt(selectedManager);
 
         switch (getCharacter)
         {

@@ -13,7 +13,7 @@ public class TeamChacManager : MonoBehaviour
     // T_Chac/Panel_TeamStats Section
     public List<GameObject> teamMembersList;
     public List<GameObject> memberPlaceholders;
-    private List<GameObject> randomTeamMember;
+    public GameObject[] randomTeamMember;
 
     // Shuffling Button & Text Section
     public TextMeshProUGUI shuffleTriesText;
@@ -33,8 +33,6 @@ public class TeamChacManager : MonoBehaviour
     void Start()
     {
         confirmTeamButton.interactable = false;
-
-        randomTeamMember = this.GetComponent<List<GameObject>>();     // there is a plural for getting component(s) for an array        
 
         // defining Keys for storing team members' name
         selectedMembers[0] = "SelectedMember1";
@@ -71,21 +69,51 @@ public class TeamChacManager : MonoBehaviour
 
     public void RandomTeamShuffle()
     {
-        //Debug.Log(randomTeamIndex[0]);
+        int[] previousRandomIndex = new int[4] { 999, 999, 999, 999 };
+        int[] randomTeamIndex = new int[4] { 0, 0, 0, 0 };
 
+        // max i range is 4 elements as there are 4 team member slots
         for (int i = 0; i < 4; i++)
         {
-            int randomTeamIndex = Random.Range(0, teamMembersList.Count - 1);
-            randomTeamMember[i] = Instantiate(teamMembersList[randomTeamIndex], memberPlaceholders[i].transform.position, memberPlaceholders[i].transform.rotation);
+            // Delete all child objects
+            foreach (Transform child in memberPlaceholders[i].transform)
+            {
+                Destroy(child.gameObject);
+            }
+            Debug.Log("Clear all child");
 
-            randomTeamMember[i].transform.parent = memberPlaceholders[i].transform;
+            // Create random member (without repeat) by comparing each element of previousRandomIndex
+            for (int j = 0; j < 4; j++)
+            {
+                while (randomTeamIndex[i] == previousRandomIndex[j])
+                {
+                    randomTeamIndex[i] = Random.Range(0, teamMembersList.Count);
+                    j = 0;
+                }
+            }
+            Debug.Log(randomTeamIndex[i]);
+
+            previousRandomIndex[i] = randomTeamIndex[i];
+            Debug.Log(previousRandomIndex[i]);
+
+            // Clone the appropraite prefab (team member) based on the random index
+            randomTeamMember[i] = Instantiate(teamMembersList[randomTeamIndex[i]], memberPlaceholders[i].transform.position, memberPlaceholders[i].transform.rotation);
+            Debug.Log("a random team member is selected");
+
+            // set the parent of the instantiated team member to be the empty gameobject
+            randomTeamMember[i].transform.SetParent(memberPlaceholders[i].transform);
+                //the not-so-efficient way: randomTeamMember[i].transform.parent = memberPlaceholders[i].transform;
         }
-        Debug.Log(randomTeamMember);
-
+        
         UpdateShuffleTries();
     }
 
-    public void UpdateShuffleTries()
+    private void DeleteOldMember()
+    {
+        
+    }
+
+    private void UpdateShuffleTries()
     {
         shuffleTries--;
         shuffleTriesText.text = "Tries Left: " + shuffleTries;
