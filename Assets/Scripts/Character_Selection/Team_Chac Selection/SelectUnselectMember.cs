@@ -6,13 +6,10 @@ using TMPro;
 
 public class SelectUnselectMember : MonoBehaviour
 {
-    private readonly string selectedMember1 = "SelectedMember1";
-    private readonly string selectedMember2 = "SelectedMember2";
-    private readonly string selectedMember3 = "SelectedMember3";
-    private readonly string selectedMember4 = "SelectedMember4";
-
     private Button selectButton;
     private TextMeshProUGUI selectText;
+    public GameObject parentObject;
+
     private bool isMemberSelected = false;
 
     // Start is called before the first frame update
@@ -23,17 +20,21 @@ public class SelectUnselectMember : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void SelectUnselectButton()
     {
-        Debug.Log("'this' name is: " + this.name);
-        selectButton = this.gameObject.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(3).GetComponent<Button>();
-        Debug.Log("The selected button is now: " + selectButton.name);
+        // Get text and change it
+        selectText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        ChangeButtonText();
 
-        selectText = selectButton.GetComponentInChildren<TextMeshProUGUI>();
+        // Get attached parent
+        parentObject = GetComponent<GameObject>();
+        parentObject = GameObject.Find(transform.parent.name);
+    }
 
+    private void ChangeButtonText()
+    {
         if (isMemberSelected == false)
         {
             selectText.text = "Unselect";

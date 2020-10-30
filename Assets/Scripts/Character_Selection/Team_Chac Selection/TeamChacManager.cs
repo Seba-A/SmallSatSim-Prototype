@@ -17,8 +17,11 @@ public class TeamChacManager : MonoBehaviour
 
     private int[] teamIndex = new int[3];
 
-    // Team Member Select/Unselect
-    
+    // Team Member Data
+    private readonly string selectedMember1 = "SelectedMember1";
+    private readonly string selectedMember2 = "SelectedMember2";
+    private readonly string selectedMember3 = "SelectedMember3";
+    private readonly string selectedMember4 = "SelectedMember4";
 
     // T_Chac/ChosenManager Section
     public GameObject reselectManagerUI;
