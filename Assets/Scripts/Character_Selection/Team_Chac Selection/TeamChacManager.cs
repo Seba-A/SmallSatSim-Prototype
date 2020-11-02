@@ -11,9 +11,9 @@ public class TeamChacManager : MonoBehaviour
     public Button shuffleButton;
 
     // T_Chac/Panel_TeamStats Section
-    public List<GameObject> teamMembersList;
-    public List<GameObject> memberPlaceholders;
-    public GameObject[] randomTeamMember;
+    public List<GameObject> teamMembersList;    // the whole list of team member character prefabs.
+    public List<GameObject> memberPlaceholders; // empty gameobject acting as placeholders (& parent) for clone of TeamMember.
+    public GameObject[] randomTeamMember;       // empty gameobject to be substituted as a clone of TeamMember.
 
     // Shuffling Button & Text Section
     public TextMeshProUGUI shuffleTriesText;
@@ -88,7 +88,7 @@ public class TeamChacManager : MonoBehaviour
                 while (randomTeamIndex[i] == previousRandomIndex[j])
                 {
                     randomTeamIndex[i] = Random.Range(0, teamMembersList.Count);
-                    j = 0;
+                    j = 0;      // if there is a need to re-generate a new randomTeamIndex, the counter j is re-set to zero.
                 }
             }
             Debug.Log(randomTeamIndex[i]);
@@ -106,11 +106,6 @@ public class TeamChacManager : MonoBehaviour
         }
         
         UpdateShuffleTries();
-    }
-
-    private void DeleteOldMember()
-    {
-        
     }
 
     private void UpdateShuffleTries()
@@ -146,6 +141,7 @@ public class TeamChacManager : MonoBehaviour
 
 
     #region T_Chac/ChosenManager Section
+
     public void ReSelectManager()
     {
         // switch back to manager selection
@@ -161,6 +157,7 @@ public class TeamChacManager : MonoBehaviour
         // Note: Relevant buttons and UI has been disabled in Unity GameObject's Inspector Window
         selectedManager.GetComponent<GetMainChac>().DeleteOldCharacter();
     }
+
     #endregion
 
 }

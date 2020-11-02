@@ -4363,6 +4363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 711426167}
+  - component: {fileID: 711426168}
   m_Layer: 0
   m_Name: Manager And Team
   m_TagString: Untagged
@@ -4389,6 +4390,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &711426168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711426166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290e0569525294dfba751b5362c205f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myManager: {fileID: 1668874223}
+  managerList:
+  - {fileID: 929067022522409760, guid: 8684ee775d1f7405c8fd3fe4a64b0070, type: 3}
+  - {fileID: 1412210961632965964, guid: 5de5b3f561853496c83c18e5c9d05f2c, type: 3}
+  - {fileID: 3799165551437177711, guid: ce80852e03cd9455fa3a4493ff98ebf7, type: 3}
+  - {fileID: 1181047763869341770, guid: 19e0ef764976c40588be74f4678518da, type: 3}
+  - {fileID: 4752343780131309939, guid: e91f0ec5e1a98444f98c89e9c989d09d, type: 3}
+  confirmedManager: {fileID: 0}
+  myTeam:
+  - {fileID: 113156904}
+  - {fileID: 941022803}
+  - {fileID: 331420851}
+  - {fileID: 1451433731}
+  teamMemberList:
+  - {fileID: 190764561168828950, guid: c304c35163bf444f7b7579c8c97e47e1, type: 3}
+  - {fileID: 1375190418814986072, guid: 7ee4076dd97a34b7e8fdd0341b07ddeb, type: 3}
+  - {fileID: 5513063052583861914, guid: 5286a5641196a4e62859fcbcd22c72f1, type: 3}
+  - {fileID: 8725110920547899418, guid: 6adc8a3e5604e4914b2014e407d7bc8f, type: 3}
+  - {fileID: 7849987406922145692, guid: 32c002d11ab374f2d9a783dde48ff402, type: 3}
+  - {fileID: 190764561168828950, guid: 065f137af38444fa88251c781cc3b183, type: 3}
+  - {fileID: 190764561168828950, guid: df94c24739d8d42dfb1dead8c7e8e787, type: 3}
+  - {fileID: 190764561168828950, guid: 09bffd0a6b0c7492dab0103f2f3b6c5e, type: 3}
+  - {fileID: 190764561168828950, guid: 6872e16c0f6b84f15a33113dfd43d285, type: 3}
+  confirmedTeam:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &737727135
 GameObject:
   m_ObjectHideFlags: 0
