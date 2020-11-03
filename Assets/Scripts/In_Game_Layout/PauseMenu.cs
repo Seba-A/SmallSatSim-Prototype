@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPause = false;
 
     public GameObject pauseMenuUI;
+    public GameObject OptionsMenuUI;
 
     //this is to stop the camera from moving when in the pause menu
     public GameObject otherobj;
@@ -34,6 +35,8 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPause = false;
+
+        OptionsMenuUI.SetActive(false);
 
         //enable camera movement
         (otherobj.GetComponent(script) as MonoBehaviour).enabled = true;
