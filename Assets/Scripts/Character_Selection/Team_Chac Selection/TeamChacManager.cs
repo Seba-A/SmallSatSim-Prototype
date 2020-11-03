@@ -103,6 +103,7 @@ public class TeamChacManager : MonoBehaviour
             // set the parent of the instantiated team member to be the empty gameobject
             randomTeamMember[i].transform.SetParent(memberPlaceholders[i].transform);
                 //the not-so-efficient way: randomTeamMember[i].transform.parent = memberPlaceholders[i].transform;
+            
         }
         
         UpdateShuffleTries();

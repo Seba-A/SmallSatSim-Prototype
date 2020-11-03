@@ -19,7 +19,6 @@ public class GetManagerAndTeam : MonoBehaviour
     private readonly string selectedManager = "SelectedManager";
     private readonly string[] selectedMembers = new string[4];
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +53,9 @@ public class GetManagerAndTeam : MonoBehaviour
 
         confirmedManager.transform.SetParent(myManager.transform);
         confirmedManager.GetComponent<BoxCollider>().isTrigger = true;
+
+        // remove SelfRotate script attached to manager prefab
+        Destroy(confirmedManager.GetComponent<SelfRotate>());
     }
 
     public void GetMyTeamInfo()
