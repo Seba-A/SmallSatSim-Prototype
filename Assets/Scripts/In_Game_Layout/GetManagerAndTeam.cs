@@ -11,6 +11,8 @@ public class GetManagerAndTeam : MonoBehaviour
     public GameObject[] managerList;
     public GameObject confirmedManager;
 
+    public string selfRotateScript;
+
     public List<GameObject> myTeam;
     public GameObject myTeamInfo;
     public GameObject[] teamMemberList;
@@ -18,7 +20,6 @@ public class GetManagerAndTeam : MonoBehaviour
 
     private readonly string selectedManager = "SelectedManager";
     private readonly string[] selectedMembers = new string[4];
-
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +55,8 @@ public class GetManagerAndTeam : MonoBehaviour
 
         confirmedManager.transform.SetParent(myManager.transform);
         confirmedManager.GetComponent<BoxCollider>().isTrigger = true;
+
+        (confirmedManager.GetComponent(selfRotateScript) as MonoBehaviour).enabled = false;
     }
 
     public void GetMyTeamInfo()
