@@ -11,8 +11,6 @@ public class GetManagerAndTeam : MonoBehaviour
     public GameObject[] managerList;
     public GameObject confirmedManager;
 
-    public string selfRotateScript;
-
     public List<GameObject> myTeam;
     public GameObject myTeamInfo;
     public GameObject[] teamMemberList;
@@ -56,7 +54,8 @@ public class GetManagerAndTeam : MonoBehaviour
         confirmedManager.transform.SetParent(myManager.transform);
         confirmedManager.GetComponent<BoxCollider>().isTrigger = true;
 
-        (confirmedManager.GetComponent(selfRotateScript) as MonoBehaviour).enabled = false;
+        // remove SelfRotate script attached to manager prefab
+        Destroy(confirmedManager.GetComponent<SelfRotate>());
     }
 
     public void GetMyTeamInfo()
