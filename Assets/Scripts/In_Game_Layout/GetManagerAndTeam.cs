@@ -5,11 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class GetManagerAndTeam : MonoBehaviour
 {
+    public GameObject managerAndTeam;
+
     public GameObject myManager;
     public GameObject[] managerList;
     public GameObject confirmedManager;
 
     public List<GameObject> myTeam;
+    public GameObject myTeamInfo;
     public GameObject[] teamMemberList;
     public List<GameObject> confirmedTeam;
 
@@ -27,16 +30,13 @@ public class GetManagerAndTeam : MonoBehaviour
         selectedMembers[3] = "SelectedMember4";
 
         confirmedManager = myManager.GetComponent<GameObject>();
+        //Debug.Log("Import keys and get manager to be game object component.");
+
+        //managerAndTeam.SetActive(true);
+        Debug.Log("show Manager and Team");
 
         GetMyManager();
-        GetMyTeam();
-
-        /*
-        SceneManager.MoveGameObjectToScene(myManager, SceneManager.GetActiveScene());
-        foreach (GameObject member in myTeam)
-        {
-            SceneManager.MoveGameObjectToScene(member, SceneManager.GetActiveScene());
-        }*/
+        GetMyTeamInfo();
     }
 
     // Update is called once per frame
@@ -50,19 +50,38 @@ public class GetManagerAndTeam : MonoBehaviour
         int managerInt = PlayerPrefs.GetInt(selectedManager);
 
         confirmedManager = Instantiate(managerList[managerInt], myManager.transform.position, myManager.transform.rotation);
+        Debug.Log("The confirmed manager is: " + confirmedManager.name);
 
-        confirmedManager.transform.parent = myManager.transform;
+        confirmedManager.transform.SetParent(myManager.transform);
+        confirmedManager.GetComponent<BoxCollider>().isTrigger = true;
     }
 
-    public void GetMyTeam()
+    public void GetMyTeamInfo()
     {
+        // NOTE: Team member info is in the form of UI. Not 3D-objects!
+
         string[] teamString = new string[4];
+        int[] confirmTeamInt = new int[4] { 0, 0, 0, 0 };
+
         for (int i = 0; i < myTeam.Count; i++)
         {
             teamString[i] = PlayerPrefs.GetString(selectedMembers[i]);
-            confirmedTeam[i] = GameObject.Find(teamString[i]);
+            Debug.Log(teamString[i]);
 
-            confirmedTeam[i].transform.parent = myTeam[i].transform;
+            foreach (GameObject element in teamMemberList)
+            {
+                if (element.name == teamString[i])
+                {
+                    confirmTeamInt[i] = System.Array.IndexOf(teamMemberList, element);
+                    Debug.Log(confirmTeamInt);
+                }
+            }
+
+            confirmedTeam[i] = Instantiate(teamMemberList[confirmTeamInt[i]], myTeamInfo.transform.position, myTeamInfo.transform.rotation);
+            Debug.Log("Member " + i + " of name " + confirmedTeam[i].name + " is now added to the team.");
+
+            confirmedTeam[i].transform.SetParent(myTeamInfo.transform);
+            confirmedTeam[i].gameObject.SetActive(false);
         }
     }
 }

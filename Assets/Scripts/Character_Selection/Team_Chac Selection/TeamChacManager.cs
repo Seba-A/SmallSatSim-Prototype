@@ -130,8 +130,12 @@ public class TeamChacManager : MonoBehaviour
             memberIndex = selectionAttempts;
         }
 
-        PlayerPrefs.SetString(selectedMembers[memberIndex], selectedObjName);
-        Debug.Log(selectedObjName + " is saved to Key: " + selectedMembers[memberIndex] + " with member index: " + memberIndex);
+        // removing the word '(Clone)' from the prefab's name
+        string selectedPrefabName = selectedObjName.Substring(0, selectedObjName.Length - 7);
+
+        // save player preference with prefab's name
+        PlayerPrefs.SetString(selectedMembers[memberIndex], selectedPrefabName);
+        Debug.Log(selectedPrefabName + " is saved to Key: " + selectedMembers[memberIndex] + " with member index: " + memberIndex);
 
         selectionAttempts++;
         Debug.Log("attempts: " + selectionAttempts);
