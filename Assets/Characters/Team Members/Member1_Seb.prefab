@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 190764561005522078}
   - component: {fileID: 190764561005522079}
   m_Layer: 5
-  m_Name: Chac_Full Stats_Cous
+  m_Name: Chac_Full Stats_Seb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Story of Cous Jr.
+  m_text: 'Story of Seb Jr.
+
+
+    An average guy with an average face of an average
+    character.
+
+    Can be trained to specialise in anything.
+
+
+    The only unique
+    thing about Seb Jr. is his tongue, and he is proud of it.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -91,8 +101,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -127,7 +137,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 5, y: 0, z: 5, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -276,7 +286,7 @@ GameObject:
   - component: {fileID: 190764561168828948}
   - component: {fileID: 1203843763}
   m_Layer: 5
-  m_Name: Panel_CousCharacter
+  m_Name: Member1_Seb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -368,7 +378,7 @@ GameObject:
   - component: {fileID: 190764561179573577}
   - component: {fileID: 190764561179573578}
   m_Layer: 5
-  m_Name: Character Image_Cous
+  m_Name: Character Image_Seb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -422,7 +432,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9be4bf2229f33454698fba817642e86c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5a1dccc7bd50e46e39b953ce2b4eff79, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -577,7 +587,7 @@ GameObject:
   - component: {fileID: 190764562123650344}
   - component: {fileID: 190764562123650345}
   m_Layer: 5
-  m_Name: Chac_Key Stats_Cous
+  m_Name: Chac_Key Stats_Seb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -845,7 +855,7 @@ GameObject:
   - component: {fileID: 190764562258181472}
   - component: {fileID: 190764562258181473}
   m_Layer: 5
-  m_Name: Character Name_Cous
+  m_Name: Character Name_Seb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -897,7 +907,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cous Jr.
+  m_text: Seb Jr.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

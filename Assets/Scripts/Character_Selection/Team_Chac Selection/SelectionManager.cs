@@ -46,7 +46,7 @@ public class SelectionManager : MonoBehaviour
         if (isMemberSelected == false)
         {
             selectText.text = "Unselect";
-
+            parentObject.GetComponent<Image>().color = new Color32(140, 230, 140, 100);
             Debug.Log(parentObject.name + " is selected.");
 
             // Save selected member
@@ -58,7 +58,7 @@ public class SelectionManager : MonoBehaviour
         else
         {
             selectText.text = "Select";
-
+            parentObject.GetComponent<Image>().color = new Color32(225, 225, 225, 100);
             Debug.Log(parentObject.name + " is unselected.");
 
             isMemberSelected = false;
