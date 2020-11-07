@@ -16,4 +16,5 @@ public class Task : ScriptableObject
     public int clarity;
     public int efficiency;
     public int innovation;
+    public int progressbar;
 }
