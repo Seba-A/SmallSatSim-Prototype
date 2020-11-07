@@ -1201,6 +1201,7 @@ GameObject:
   - component: {fileID: 123470201}
   - component: {fileID: 123470200}
   - component: {fileID: 123470199}
+  - component: {fileID: 123470204}
   m_Layer: 5
   m_Name: Task (7)
   m_TagString: Untagged
@@ -1311,6 +1312,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 123470197}
   m_CullTransparentMesh: 0
+--- !u!114 &123470204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123470197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160d4ac1c78ca0943bfee7097207d140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Task 2
+  description: Run Forrest run!!!!
+  timeRequired: 10
+  timerIsRunning: 0
+  redundancy: 100
+  reliability: 150
+  clarity: 300
+  efficiency: 50
+  innovation: 220
+  progressbar: 90
+  nameTask: {fileID: 837592185}
+  descriptionText: {fileID: 841189125}
 --- !u!1 &137806469
 GameObject:
   m_ObjectHideFlags: 0
@@ -4399,6 +4424,7 @@ MonoBehaviour:
   efficiency: {fileID: 1083872447}
   innovation: {fileID: 745242780}
   progressbar: {fileID: 1320362663}
+  task1: {fileID: 11400000, guid: 5e72fbbf4b977464eaa268b4b624b451, type: 2}
 --- !u!1001 &476906181
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -16,9 +16,9 @@ MonoBehaviour:
   description: you will have to kill all your teammates now!!
   timeRequired: 10
   timerIsRunning: 0
-  redundancy: 500
-  reliability: 500
-  clarity: 500
-  efficiency: 500
-  innovation: 500
-  progressbar: 150
+  redundancy: 100
+  reliability: 150
+  clarity: 300
+  efficiency: 70
+  innovation: 220
+  progressbar: 90

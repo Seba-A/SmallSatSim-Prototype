@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
 {
 
     public TextMeshProUGUI time;
-    public float timeRemaining = 10;
+    public float timeRemaining;
     public bool timerIsRunning = false;
     public bool taskCompleted = false;
 
@@ -20,35 +20,46 @@ public class GameManager : MonoBehaviour
     public GameObject innovation;
     public GameObject progressbar;
 
+    private int redundancyScore;
+    private int reliabilityScore;
+    private int clarityScore;
+    private int efficiencyScore;
+    private int innovationScore;
+    private int progressbarScore;
+
+    public Task task1;
+
     // Start is called before the first frame update
     void Start()
     {
         // will need to change this so that is is true only when task is dragged
+        timeRemaining = task1.timeRequired;
         timerIsRunning = true;
 
-        //call the score of each progress bar
-        int redundancyScore = 0;
+        //set the score of each progress bar to 0 at the satr of the game
+        redundancyScore = 0;
         redundancy.GetComponent<ProgressBar>().current = redundancyScore;
 
-        int reliabilityScore = 0;
+        reliabilityScore = 0;
         reliability.GetComponent<ProgressBar>().current = reliabilityScore;
 
-        int clarityScore = 0;
+        clarityScore = 0;
         clarity.GetComponent<ProgressBar>().current = clarityScore;
 
-        int efficiencyScore = 0;
+        efficiencyScore = 0;
         efficiency.GetComponent<ProgressBar>().current = efficiencyScore;
 
-        int innovationScore = 0;
+        innovationScore = 0;
         innovation.GetComponent<ProgressBar>().current = innovationScore;
 
-        int progressbarScore = 0;
+        progressbarScore = 0;
         progressbar.GetComponent<ProgressBar>().current = progressbarScore;
     }
 
     //timer
     public void Update()
     {
+
         if (timerIsRunning)
         {
             time.text = "Time: " + timeRemaining.ToString("0");
@@ -68,8 +79,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void AddScore()
+    public void AddScore()
     {
-        throw new NotImplementedException();
+        redundancyScore = task1.redundancy;
+        redundancy.GetComponent<ProgressBar>().current = redundancyScore;
+
+        reliabilityScore = 150;
+        reliability.GetComponent<ProgressBar>().current = reliabilityScore;
+
+        clarityScore = 300;
+        clarity.GetComponent<ProgressBar>().current = clarityScore;
+
+        efficiencyScore = 70;
+        efficiency.GetComponent<ProgressBar>().current = efficiencyScore;
+
+        innovationScore = 220;
+        innovation.GetComponent<ProgressBar>().current = innovationScore;
+
+        progressbarScore = 90;
+        progressbar.GetComponent<ProgressBar>().current = progressbarScore;
     }
+
+
 }
