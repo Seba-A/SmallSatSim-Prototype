@@ -64,7 +64,24 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Story of Joe Jr.
+  m_text: 'Since young, Joe knew he was special. At the age of 2, he has already
+    travelled around the world 20 times. "I had my buddy unicorn!" he answered whenever
+    he was asked about how he would know so much about the world.
+
+
+    Maybe that
+    is how he develops the high skill of flirting, because nobody would believe his
+    unicorn stories.
+
+
+    Leader Effect: Have fun [Active]
+
+    Possess the ability
+    to increase the focus and quality of all female team members by 15.
+
+
+    Cooldown
+    time: 1 week'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -91,8 +108,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -276,7 +293,7 @@ GameObject:
   - component: {fileID: 190764561168828948}
   - component: {fileID: 1203843763}
   m_Layer: 5
-  m_Name: Panel_JoeCharacter
+  m_Name: Member9_Joe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,7 +648,21 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Key Stats:
 
-'
+    S+55, Q+70;
+
+    Womanizer
+
+
+    Relationship+55
+
+    Focus+45
+
+    Creativity+65
+
+    Trait:
+    Womanizer
+
+    Field: Mythical'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -658,8 +689,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

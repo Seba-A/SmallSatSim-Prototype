@@ -7,14 +7,14 @@ public class GetManagerAndTeam : MonoBehaviour
 {
     public GameObject managerAndTeam;
 
-    public GameObject myManager;
-    public GameObject[] managerList;
-    public GameObject confirmedManager;
+    public GameObject myManager;            // placeholder for position in Scene
+    public GameObject[] managerList;        // full list of manager prefab
+    public GameObject confirmedManager;     // selected manager that will be instantiated
 
-    public List<GameObject> myTeam;
-    public GameObject myTeamInfo;
-    public GameObject[] teamMemberList;
-    public List<GameObject> confirmedTeam;
+    public List<GameObject> myTeam;         // placeholder 3D-objects in the Scene
+    public GameObject myTeamInfo;           // placeholder UI for position in Canvas Character Info Panel
+    public GameObject[] teamMemberList;     // full list of team member prefab
+    public List<GameObject> confirmedTeam;  // selected team member that will be instantiated
 
     private readonly string selectedManager = "SelectedManager";
     private readonly string[] selectedMembers = new string[4];

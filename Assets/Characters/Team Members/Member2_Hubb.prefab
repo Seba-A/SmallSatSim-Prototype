@@ -208,7 +208,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Story of Hubb Jr.
+  m_text: 'After going through 27 plastic surgeries around the world including Thailand,
+    Korea, and most recently at Syria, Hubb Jr. is ready to take on any challenge
+    that is thrown at him.
+
+
+    "What could be worse than having to re-make your
+    face?" he said.
+
+
+    Leader Effect: Sleepless [Active]
+
+    Possess the ability
+    to boost any two team members for 3 days, allowing them to perform consistently
+    without the need to sleep for 3 consecutive days.
+
+
+    Cooldown time: 1 month
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -235,8 +253,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -553,7 +571,7 @@ GameObject:
   - component: {fileID: 1375190418814986078}
   - component: {fileID: 8601923959201725996}
   m_Layer: 5
-  m_Name: Panel_HubbCharacter
+  m_Name: Member2_Hubb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -798,10 +816,10 @@ RectTransform:
   m_Father: {fileID: 1375190419139402280}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: -55}
-  m_SizeDelta: {x: 0, y: 50}
+  m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1375190419087130313
 CanvasRenderer:
@@ -832,7 +850,21 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Key Stats:
 
-'
+    S+70, Q+45;
+
+    Curious
+
+
+    Relationship+50,
+
+    Focus+60,
+
+    Creativity+50
+
+    Trait:
+    Curious
+
+    Field: Zombie World'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -859,8 +891,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
