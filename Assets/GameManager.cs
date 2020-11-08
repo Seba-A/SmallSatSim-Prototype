@@ -82,21 +82,21 @@ public class GameManager : MonoBehaviour
     public void AddScore()
     {
         redundancyScore = task1.redundancy;
-        redundancy.GetComponent<ProgressBar>().current = redundancyScore;
+        redundancy.GetComponent<ProgressBar>().current =+ redundancyScore;
 
         reliabilityScore = 150;
-        reliability.GetComponent<ProgressBar>().current = reliabilityScore;
+        reliability.GetComponent<ProgressBar>().current =+ reliabilityScore;
 
         clarityScore = 300;
-        clarity.GetComponent<ProgressBar>().current = clarityScore;
+        clarity.GetComponent<ProgressBar>().current =+ clarityScore;
 
         efficiencyScore = 70;
-        efficiency.GetComponent<ProgressBar>().current = efficiencyScore;
+        efficiency.GetComponent<ProgressBar>().current =+ efficiencyScore;
 
         innovationScore = 220;
-        innovation.GetComponent<ProgressBar>().current = innovationScore;
+        innovation.GetComponent<ProgressBar>().current =+ innovationScore;
 
         progressbarScore = 90;
-        progressbar.GetComponent<ProgressBar>().current = progressbarScore;
+        progressbar.GetComponent<ProgressBar>().current =+ progressbarScore;
     }
 }

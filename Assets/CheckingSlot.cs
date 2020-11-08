@@ -18,10 +18,12 @@ public class CheckingSlot : MonoBehaviour
         if (this.transform.parent.name == "ContentTask")
         {
             Debug.Log("Task has been assigned");
+            timerIsRunning = true;
         }
         else
         {
             Debug.Log("No task has been assigned");
+            timerIsRunning = false;
         }
     }
 }
