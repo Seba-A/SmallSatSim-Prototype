@@ -10,6 +10,9 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     GameObject placeholder = null;
 
+    //to activate timer
+    public bool timerIsRunning = false;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("OnBeginDrag");

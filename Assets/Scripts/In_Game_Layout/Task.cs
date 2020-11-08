@@ -9,7 +9,6 @@ public class Task : ScriptableObject
     public string description;
 
     public float timeRequired;
-    public bool timerIsRunning = false;
 
     public int redundancy;
     public int reliability;

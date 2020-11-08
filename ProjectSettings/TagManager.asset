@@ -11,6 +11,7 @@ TagManager:
   - Teammate Stats
   - Teammate
   - Environment
+  - Task Assigned
   layers:
   - Default
   - TransparentFX

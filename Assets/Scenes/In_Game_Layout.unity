@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 10209512}
   m_Layer: 5
   m_Name: Content
-  m_TagString: Untagged
+  m_TagString: Task Assigned
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -700,6 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
+  timerIsRunning: 0
 --- !u!114 &106038230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,6 +1244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
+  timerIsRunning: 0
 --- !u!114 &123470200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1327,7 +1329,6 @@ MonoBehaviour:
   name: Task 2
   description: Run Forrest run!!!!
   timeRequired: 10
-  timerIsRunning: 0
   redundancy: 100
   reliability: 150
   clarity: 300
@@ -10623,6 +10624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
+  timerIsRunning: 0
 --- !u!114 &1071117347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13452,6 +13454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
+  timerIsRunning: 0
 --- !u!114 &1333269096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14574,6 +14577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
+  timerIsRunning: 0
 --- !u!114 &1516707173
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -99,6 +99,4 @@ public class GameManager : MonoBehaviour
         progressbarScore = 90;
         progressbar.GetComponent<ProgressBar>().current = progressbarScore;
     }
-
-
 }
