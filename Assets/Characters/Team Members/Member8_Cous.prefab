@@ -64,7 +64,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Story of Cous Jr.
+  m_text: 'Cous Jr. named himself the day he was borned, but he could not speak.
+    He claims that he is able to see the entire spectrum of the electromagnetic waves,
+    yet he is blind.
+
+
+    "Nothing is safe, not until you add rocks to it." he warned.
+
+    Is
+    that why he plays rock n'' roll for a living?
+
+
+    Leader Effect: Go with the
+    Flow [Passive]
+
+    Possess the ability to increase relationship and creativity
+    by 10; decrease speed and quality of the whole team by 10.
+
+    (Relationship+10,
+    Creativity+10, Speed-10, Quality-10)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -91,8 +109,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -276,7 +294,7 @@ GameObject:
   - component: {fileID: 190764561168828948}
   - component: {fileID: 1203843763}
   m_Layer: 5
-  m_Name: Panel_CousCharacter
+  m_Name: Member8_Cous
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,7 +649,21 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Key Stats:
 
-'
+    S+70, Q+50;
+
+    Kinky
+
+
+    Relationship+45
+
+    Focus+65
+
+    Creativity+50
+
+    Trait:
+    Kinky
+
+    Field: Rocks'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -658,8 +690,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

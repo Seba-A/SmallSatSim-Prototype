@@ -64,31 +64,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Eric''s Full Stats:
-
-
-    Speed: 70
-
-    Quality: 70
-
-    Relationship:
-    75
-
-    Focus: 70
-
-    Creativity: 75
-
-
-    Trait: Bloodfrenzy
-
-
-    Field: Blackmarket
-    & Public Relations
-
-
-    Leader Efect: [Active buff] Possess the ability to manipulate
-    the speed, quality, and relationship of a maximum of 2 team members at the same
-    time by -20 to +20 for 1 week. '
+  m_text: "Eric's Full Stats:\n\nSpeed: 70\nQuality: 70\nRelationship: 75\nFocus:
+    70\nCreativity: 75\n\nTrait: Bloodfrenzy\nField: Blackmarket & Public Relations\n\nLeader
+    Efect: Manipulation [Active]\nPossess the ability to manipulate the speed, quality,
+    and relationship of a maximum of 2 team members at the same time by -20 to +20
+    for 1 week. \n\nCooldown time: 2 weeks"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
