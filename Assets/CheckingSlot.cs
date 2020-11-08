@@ -15,11 +15,6 @@ public class CheckingSlot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckSlot();
-    }
-
-    public void CheckSlot()
-    {
         if (this.transform.parent.name == "ContentTask")
         {
             Debug.Log("Task has been assigned");
