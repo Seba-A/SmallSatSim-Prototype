@@ -15,7 +15,7 @@ public class CheckingSlot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        CheckSlot();
     }
 
     public void CheckSlot()
