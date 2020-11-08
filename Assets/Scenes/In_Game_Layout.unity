@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 10209513}
   - component: {fileID: 10209512}
   m_Layer: 5
-  m_Name: Content
+  m_Name: ContentTask
   m_TagString: Task Assigned
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4745,8 +4745,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1420411207}
   m_HandleRect: {fileID: 1420411206}
   m_Direction: 2
-  m_Value: 0.99999994
-  m_Size: 0.31784785
+  m_Value: 1
+  m_Size: 0.3178478
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10755,7 +10755,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1107069980}
   m_HandleRect: {fileID: 1107069978}
   m_Direction: 2
-  m_Value: 1.0000005
+  m_Value: 1.0000004
   m_Size: 0.6360434
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -13398,6 +13398,7 @@ GameObject:
   - component: {fileID: 1333269096}
   - component: {fileID: 1333269095}
   - component: {fileID: 1333269094}
+  - component: {fileID: 1333269100}
   m_Layer: 5
   m_Name: Task
   m_TagString: Untagged
@@ -13524,6 +13525,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333269092}
   m_CullTransparentMesh: 0
+--- !u!114 &1333269100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333269092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7f9f93a220356049a9783c7126599e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerIsRunning: 0
 --- !u!1 &1349020857
 GameObject:
   m_ObjectHideFlags: 0
