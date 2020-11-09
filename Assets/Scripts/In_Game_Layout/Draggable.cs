@@ -63,12 +63,12 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         if (this.transform.parent.name == "ContentTask")
         {
-            Debug.Log("Task has been assigned");
+            //Debug.Log("Task has been assigned");
             timerIsRunning = true;
         }
         else
         {
-            Debug.Log("No task has been assigned");
+            //Debug.Log("No task has been assigned");
             timerIsRunning = false;
         }
     }

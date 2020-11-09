@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI time;
     public float timeRemaining;
-    public bool timerIsRunning = false;
+    //public bool timerIsRunning = false;
     public bool taskCompleted = false;
 
     public GameObject redundancy;
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     {
         // will need to change this so that is is true only when task is dragged
         timeRemaining = task1.timeRequired;
-        timerIsRunning = true;
+        //timerIsRunning = true;
 
         //set the score of each progress bar to 0 at the satr of the game
         redundancyScore = 0;
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
     public void Update()
     {
 
-        if (timerIsRunning)
+        if (GameObject.Find("Task").GetComponent<Draggable>().timerIsRunning)
         {
             time.text = "Time: " + timeRemaining.ToString("0");
 
@@ -72,7 +72,8 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("The Task has been completed!");
                 timeRemaining = 0;
-                timerIsRunning = false;
+                GameObject.Find("Task").GetComponent<Draggable>().timerIsRunning = false;
+                Destroy(GameObject.Find("Task"));
                 taskCompleted = true;
                 AddScore();
             }
