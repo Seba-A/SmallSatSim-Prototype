@@ -49,13 +49,18 @@ public class GetManagerAndTeam : MonoBehaviour
         int managerInt = PlayerPrefs.GetInt(selectedManager);
 
         confirmedManager = Instantiate(managerList[managerInt], myManager.transform.position, myManager.transform.rotation);
+        confirmedManager.name = confirmedManager.name.Substring(0, confirmedManager.name.Length - 7);
         Debug.Log("The confirmed manager is: " + confirmedManager.name);
 
         confirmedManager.transform.SetParent(myManager.transform);
         confirmedManager.GetComponent<BoxCollider>().isTrigger = true;
+        confirmedManager.tag = "Teammate";
 
         // remove SelfRotate script attached to manager prefab
         Destroy(confirmedManager.GetComponent<SelfRotate>());
+
+        // add clickingonteam script to manager prefab
+        confirmedManager.AddComponent<ClickingOnTeam>();
     }
 
     public void GetMyTeamInfo()
@@ -80,10 +85,14 @@ public class GetManagerAndTeam : MonoBehaviour
             }
 
             confirmedTeam[i] = Instantiate(teamMemberList[confirmTeamInt[i]], myTeamInfo.transform.position, myTeamInfo.transform.rotation);
+            confirmedTeam[i].name = confirmedTeam[i].name.Substring(0, confirmedTeam[i].name.Length - 7);
             Debug.Log("Member " + i + " of name " + confirmedTeam[i].name + " is now added to the team.");
 
             confirmedTeam[i].transform.SetParent(myTeamInfo.transform);
             confirmedTeam[i].gameObject.SetActive(false);
+
+            // remove the Select Button game object on each member
+            Destroy(confirmedTeam[i].transform.Find("Select Button").gameObject);
         }
     }
 }
