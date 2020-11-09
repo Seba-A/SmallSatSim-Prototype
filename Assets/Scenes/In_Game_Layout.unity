@@ -2715,9 +2715,10 @@ GameObject:
   - component: {fileID: 341490668}
   - component: {fileID: 341490667}
   - component: {fileID: 341490666}
+  - component: {fileID: 341490670}
   m_Layer: 0
   m_Name: TeamMember 1
-  m_TagString: Untagged
+  m_TagString: Teammate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2796,6 +2797,21 @@ Transform:
   m_Father: {fileID: 711426167}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &341490670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 341490665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf0700dcf5fcb7845a97d787072d530f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charInfoPanel: {fileID: 979407073}
+  charStats: {fileID: 0}
+  charRolesNTasks: {fileID: 0}
 --- !u!1 &346125910
 GameObject:
   m_ObjectHideFlags: 0
@@ -4583,9 +4599,10 @@ GameObject:
   - component: {fileID: 483049970}
   - component: {fileID: 483049969}
   - component: {fileID: 483049968}
+  - component: {fileID: 483049972}
   m_Layer: 0
   m_Name: TeamMember 3
-  m_TagString: Untagged
+  m_TagString: Teammate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4664,6 +4681,21 @@ Transform:
   m_Father: {fileID: 711426167}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &483049972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483049967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf0700dcf5fcb7845a97d787072d530f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charInfoPanel: {fileID: 979407073}
+  charStats: {fileID: 0}
+  charRolesNTasks: {fileID: 0}
 --- !u!1 &495677409
 GameObject:
   m_ObjectHideFlags: 0
@@ -5213,9 +5245,10 @@ GameObject:
   - component: {fileID: 575125503}
   - component: {fileID: 575125502}
   - component: {fileID: 575125501}
+  - component: {fileID: 575125505}
   m_Layer: 0
   m_Name: TeamMember 4
-  m_TagString: Untagged
+  m_TagString: Teammate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5294,6 +5327,21 @@ Transform:
   m_Father: {fileID: 711426167}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &575125505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575125500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf0700dcf5fcb7845a97d787072d530f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charInfoPanel: {fileID: 979407073}
+  charStats: {fileID: 0}
+  charRolesNTasks: {fileID: 0}
 --- !u!1 &577284607
 GameObject:
   m_ObjectHideFlags: 0
@@ -9879,7 +9927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &979407074
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12686,9 +12734,10 @@ MonoBehaviour:
     the tasks assgined below.
 
 
-    Here there will be a list of all the attribuites of this character, stranghts  weaknesses,
-    and type of character. these attribiutes will be used to assign the best suited
-    misssion to this character. Example character is Beatiful 10/10 = can be a model.'
+    Here there will be a list of all the attribuites
+    of this character, stranghts  weaknesses, and type of character. these attribiutes
+    will be used to assign the best suited misssion to this character. Example character
+    is Beatiful 10/10 = can be a model.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14010,8 +14059,8 @@ RectTransform:
   m_Father: {fileID: 762495906}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.6821522}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15716,9 +15765,10 @@ GameObject:
   - component: {fileID: 1630506769}
   - component: {fileID: 1630506768}
   - component: {fileID: 1630506767}
+  - component: {fileID: 1630506771}
   m_Layer: 0
   m_Name: TeamMember 2
-  m_TagString: Untagged
+  m_TagString: Teammate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15797,6 +15847,21 @@ Transform:
   m_Father: {fileID: 711426167}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1630506771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630506766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf0700dcf5fcb7845a97d787072d530f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charInfoPanel: {fileID: 979407073}
+  charStats: {fileID: 0}
+  charRolesNTasks: {fileID: 0}
 --- !u!1 &1659756256
 GameObject:
   m_ObjectHideFlags: 0
@@ -15814,7 +15879,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1659756257
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16939,7 +17004,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0700dcf5fcb7845a97d787072d530f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 979407073}
+  charInfoPanel: {fileID: 0}
+  charStats: {fileID: 0}
+  charRolesNTasks: {fileID: 0}
 --- !u!1 &1855404890
 GameObject:
   m_ObjectHideFlags: 0
