@@ -57,4 +57,19 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         Destroy(placeholder);
     }
+
+    //usign this to activate the timer
+    void Update()
+    {
+        if (this.transform.parent.name == "ContentTask")
+        {
+            Debug.Log("Task has been assigned");
+            timerIsRunning = true;
+        }
+        else
+        {
+            Debug.Log("No task has been assigned");
+            timerIsRunning = false;
+        }
+    }
 }
