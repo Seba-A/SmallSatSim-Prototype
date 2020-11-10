@@ -8,8 +8,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
 
-    public TextMeshProUGUI time;
-    public float timeRemaining;
+    //public float timeRemaining;
 
     public GameObject redundancy;
     public GameObject reliability;
@@ -17,6 +16,8 @@ public class GameManager : MonoBehaviour
     public GameObject efficiency;
     public GameObject innovation;
     public GameObject progressbar;
+
+    public GameObject assignedTaskContent;
 
     private int redundancyScore;
     private int reliabilityScore;
@@ -28,6 +29,13 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< HEAD
+=======
+        // will need to change this so that is is true only when task is dragged
+        //timeRemaining = 15;
+        //timerIsRunning = true;
+
+>>>>>>> 8ab2d57603fae554178bd261c594faa499b0df15
         //set the score of each progress bar to 0 at the satr of the game
         redundancyScore = 100;
         redundancy.GetComponent<ProgressBar>().current = redundancyScore;
@@ -51,7 +59,9 @@ public class GameManager : MonoBehaviour
     //timer
     public void Update()
     {
+        /*
         //need to find a way to do it for any task
+<<<<<<< HEAD
         if (GameObject.Find("Task") != null)
         {
             if (GameObject.Find("Task").GetComponent<Draggable>().timerIsRunning)
@@ -70,12 +80,34 @@ public class GameManager : MonoBehaviour
                     //Destroy(GameObject.Find("Task"));
                     AddScore();
                 }
+=======
+        if (assignedTaskContent.GetComponent<Slottable>().isTaskSlotted == true)
+        {
+            string currentRunningTask = assignedTaskContent.GetComponent<Slottable>().slottedTaskName;
+            Debug.Log(currentRunningTask);
+
+            time.text = "Time: " + timeRemaining.ToString("0");
+
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
             }
-        }
+            else
+            {
+                Debug.Log("The Task has been completed!");
+                timeRemaining = 0;
+                //GameObject.Find(currentRunningTask).GetComponent<Draggable>().timerIsRunning = false;
+                Destroy(GameObject.Find(currentRunningTask));
+                AddScore();
+>>>>>>> 8ab2d57603fae554178bd261c594faa499b0df15
+            }
+        }*/
     }
 
     public void AddScore()
     {
+        //redundancyScore += GameObject.Find(currentRunningTask).redundancyScoreToAdd;
+
         redundancyScore = 50;
         redundancy.GetComponent<ProgressBar>().current =+ redundancyScore;
 
