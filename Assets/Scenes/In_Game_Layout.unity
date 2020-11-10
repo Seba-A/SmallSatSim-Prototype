@@ -12733,10 +12733,9 @@ MonoBehaviour:
     the tasks assgined below.
 
 
-    Here there will be a list of all the attribuites
-    of this character, stranghts  weaknesses, and type of character. these attribiutes
-    will be used to assign the best suited misssion to this character. Example character
-    is Beatiful 10/10 = can be a model.'
+    Here there will be a list of all the attribuites of this character, stranghts  weaknesses,
+    and type of character. these attribiutes will be used to assign the best suited
+    misssion to this character. Example character is Beatiful 10/10 = can be a model.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
