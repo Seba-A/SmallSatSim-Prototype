@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
     //timer
     public void Update()
     {
-
+        //need to find a way to do it for any task
         if (GameObject.Find("Task").GetComponent<Draggable>().timerIsRunning)
         {
             time.text = "Time: " + timeRemaining.ToString("0");
