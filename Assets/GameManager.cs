@@ -28,10 +28,6 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // will need to change this so that is is true only when task is dragged
-        timeRemaining = 15;
-        //timerIsRunning = true;
-
         //set the score of each progress bar to 0 at the satr of the game
         redundancyScore = 100;
         redundancy.GetComponent<ProgressBar>().current = redundancyScore;
@@ -56,21 +52,24 @@ public class GameManager : MonoBehaviour
     public void Update()
     {
         //need to find a way to do it for any task
-        if (GameObject.Find("Task").GetComponent<Draggable>().timerIsRunning)
+        if (GameObject.Find("Task") != null)
         {
-            time.text = "Time: " + timeRemaining.ToString("0");
+            if (GameObject.Find("Task").GetComponent<Draggable>().timerIsRunning)
+            {
+                time.text = "Time: " + timeRemaining.ToString("0");
 
-            if (timeRemaining > 0)
-            {
-                timeRemaining -= Time.deltaTime;
-            }
-            else
-            {
-                Debug.Log("The Task has been completed!");
-                timeRemaining = 0;
-                GameObject.Find("Task").GetComponent<Draggable>().timerIsRunning = false;
-                Destroy(GameObject.Find("Task"));
-                AddScore();
+                if (timeRemaining > 0)
+                {
+                    timeRemaining -= Time.deltaTime;
+                }
+                else
+                {
+                    Debug.Log("The Task has been completed!");
+                    timeRemaining = 0;
+                    GameObject.Find("Task").GetComponent<Draggable>().taskCompleted = true;
+                    //Destroy(GameObject.Find("Task"));
+                    AddScore();
+                }
             }
         }
     }
@@ -94,5 +93,17 @@ public class GameManager : MonoBehaviour
 
         progressbarScore = 90;
         progressbar.GetComponent<ProgressBar>().current =+ progressbarScore;
+    }
+
+    //setting timer
+    public void SetTimer()
+    {
+        if (GameObject.Find("Task") != null)
+        {
+            if (GameObject.Find("Task").GetComponent<Draggable>().timerIsRunning)
+            {
+                timeRemaining = 10;
+            }
+        }
     }
 }

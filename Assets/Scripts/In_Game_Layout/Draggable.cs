@@ -12,6 +12,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     //to activate timer
     public bool timerIsRunning = false;
+    public bool taskCompleted = false;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
