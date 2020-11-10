@@ -68,8 +68,8 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("The Task has been completed!");
                 timeRemaining = 0;
-                //GameObject.Find("Task").GetComponent<TaskV2>().taskCompleted = true;
-                //Destroy(GameObject.Find("Task"));
+                GameObject.Find("Task").GetComponent<Draggable>().timerIsRunning = false;
+                Destroy(GameObject.Find("Task"));
                 AddScore();
             }
         }
