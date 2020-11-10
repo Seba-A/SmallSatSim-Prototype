@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de26765bb7cd44438cde4066ab4ea06, type: 3}
+  m_Name: Manager5_Info
+  m_EditorClassIdentifier: 
+  name: Lian Ming
+  descriptionText: {fileID: 8337517606825308425, guid: e7719a6f346c1489ab35243a3d88c6a8,
+    type: 3}
+  speed: 70
+  quality: 100
+  relationship: 85
+  focus: 65
+  creativity: 50
+  trait: Charismatic
+  field: Hitmen & Systems Engineering
+  leaderEffect: {fileID: 607002303545091558, guid: 290d6411daf374b719a633084e9e3d95,
+    type: 3}
+  role: Team Manager
+  roleDescription: {fileID: 8337517606825308425, guid: 1b0208e6c9d374be8a0450e74559e5aa,
+    type: 3}

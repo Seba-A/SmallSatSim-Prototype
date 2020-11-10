@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de26765bb7cd44438cde4066ab4ea06, type: 3}
+  m_Name: Manager1_Info
+  m_EditorClassIdentifier: 
+  name: Sebastian
+  descriptionText: {fileID: 8337517606825308425, guid: a5069f829ba7e45f8a25e3744c9f7c86,
+    type: 3}
+  speed: 55
+  quality: 65
+  relationship: 70
+  focus: 50
+  creativity: 100
+  trait: Creative
+  field: Aerospace Electronics
+  leaderEffect: {fileID: 8337517606825308425, guid: d901218d17fcb4f86a4ed8e99778db1c,
+    type: 3}
+  role: Team Manager
+  roleDescription: {fileID: 8337517606825308425, guid: 1b0208e6c9d374be8a0450e74559e5aa,
+    type: 3}

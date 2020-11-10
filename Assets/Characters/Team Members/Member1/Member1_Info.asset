@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de26765bb7cd44438cde4066ab4ea06, type: 3}
+  m_Name: Member1_Info
+  m_EditorClassIdentifier: 
+  name: Seb Jr.
+  descriptionText: {fileID: 8337517606825308425, guid: 183019271de014febb47ae8864caec28,
+    type: 3}
+  speed: 50
+  quality: 50
+  relationship: 50
+  focus: 50
+  creativity: 50
+  trait: Traditional
+  field: None (can be trained)
+  leaderEffect: {fileID: 8337517606825308425, guid: e70b0289480a748c4aabf55c0a472731,
+    type: 3}
+  role: Not Assigned
+  roleDescription: {fileID: 0}
