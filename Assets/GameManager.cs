@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI time;
     public float timeRemaining;
-    //public bool timerIsRunning = false;
-    public bool taskCompleted = false;
 
     public GameObject redundancy;
     public GameObject reliability;
@@ -27,17 +25,15 @@ public class GameManager : MonoBehaviour
     private int innovationScore;
     private int progressbarScore;
 
-    public Task task1;
-
     // Start is called before the first frame update
     void Start()
     {
         // will need to change this so that is is true only when task is dragged
-        timeRemaining = task1.timeRequired;
+        timeRemaining = 15;
         //timerIsRunning = true;
 
         //set the score of each progress bar to 0 at the satr of the game
-        redundancyScore = 0;
+        redundancyScore = 100;
         redundancy.GetComponent<ProgressBar>().current = redundancyScore;
 
         reliabilityScore = 0;
@@ -72,9 +68,8 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("The Task has been completed!");
                 timeRemaining = 0;
-                GameObject.Find("Task").GetComponent<Draggable>().timerIsRunning = false;
-                Destroy(GameObject.Find("Task"));
-                taskCompleted = true;
+                //GameObject.Find("Task").GetComponent<TaskV2>().taskCompleted = true;
+                //Destroy(GameObject.Find("Task"));
                 AddScore();
             }
         }
@@ -82,7 +77,7 @@ public class GameManager : MonoBehaviour
 
     public void AddScore()
     {
-        redundancyScore = task1.redundancy;
+        redundancyScore = 50;
         redundancy.GetComponent<ProgressBar>().current =+ redundancyScore;
 
         reliabilityScore = 150;

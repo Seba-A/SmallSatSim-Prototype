@@ -9,6 +9,7 @@ public class Task : ScriptableObject
     public string description;
 
     public float timeRequired;
+    public bool taskCompleted;
 
     public int redundancy;
     public int reliability;

@@ -11,6 +11,7 @@ public class TaskV2 : MonoBehaviour
     public string description;
 
     public float timeRequired;
+    public bool taskCompleted;
 
     public int redundancy;
     public int reliability;
