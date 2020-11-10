@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
@@ -61,6 +62,11 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     //usign this to activate the timer
     void Update()
+    {
+        SetTimer();
+    }
+
+    public void SetTimer()
     {
         if (this.transform.parent.name == "ContentTask")
         {
