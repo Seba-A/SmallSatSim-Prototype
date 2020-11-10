@@ -29,13 +29,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
-=======
         // will need to change this so that is is true only when task is dragged
         //timeRemaining = 15;
         //timerIsRunning = true;
 
->>>>>>> 8ab2d57603fae554178bd261c594faa499b0df15
         //set the score of each progress bar to 0 at the satr of the game
         redundancyScore = 100;
         redundancy.GetComponent<ProgressBar>().current = redundancyScore;
@@ -61,7 +58,6 @@ public class GameManager : MonoBehaviour
     {
         /*
         //need to find a way to do it for any task
-<<<<<<< HEAD
         if (GameObject.Find("Task") != null)
         {
             if (GameObject.Find("Task").GetComponent<Draggable>().timerIsRunning)
@@ -80,7 +76,7 @@ public class GameManager : MonoBehaviour
                     //Destroy(GameObject.Find("Task"));
                     AddScore();
                 }
-=======
+
         if (assignedTaskContent.GetComponent<Slottable>().isTaskSlotted == true)
         {
             string currentRunningTask = assignedTaskContent.GetComponent<Slottable>().slottedTaskName;
@@ -99,7 +95,6 @@ public class GameManager : MonoBehaviour
                 //GameObject.Find(currentRunningTask).GetComponent<Draggable>().timerIsRunning = false;
                 Destroy(GameObject.Find(currentRunningTask));
                 AddScore();
->>>>>>> 8ab2d57603fae554178bd261c594faa499b0df15
             }
         }*/
     }
@@ -125,17 +120,5 @@ public class GameManager : MonoBehaviour
 
         progressbarScore = 90;
         progressbar.GetComponent<ProgressBar>().current =+ progressbarScore;
-    }
-
-    //setting timer
-    public void SetTimer()
-    {
-        if (GameObject.Find("Task") != null)
-        {
-            if (GameObject.Find("Task").GetComponent<Draggable>().timerIsRunning)
-            {
-                timeRemaining = 10;
-            }
-        }
     }
 }
