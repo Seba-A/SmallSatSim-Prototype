@@ -172,6 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808bd836951e94641855c090a9b9c62f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  assignedFirstTaskName: 
+  isFirstSlotFilled: 0
+  time: {fileID: 623051769}
+  assignedFirstTask: {fileID: 0}
 --- !u!114 &10209513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,6 +1333,7 @@ MonoBehaviour:
   name: Task 2
   description: Run Forrest run!!!!
   timeRequired: 10
+  taskCompleted: 0
   redundancy: 100
   reliability: 150
   clarity: 300
@@ -4431,16 +4436,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e774aa6cba9838f4ea7dcfb4c527dfaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: {fileID: 623051769}
-  timeRemaining: 10
-  taskCompleted: 0
   redundancy: {fileID: 1431465086}
   reliability: {fileID: 288620190}
   clarity: {fileID: 190398096}
   efficiency: {fileID: 1083872447}
   innovation: {fileID: 745242780}
   progressbar: {fileID: 1320362663}
-  task1: {fileID: 11400000, guid: 5e72fbbf4b977464eaa268b4b624b451, type: 2}
+  assignedTaskContent: {fileID: 10209510}
 --- !u!1001 &476906181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4776,8 +4778,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1420411207}
   m_HandleRect: {fileID: 1420411206}
   m_Direction: 2
-  m_Value: 0.99999994
-  m_Size: 0.31784785
+  m_Value: 1
+  m_Size: 0.3178478
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10802,7 +10804,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1107069980}
   m_HandleRect: {fileID: 1107069978}
   m_Direction: 2
-  m_Value: 1.0000005
+  m_Value: 1.0000004
   m_Size: 0.6360434
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -19325,7 +19327,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2103903207}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 808bd836951e94641855c090a9b9c62f, type: 3}
+  m_Script: {fileID: 11500000, guid: fcfb8357a21994770bc9984b3115d94a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2103903210

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Slottable : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
+public class Slottable_MissionPanel : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public void OnDrop(PointerEventData eventData)
     {
