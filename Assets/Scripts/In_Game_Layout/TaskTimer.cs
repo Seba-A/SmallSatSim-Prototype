@@ -49,4 +49,17 @@ public class TaskTimer : MonoBehaviour
             }
         }
     }
+
+    /*//increase the score value
+    public void AddScore()
+    {
+        //increase the value of the scores
+        GameObject.Find("Game Manager").GetComponent<GameManager>().redundancyScore =+ redundancyScore
+        redundancyScore =+ redundancyScore;
+        reliabilityScore = +reliabilityScore;
+        clarityScore = +clarityScore;
+        efficiencyScore = +efficiencyScore;
+        innovationScore = +innovationScore;
+        progressbarScore = +progressbarScore;
+    }*/
 }

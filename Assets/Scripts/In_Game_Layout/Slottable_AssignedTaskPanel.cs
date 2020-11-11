@@ -45,7 +45,7 @@ public class Slottable_AssignedTaskPanel : MonoBehaviour, IDropHandler, IPointer
             StartCoroutine(CountDownTimer());
 
             // add score
-            GameObject.Find("GameManager").GetComponent<GameManager>().AddScore();
+            //GameObject.Find("GameManager").GetComponent<GameManager>().AddScore();
         }
     }
 
