@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class ClickingOnTeam : MonoBehaviour
 {
+    RaycastHit hitInfo;
+
     [SerializeField] private GameObject charInfoPanel;
     [SerializeField] private GameObject charStats;
     [SerializeField] private GameObject charRolesNTasks;
@@ -12,6 +14,11 @@ public class ClickingOnTeam : MonoBehaviour
     private GameObject selectedManager;
 
     private readonly string[] selectedMembers = new string[4];
+
+    // variables needed for double-clicking
+    private float clicked = 0;
+    private float clicktime = 0;
+    private float clickdelay = 0.5f;
 
     void Start()
     {
@@ -34,53 +41,40 @@ public class ClickingOnTeam : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo))
             {
                 if (hitInfo.collider.gameObject.tag == "Teammate")
                 {
-                    charInfoPanel.SetActive(true);
-                    CloseAllChar_Stats_Roles_Tasks();       //function added here to avoid more than one character info opening at the same time
+                    clicked++;
+                    //Debug.Log(clicked);
 
+                    if (clicked == 1) clicktime = Time.time;
 
-                    switch (hitInfo.collider.gameObject.name)
+                    // double-click opens the character info panel
+                    if (clicked > 1 && Time.time - clicktime < clickdelay)
                     {
-                        case ("Manager"):
-                            //charStats.transform.Find("ManagerFullStats").gameObject.SetActive(true);
-                            //charRolesNTasks.transform.Find("Manager Roles N Tasks").gameObject.SetActive(true);
-                            Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
-                            break;
-                        case "TeamMember 1":
-                            charStats.transform.Find(PlayerPrefs.GetString(selectedMembers[0])).gameObject.SetActive(true);
-                            //charRolesNTasks.transform.Find("Member[0] Roles N Tasks").gameObject.SetActive(true);
-                            Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
-                            break;
-                        case "TeamMember 2":
-                            charStats.transform.Find(PlayerPrefs.GetString(selectedMembers[1])).gameObject.SetActive(true);
-                            //charRolesNTasks.transform.Find("Member[1] Roles N Tasks").gameObject.SetActive(true);
-                            Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
-                            break;
-                        case "TeamMember 3":
-                            charStats.transform.Find(PlayerPrefs.GetString(selectedMembers[2])).gameObject.SetActive(true);
-                            //charRolesNTasks.transform.Find("Member[2] Roles N Tasks").gameObject.SetActive(true);
-                            Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
-                            break;
-                        case "TeamMember 4":
-                            charStats.transform.Find(PlayerPrefs.GetString(selectedMembers[3])).gameObject.SetActive(true);
-                            //charRolesNTasks.transform.Find("Member[3] Roles N Tasks").gameObject.SetActive(true);
-                            Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
-                            break;
-                        case "Example Teammate":
-                            charRolesNTasks.transform.Find("Stats_Tasks").gameObject.SetActive(true);
-                            Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
-                            break;
+                        Debug.Log("Double Clicked on: " + hitInfo.collider.gameObject.name);
+
+                        clicked = 0;
+                        clicktime = 0;
+
+                        charInfoPanel.SetActive(true);
+                        CloseAllCharInfo();       //function added here to avoid more than one character info opening at the same time
+
+                        OpenCorrectCharInfo();
+
                     }
+                    else if (clicked > 2 || Time.time - clicktime > 1)
+                    {
+                        clicked = 0;
+                    }
+
                 }
                 else if (charInfoPanel && !OverUIObject())
                 {
                     //Debug.Log("Not UI");
                     charInfoPanel.SetActive(false);
-                    CloseAllChar_Stats_Roles_Tasks();
+                    CloseAllCharInfo();
                 }
             }
         }
@@ -96,7 +90,7 @@ public class ClickingOnTeam : MonoBehaviour
         return results.Count > 0;
     }
 
-    private void CloseAllChar_Stats_Roles_Tasks()
+    private void CloseAllCharInfo()
     {
         foreach (Transform child in charStats.transform)
         {
@@ -109,28 +103,39 @@ public class ClickingOnTeam : MonoBehaviour
         }
     }
 
-    /*
-    // double-clicking function from https://forum.unity.com/threads/detect-double-click-on-something-what-is-the-best-way.476759/
-    public class GestionClickInventaire : MonoBehaviour, IPointerDownHandler
+    private void OpenCorrectCharInfo()
     {
-        float clicked = 0;
-        float clicktime = 0;
-        float clickdelay = 0.5f;
-
-        public void OnPointerDown(PointerEventData data)
+        switch (hitInfo.collider.gameObject.name)
         {
-            clicked++;
-            if (clicked == 1) clicktime = Time.time;
-
-            if (clicked > 1 && Time.time - clicktime < clickdelay)
-            {
-                clicked = 0;
-                clicktime = 0;
-                Debug.Log("Double CLick: " + this.GetComponent<RectTransform>().name);
-
-            }
-            else if (clicked > 2 || Time.time - clicktime > 1) clicked = 0;
-
+            case ("Manager"):
+                //charStats.transform.Find("ManagerFullStats").gameObject.SetActive(true);
+                //charRolesNTasks.transform.Find("Manager Roles N Tasks").gameObject.SetActive(true);
+                Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
+                break;
+            case "TeamMember 1":
+                charStats.transform.Find(PlayerPrefs.GetString(selectedMembers[0])).gameObject.SetActive(true);
+                //charRolesNTasks.transform.Find("Member[0] Roles N Tasks").gameObject.SetActive(true);
+                Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
+                break;
+            case "TeamMember 2":
+                charStats.transform.Find(PlayerPrefs.GetString(selectedMembers[1])).gameObject.SetActive(true);
+                //charRolesNTasks.transform.Find("Member[1] Roles N Tasks").gameObject.SetActive(true);
+                Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
+                break;
+            case "TeamMember 3":
+                charStats.transform.Find(PlayerPrefs.GetString(selectedMembers[2])).gameObject.SetActive(true);
+                //charRolesNTasks.transform.Find("Member[2] Roles N Tasks").gameObject.SetActive(true);
+                Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
+                break;
+            case "TeamMember 4":
+                charStats.transform.Find(PlayerPrefs.GetString(selectedMembers[3])).gameObject.SetActive(true);
+                //charRolesNTasks.transform.Find("Member[3] Roles N Tasks").gameObject.SetActive(true);
+                Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
+                break;
+            case "Example Teammate":
+                charRolesNTasks.transform.Find("Stats_Tasks").gameObject.SetActive(true);
+                Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
+                break;
         }
-    }*/
+    }
 }

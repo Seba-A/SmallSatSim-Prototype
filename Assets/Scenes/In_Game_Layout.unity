@@ -172,10 +172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77e071dd8796136468523084e0397838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  assignedFirstTaskName: 
-  isFirstSlotFilled: 0
-  time: {fileID: 623051769}
-  assignedFirstTask: {fileID: 0}
 --- !u!114 &10209513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,7 +701,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
   taskIsAssigned: 0
-  taskCompleted: 0
 --- !u!114 &106038230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1250,7 +1245,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
   taskIsAssigned: 0
-  taskCompleted: 0
 --- !u!114 &123470200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4444,7 +4438,6 @@ MonoBehaviour:
   efficiency: {fileID: 1083872447}
   innovation: {fileID: 745242780}
   progressbar: {fileID: 1320362663}
-  assignedTaskContent: {fileID: 0}
 --- !u!1001 &476906181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4780,7 +4773,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1420411207}
   m_HandleRect: {fileID: 1420411206}
   m_Direction: 2
-  m_Value: 0.9999998
+  m_Value: 1
   m_Size: 0.3178478
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -10676,7 +10669,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
   taskIsAssigned: 0
-  taskCompleted: 0
 --- !u!114 &1071117347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10807,7 +10799,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1107069980}
   m_HandleRect: {fileID: 1107069978}
   m_Direction: 2
-  m_Value: 1.0000005
+  m_Value: 1.0000004
   m_Size: 0.6360434
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -13516,7 +13508,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
   taskIsAssigned: 0
-  taskCompleted: 0
 --- !u!114 &1333269096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14640,7 +14631,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
   taskIsAssigned: 0
-  taskCompleted: 0
 --- !u!114 &1516707173
 MonoBehaviour:
   m_ObjectHideFlags: 0
