@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/*
+ * Relevant tutorial: https://www.youtube.com/watch?v=aPXvoWVabPY
+ */
+
 [CreateAssetMenu(fileName = "NewCharacterInfo", menuName = "CharacterInfo")]
 public class CharacterInfo : ScriptableObject
 {
     // Character Profile
     public Sprite characterImage;
     public new string name;
-    public TextMeshProUGUI descriptionText;
+    public TextMeshProUGUI charDescription;
 
     public int speed;
     public int quality;
@@ -23,8 +27,16 @@ public class CharacterInfo : ScriptableObject
     public TextMeshProUGUI leaderEffect;
 
 
-    // Character Role(s) and Task(s)
+    // Character Role(s)
     public string role;
     public TextMeshProUGUI roleDescription;
 
+    public void RoleEffects()
+    {
+
+    }
+
+
+    // Character Task(s)
+    public TextMeshProUGUI[] assignedTask = new TextMeshProUGUI[5];
 }

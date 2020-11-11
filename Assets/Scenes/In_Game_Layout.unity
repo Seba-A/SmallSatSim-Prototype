@@ -6360,6 +6360,7 @@ GameObject:
   - component: {fileID: 624948973}
   - component: {fileID: 624948975}
   - component: {fileID: 624948974}
+  - component: {fileID: 624948976}
   m_Layer: 5
   m_Name: CharStats Panel
   m_TagString: Untagged
@@ -6426,6 +6427,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624948972}
   m_CullTransparentMesh: 0
+--- !u!114 &624948976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624948972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b79e4eee321842c680a6d7d69f6dab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 11400000, guid: 6eb9aad00341249dca046f45e11a4eba, type: 2}
+  charImage: {fileID: 2087439547}
+  nameText: {fileID: 1997345309}
+  keyStatsText: {fileID: 427104997}
+  descriptionText: {fileID: 1523734206}
+  speedText: {fileID: 603713147}
+  qualityText: {fileID: 743381519}
+  relationshipText: {fileID: 1681059396}
+  focusText: {fileID: 1793237183}
+  creativityText: {fileID: 684359942}
+  traitText: {fileID: 470872099}
+  fieldText: {fileID: 1246196525}
+  leaderEffectText: {fileID: 905401566}
 --- !u!1 &637838939
 GameObject:
   m_ObjectHideFlags: 0
@@ -9533,7 +9559,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -40}
   m_SizeDelta: {x: -20, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &905401566
@@ -14005,7 +14031,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -400}
-  m_SizeDelta: {x: 0, y: 30}
+  m_SizeDelta: {x: -20, y: 30}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1246196525
 MonoBehaviour:
@@ -21107,7 +21133,7 @@ GameObject:
   - component: {fileID: 2087439548}
   - component: {fileID: 2087439547}
   m_Layer: 5
-  m_Name: Image
+  m_Name: CharImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
