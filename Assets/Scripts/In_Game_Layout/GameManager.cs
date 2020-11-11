@@ -14,12 +14,12 @@ public class GameManager : MonoBehaviour
     public GameObject innovation;
     public GameObject progressbar;
 
-    private int redundancyScore;
-    private int reliabilityScore;
-    private int clarityScore;
-    private int efficiencyScore;
-    private int innovationScore;
-    private int progressbarScore;
+    private int redundancyScore = 0;
+    private int reliabilityScore = 0;
+    private int clarityScore = 0;
+    private int efficiencyScore = 0;
+    private int innovationScore = 0;
+    private int progressbarScore = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,9 @@ public class GameManager : MonoBehaviour
         //timerIsRunning = true;
 
         //set the score of each progress bar to 0 at the satr of the game
-        redundancyScore = 100;
+
+
+        /*redundancyScore = 100;
         redundancy.GetComponent<ProgressBar>().current = redundancyScore;
 
         reliabilityScore = 0;
@@ -45,7 +47,9 @@ public class GameManager : MonoBehaviour
         innovation.GetComponent<ProgressBar>().current = innovationScore;
 
         progressbarScore = 0;
-        progressbar.GetComponent<ProgressBar>().current = progressbarScore;
+        progressbar.GetComponent<ProgressBar>().current = progressbarScore;*/
+
+
     }
 
     //timer
@@ -92,6 +96,7 @@ public class GameManager : MonoBehaviour
                 AddScore();
             }
         }*/
+
     }
 
     public void AddScore()

@@ -8,14 +8,24 @@ public class TaskTimer : MonoBehaviour
     public TextMeshProUGUI time;
     public float timeRemaining;
 
+    public GameObject assignTaskPanel;
+
+    //private Slottable_Assign slottable_Assign;
+
     // Start is called before the first frame update
     void Start()
     {
         timeRemaining = gameObject.GetComponent<TaskV2>().timeRequired;
+        //slottable_Assign = GameObject.FindObjectOfType<Slottable_Assign>();
     }
 
-    // Update is called once per frame
     void Update()
+    {
+        TaskTime();
+    }
+
+    // The timer is set
+    public void TaskTime()
     {
         if (gameObject.GetComponent<Draggable>().taskIsAssigned)
         {
@@ -24,16 +34,19 @@ public class TaskTimer : MonoBehaviour
             if (timeRemaining > 0)
             {
                 timeRemaining -= Time.deltaTime;
+                assignTaskPanel.GetComponent<Slottable_Assign>().startNextTask = false;
+                //slottable_Assign.startNextTask = false;
             }
             else
             {
                 //Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 gameObject.GetComponent<TaskV2>().taskCompleted = true;
+                assignTaskPanel.GetComponent<Slottable_Assign>().startNextTask = true;
+                //slottable_Assign.startNextTask = true;
+                assignTaskPanel.GetComponent<Slottable_Assign>().tasks.Remove(gameObject.name);
                 Destroy(gameObject);
             }
         }
     }
-
-
 }
