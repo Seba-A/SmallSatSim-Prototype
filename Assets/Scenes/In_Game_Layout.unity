@@ -173,6 +173,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startNextTask: 1
+  assignedFirstTaskName: 
+  isFirstSlotFilled: 0
+  assignedFirstTask: {fileID: 0}
+  tasks: []
 --- !u!114 &10209513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +195,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 2.5
+  m_Spacing: 12
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -1600,8 +1604,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.35, y: 90}
-  m_SizeDelta: {x: 200.8117, y: 180}
+  m_AnchoredPosition: {x: 0.35, y: 111.14998}
+  m_SizeDelta: {x: 200.8117, y: 228.9961}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221981256
 MonoBehaviour:
@@ -4855,8 +4859,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -18, y: -202.09}
-  m_SizeDelta: {x: 20, y: -214.18459}
+  m_AnchoredPosition: {x: -30.2, y: -240}
+  m_SizeDelta: {x: 20, y: -252.09758}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &495677411
 MonoBehaviour:
@@ -4900,8 +4904,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1420411207}
   m_HandleRect: {fileID: 1420411206}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.31784776
+  m_Value: 0.99999994
+  m_Size: 0.37216684
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6943,7 +6947,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: [{fileID: 624948973}]
+  m_Children:
+  - {fileID: 624948973}
   m_Father: {fileID: 979407074}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8779,7 +8784,8 @@ MonoBehaviour:
 
     Universal OPshitz bro.
 
-    Dun play play ah'
+    Dun
+    play play ah'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11206,7 +11212,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1107069980}
   m_HandleRect: {fileID: 1107069978}
   m_Direction: 2
-  m_Value: 1.0000004
+  m_Value: 1.0000005
   m_Size: 0.6360434
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -13415,9 +13421,10 @@ MonoBehaviour:
     the tasks assgined below.
 
 
-    Here there will be a list of all the attribuites of this character, stranghts  weaknesses,
-    and type of character. these attribiutes will be used to assign the best suited
-    misssion to this character. Example character is Beatiful 10/10 = can be a model.'
+    Here there will be a list of all the attribuites
+    of this character, stranghts  weaknesses, and type of character. these attribiutes
+    will be used to assign the best suited misssion to this character. Example character
+    is Beatiful 10/10 = can be a model.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
