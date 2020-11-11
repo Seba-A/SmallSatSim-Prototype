@@ -7,6 +7,7 @@ using TMPro;
 public class CharacterInfo : ScriptableObject
 {
     // Character Profile
+    public Sprite characterImage;
     public new string name;
     public TextMeshProUGUI descriptionText;
 
