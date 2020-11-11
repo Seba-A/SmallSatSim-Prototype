@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GetManagerAndTeam : MonoBehaviour
 {
-    public GameObject managerAndTeam;
-
     public GameObject myManager;            // placeholder for position in Scene
     public GameObject[] managerList;        // full list of manager prefab
     public GameObject confirmedManager;     // selected manager that will be instantiated
@@ -29,13 +27,11 @@ public class GetManagerAndTeam : MonoBehaviour
         selectedMembers[3] = "SelectedMember4";
 
         confirmedManager = myManager.GetComponent<GameObject>();
-        //Debug.Log("Import keys and get manager to be game object component.");
-
-        //managerAndTeam.SetActive(true);
-        Debug.Log("show Manager and Team");
 
         GetMyManager();
         GetMyTeamInfo();
+
+        Debug.Log("Selected manager and team members successfully imported to " + SceneManager.GetActiveScene().name);
     }
 
     // Update is called once per frame
@@ -53,6 +49,8 @@ public class GetManagerAndTeam : MonoBehaviour
         Debug.Log("The confirmed manager is: " + confirmedManager.name);
 
         confirmedManager.transform.SetParent(myManager.transform);
+
+        // configuring imported manager object to have the same settings as other team members
         confirmedManager.GetComponent<BoxCollider>().isTrigger = true;
         confirmedManager.tag = "Teammate";
 
@@ -80,7 +78,7 @@ public class GetManagerAndTeam : MonoBehaviour
                 if (element.name == teamString[i])
                 {
                     confirmTeamInt[i] = System.Array.IndexOf(teamMemberList, element);
-                    Debug.Log(confirmTeamInt);
+                    //Debug.Log(confirmTeamInt);
                 }
             }
 
