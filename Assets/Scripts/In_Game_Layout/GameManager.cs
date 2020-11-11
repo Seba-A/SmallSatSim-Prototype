@@ -7,17 +7,12 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-
-    //public float timeRemaining;
-
     public GameObject redundancy;
     public GameObject reliability;
     public GameObject clarity;
     public GameObject efficiency;
     public GameObject innovation;
     public GameObject progressbar;
-
-    public GameObject assignedTaskContent;
 
     private int redundancyScore;
     private int reliabilityScore;
