@@ -55,7 +55,6 @@ public class TaskTimer : MonoBehaviour
     //increase the score value by the task's indicated values
     public void AddScore()
     {
-        //increase the value of the scores
         AddTo.redundancyScore = AddTo.redundancyScore + gameObject.GetComponent<TaskV2>().redundancy;
         AddTo.reliabilityScore = AddTo.reliabilityScore + gameObject.GetComponent<TaskV2>().reliability;
         AddTo.clarityScore = AddTo.clarityScore + gameObject.GetComponent<TaskV2>().clarity;

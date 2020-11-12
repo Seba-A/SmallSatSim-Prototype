@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public int innovationScore;
     public int progressbarScore;
 
+    public GameObject completeLevelUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,5 +51,10 @@ public class GameManager : MonoBehaviour
         efficiency.GetComponent<ProgressBar>().current = efficiencyScore;
         innovation.GetComponent<ProgressBar>().current = innovationScore;
         progressbar.GetComponent<ProgressBar>().current = progressbarScore;
+    }
+
+    public void CompleteLevel()
+    {
+        completeLevelUI.SetActive(true);
     }
 }
