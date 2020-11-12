@@ -6,7 +6,10 @@ using TMPro;
 
 public class StatsDisplay : MonoBehaviour
 {
-    public CharacterInfo character;
+    public GameObject managerAndTeam;
+
+    public CharacterInfo[] managerStatsList;
+    public CharacterInfo[] memberStatsList;
 
     public Image charImage;
     public TextMeshProUGUI nameText;
@@ -36,23 +39,45 @@ public class StatsDisplay : MonoBehaviour
         
     }
 
-    public void DisplayCharacterStats()
+    public void DisplayCharacterStats(int managerInt, string nameOfTeammate)
     {
-        charImage.sprite = character.characterImage;
-        nameText.text = character.name;
-        keyStatsText.text = "Key Stats: S+" + character.speed.ToString() + " Q+" + character.quality.ToString() + "; " + character.trait.ToString();
+        CharacterInfo selectedChar;
 
-        speedText.text = "Speed: " + character.speed.ToString();
-        qualityText.text = "Quality: " + character.quality.ToString();
-        relationshipText.text = "Relationship: " + character.relationship.ToString();
-        focusText.text = "Focus: " + character.focus.ToString();
-        creativityText.text = "Creativity: " + character.creativity.ToString();
+        if (nameOfTeammate == "0")
+        {
+            selectedChar = managerStatsList[managerInt];
+            Debug.Log("confirmManagerInt is: " + managerInt);
+        }
+        else
+        { 
+            int confirmTeammateInt = 0;
 
-        traitText.text = "Trait: " + character.trait.ToString();
-        fieldText.text = "Field: " + character.field.ToString();
+            foreach (GameObject element in managerAndTeam.GetComponent<GetManagerAndTeam>().teamMemberList)
+            {
+                if (element.name == nameOfTeammate)
+                {
+                    confirmTeammateInt = System.Array.IndexOf(managerAndTeam.GetComponent<GetManagerAndTeam>().teamMemberList, element);
+                    Debug.Log("confirmTeammateInt is: " + confirmTeammateInt);
+                }
+            }
 
-        descriptionText.text = character.charDescription.GetComponent<TMP_Text>().text;
-        leaderEffectText.text = "Leader Effect: " + character.leaderEffect.GetComponent<TMP_Text>().text;
+            selectedChar = memberStatsList[confirmTeammateInt];
+        }
+
+        charImage.sprite = selectedChar.characterImage;
+        nameText.text = selectedChar.name;
+        keyStatsText.text = "Key Stats: S+" + selectedChar.speed.ToString() + " Q+" + selectedChar.quality.ToString() + "; " + selectedChar.trait.ToString();
+
+        speedText.text = "Speed: " + selectedChar.speed.ToString();
+        qualityText.text = "Quality: " + selectedChar.quality.ToString();
+        relationshipText.text = "Relationship: " + selectedChar.relationship.ToString();
+        focusText.text = "Focus: " + selectedChar.focus.ToString();
+        creativityText.text = "Creativity: " + selectedChar.creativity.ToString();
+
+        traitText.text = "Trait: " + selectedChar.trait.ToString();
+        fieldText.text = "Field: " + selectedChar.field.ToString();
+
+        descriptionText.text = selectedChar.charDescription.GetComponent<TMP_Text>().text;
+        leaderEffectText.text = "Leader Effect: " + selectedChar.leaderEffect.GetComponent<TMP_Text>().text;
     }
-    
 }

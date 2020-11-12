@@ -11,8 +11,9 @@ public class ClickingOnTeam : MonoBehaviour
     [SerializeField] private GameObject charStats;
     [SerializeField] private GameObject charRolesNTasks;
 
-    private GameObject selectedManager;
+    private GameObject managerAndTeam;
 
+    private readonly string selectedManager = "SelectedManager";
     private readonly string[] selectedMembers = new string[4];
 
     // variables needed for double-clicking
@@ -23,7 +24,7 @@ public class ClickingOnTeam : MonoBehaviour
     void Start()
     {
         charInfoPanel = GameObject.Find("Canvas").transform.Find("Character Info Panel").gameObject;
-        charStats = charInfoPanel.transform.Find("ChacStats Placeholder").gameObject;
+        charStats = charInfoPanel.transform.Find("CharStats Panel").gameObject;
         charRolesNTasks = charInfoPanel.transform.Find("Roles & Tasks Placeholder").gameObject;
 
         // defining Keys used for storing team members' name
@@ -32,7 +33,7 @@ public class ClickingOnTeam : MonoBehaviour
         selectedMembers[2] = "SelectedMember3";
         selectedMembers[3] = "SelectedMember4";
 
-        selectedManager = GameObject.Find("Manager And Team");
+        managerAndTeam = GameObject.Find("Manager And Team");
     }
 
     // Update is called once per frame
@@ -92,10 +93,7 @@ public class ClickingOnTeam : MonoBehaviour
 
     private void CloseAllCharInfo()
     {
-        foreach (Transform child in charStats.transform)
-        {
-            child.gameObject.SetActive(false);
-        }
+        //charStats.SetActive(false);
 
         foreach (Transform child in charRolesNTasks.transform)
         {
@@ -105,37 +103,56 @@ public class ClickingOnTeam : MonoBehaviour
 
     private void OpenCorrectCharInfo()
     {
-        switch (hitInfo.collider.gameObject.name)
+        //charStats.SetActive(true);
+
+        int clickedManager = 999;
+        string clickedTeammate = "0";
+
+        if (hitInfo.transform.parent.gameObject.name == "Manager")
         {
-            case ("Manager"):
-                //charStats.transform.Find("ManagerFullStats").gameObject.SetActive(true);
-                //charRolesNTasks.transform.Find("Manager Roles N Tasks").gameObject.SetActive(true);
-                Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
-                break;
-            case "TeamMember 1":
-                charStats.transform.Find(PlayerPrefs.GetString(selectedMembers[0])).gameObject.SetActive(true);
-                //charRolesNTasks.transform.Find("Member[0] Roles N Tasks").gameObject.SetActive(true);
-                Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
-                break;
-            case "TeamMember 2":
-                charStats.transform.Find(PlayerPrefs.GetString(selectedMembers[1])).gameObject.SetActive(true);
-                //charRolesNTasks.transform.Find("Member[1] Roles N Tasks").gameObject.SetActive(true);
-                Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
-                break;
-            case "TeamMember 3":
-                charStats.transform.Find(PlayerPrefs.GetString(selectedMembers[2])).gameObject.SetActive(true);
-                //charRolesNTasks.transform.Find("Member[2] Roles N Tasks").gameObject.SetActive(true);
-                Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
-                break;
-            case "TeamMember 4":
-                charStats.transform.Find(PlayerPrefs.GetString(selectedMembers[3])).gameObject.SetActive(true);
-                //charRolesNTasks.transform.Find("Member[3] Roles N Tasks").gameObject.SetActive(true);
-                Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
-                break;
-            case "Example Teammate":
-                charRolesNTasks.transform.Find("Stats_Tasks").gameObject.SetActive(true);
-                Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
-                break;
+            clickedManager = PlayerPrefs.GetInt(selectedManager);
+            charStats.GetComponent<StatsDisplay>().DisplayCharacterStats(clickedManager, clickedTeammate);
+
+            //charRolesNTasks.transform.Find("Manager Roles N Tasks").gameObject.SetActive(true);
+            Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
+        }
+        else
+        {
+            switch (hitInfo.collider.gameObject.name)
+            {
+                case "TeamMember 1":
+                    clickedTeammate = PlayerPrefs.GetString(selectedMembers[0]);
+                    charStats.GetComponent<StatsDisplay>().DisplayCharacterStats(clickedManager, clickedTeammate);
+
+                    //charRolesNTasks.transform.Find("Member[0] Roles N Tasks").gameObject.SetActive(true);
+                    Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
+                    break;
+                case "TeamMember 2":
+                    clickedTeammate = PlayerPrefs.GetString(selectedMembers[1]);
+                    charStats.GetComponent<StatsDisplay>().DisplayCharacterStats(clickedManager, clickedTeammate);
+
+                    //charRolesNTasks.transform.Find("Member[1] Roles N Tasks").gameObject.SetActive(true);
+                    Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
+                    break;
+                case "TeamMember 3":
+                    clickedTeammate = PlayerPrefs.GetString(selectedMembers[2]);
+                    charStats.GetComponent<StatsDisplay>().DisplayCharacterStats(clickedManager, clickedTeammate);
+
+                    //charRolesNTasks.transform.Find("Member[2] Roles N Tasks").gameObject.SetActive(true);
+                    Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
+                    break;
+                case "TeamMember 4":
+                    clickedTeammate = PlayerPrefs.GetString(selectedMembers[3]);
+                    charStats.GetComponent<StatsDisplay>().DisplayCharacterStats(clickedManager, clickedTeammate);
+
+                    //charRolesNTasks.transform.Find("Member[3] Roles N Tasks").gameObject.SetActive(true);
+                    Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
+                    break;
+                case "Example Teammate":
+                    charRolesNTasks.transform.Find("Stats_Tasks").gameObject.SetActive(true);
+                    Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
+                    break;
+            }
         }
     }
 }

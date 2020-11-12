@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0de26765bb7cd44438cde4066ab4ea06, type: 3}
+  m_Name: Member5_Info
+  m_EditorClassIdentifier: 
+  characterImage: {fileID: 21300000, guid: 9ab2e950ab3064a77ad1ecfacfec1468, type: 3}
+  name: Ming Jr.
+  charDescription: {fileID: 8337517606825308425, guid: cf5610b1d91da401c8bbb3d3a9f855d0,
+    type: 3}
+  speed: 60
+  quality: 70
+  relationship: 45
+  focus: 50
+  creativity: 65
+  trait: Chill
+  field: Musical
+  leaderEffect: {fileID: 8337517606825308425, guid: 2980afa3c4ca947689a8dbc858b6de35,
+    type: 3}
+  role: Not Assigned
+  roleDescription: {fileID: 0}
+  assignedTask:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

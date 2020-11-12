@@ -4569,6 +4569,12 @@ MonoBehaviour:
   efficiency: {fileID: 1083872447}
   innovation: {fileID: 745242780}
   progressbar: {fileID: 1320362663}
+  redundancyScore: 0
+  reliabilityScore: 0
+  clarityScore: 0
+  efficiencyScore: 0
+  innovationScore: 0
+  progressbarScore: 0
 --- !u!1001 &476906181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4904,7 +4910,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1420411207}
   m_HandleRect: {fileID: 1420411206}
   m_Direction: 2
-  m_Value: 0.99999994
+  m_Value: 0.9999998
   m_Size: 0.37216684
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -6107,21 +6113,21 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624948972}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1965998267}
   - {fileID: 1137481522}
   - {fileID: 1933114793}
-  m_Father: {fileID: 700177074}
+  m_Father: {fileID: 979407074}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_SizeDelta: {x: 250, y: 0}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &624948974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6171,7 +6177,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b79e4eee321842c680a6d7d69f6dab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 11400000, guid: 6eb9aad00341249dca046f45e11a4eba, type: 2}
+  managerAndTeam: {fileID: 711426166}
+  managerStatsList:
+  - {fileID: 11400000, guid: acacdd7ec09114779a5daeff32775aa8, type: 2}
+  - {fileID: 11400000, guid: c74d56787fd2749fdadd12d5062ff0cc, type: 2}
+  - {fileID: 11400000, guid: b2db14ea134ba4de6970ddd15a3df3f8, type: 2}
+  - {fileID: 11400000, guid: c40e98d19bf2a406a88adda4417aa20c, type: 2}
+  - {fileID: 11400000, guid: 8f67e155aa33f418fa9167017a553ea0, type: 2}
+  memberStatsList:
+  - {fileID: 11400000, guid: 6eb9aad00341249dca046f45e11a4eba, type: 2}
+  - {fileID: 11400000, guid: d7c0358402c8b40169b4dcd42d08aa8f, type: 2}
+  - {fileID: 11400000, guid: 18f76fac01e2d47e5a172dc750ce87e9, type: 2}
+  - {fileID: 11400000, guid: 856f88925950a48c48b798dd20602957, type: 2}
+  - {fileID: 11400000, guid: 01477af54ec8e4a0a866427b0fa8220c, type: 2}
+  - {fileID: 11400000, guid: 7fb798fdc565849ef896a60d3f51e1e1, type: 2}
+  - {fileID: 11400000, guid: 9f928e35dc7db49cdb5d24b45c7d65d1, type: 2}
+  - {fileID: 11400000, guid: 85e1b8a57d5c348e5bb8ca8aa48d5c71, type: 2}
+  - {fileID: 11400000, guid: 46884c611d10740ed8bc62ed4efc5545, type: 2}
   charImage: {fileID: 2087439547}
   nameText: {fileID: 1997345309}
   keyStatsText: {fileID: 427104997}
@@ -6921,42 +6943,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684359940}
   m_CullTransparentMesh: 0
---- !u!1 &700177073
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 700177074}
-  m_Layer: 5
-  m_Name: ChacStats Placeholder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &700177074
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 700177073}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 624948973}
-  m_Father: {fileID: 979407074}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 250, y: 0}
-  m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -7110,7 +7096,7 @@ MonoBehaviour:
   - {fileID: 1630506766}
   - {fileID: 483049967}
   - {fileID: 575125500}
-  myTeamInfo: {fileID: 700177073}
+  myTeamStats: {fileID: 624948972}
   teamMemberList:
   - {fileID: 190764561168828950, guid: c304c35163bf444f7b7579c8c97e47e1, type: 3}
   - {fileID: 1375190418814986072, guid: 7ee4076dd97a34b7e8fdd0341b07ddeb, type: 3}
@@ -8756,7 +8742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -40}
+  m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: -20, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &905401566
@@ -8812,8 +8798,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10127,7 +10113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 623051769}
   timeRemaining: 0
-  assignTaskPanel: {fileID: 10209510}
+  assignTaskPanel: {fileID: 0}
 --- !u!114 &965451848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10340,7 +10326,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 700177074}
+  - {fileID: 624948973}
   - {fileID: 1919876239}
   m_Father: {fileID: 1133292464}
   m_RootOrder: 5
@@ -11212,7 +11198,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1107069980}
   m_HandleRect: {fileID: 1107069978}
   m_Direction: 2
-  m_Value: 1.0000005
+  m_Value: 1.0000004
   m_Size: 0.6360434
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -14549,7 +14535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 623051769}
   timeRemaining: 0
-  assignTaskPanel: {fileID: 10209510}
+  assignTaskPanel: {fileID: 0}
 --- !u!1 &1349020857
 GameObject:
   m_ObjectHideFlags: 0
@@ -15631,8 +15617,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -18569,7 +18555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 623051769}
   timeRemaining: 0
-  assignTaskPanel: {fileID: 10209510}
+  assignTaskPanel: {fileID: 0}
 --- !u!114 &1852712615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18868,7 +18854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 623051769}
   timeRemaining: 0
-  assignTaskPanel: {fileID: 10209510}
+  assignTaskPanel: {fileID: 0}
 --- !u!114 &1857731826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19430,7 +19416,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 623051769}
   timeRemaining: 0
-  assignTaskPanel: {fileID: 10209510}
+  assignTaskPanel: {fileID: 0}
 --- !u!114 &1906492766
 MonoBehaviour:
   m_ObjectHideFlags: 0

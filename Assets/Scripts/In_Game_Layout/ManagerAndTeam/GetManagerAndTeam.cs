@@ -10,7 +10,7 @@ public class GetManagerAndTeam : MonoBehaviour
     public GameObject confirmedManager;     // selected manager that will be instantiated
 
     public List<GameObject> myTeam;         // placeholder 3D-objects in the Scene
-    public GameObject myTeamInfo;           // placeholder UI for position in Canvas Character Info Panel
+    public GameObject myTeamStats;           // placeholder UI for position in Canvas Character Info Panel
     public GameObject[] teamMemberList;     // full list of team member prefab
     public List<GameObject> confirmedTeam;  // selected team member that will be instantiated
 
@@ -82,12 +82,12 @@ public class GetManagerAndTeam : MonoBehaviour
                 }
             }
 
-            confirmedTeam[i] = Instantiate(teamMemberList[confirmTeamInt[i]], myTeamInfo.transform.position, myTeamInfo.transform.rotation);
+            confirmedTeam[i] = Instantiate(teamMemberList[confirmTeamInt[i]], myTeamStats.transform.position, myTeamStats.transform.rotation);
             confirmedTeam[i].name = confirmedTeam[i].name.Substring(0, confirmedTeam[i].name.Length - 7);
             Debug.Log("Member " + i + " of name " + confirmedTeam[i].name + " is now added to the team.");
 
-            confirmedTeam[i].transform.SetParent(myTeamInfo.transform);
-            confirmedTeam[i].gameObject.SetActive(false);
+            //confirmedTeam[i].transform.SetParent(myTeamInfo.transform);
+            //confirmedTeam[i].gameObject.SetActive(false);
 
             // remove the Select Button game object on each member
             Destroy(confirmedTeam[i].transform.Find("Select Button").gameObject);
