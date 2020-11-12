@@ -14,16 +14,23 @@ public class GameManager : MonoBehaviour
     public GameObject innovation;
     public GameObject progressbar;
 
-    public int redundancyScore = 0;
-    public int reliabilityScore = 0;
-    public int clarityScore = 0;
-    public int efficiencyScore = 0;
-    public int innovationScore = 0;
-    public int progressbarScore = 0;
+    public int redundancyScore;
+    public int reliabilityScore;
+    public int clarityScore;
+    public int efficiencyScore;
+    public int innovationScore;
+    public int progressbarScore;
 
     // Start is called before the first frame update
     void Start()
     {
+        redundancyScore = 0;
+        reliabilityScore = 0;
+        clarityScore = 0;
+        efficiencyScore = 0;
+        innovationScore = 0;
+        progressbarScore = 0;
+
         UpdateTheScore();
     }
 
