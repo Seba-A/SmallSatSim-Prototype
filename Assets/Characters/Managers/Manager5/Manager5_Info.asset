@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de26765bb7cd44438cde4066ab4ea06, type: 3}
   m_Name: Manager5_Info
   m_EditorClassIdentifier: 
+  characterImage: {fileID: 21300000, guid: 9ab2e950ab3064a77ad1ecfacfec1468, type: 3}
   name: Lian Ming
-  descriptionText: {fileID: 8337517606825308425, guid: e7719a6f346c1489ab35243a3d88c6a8,
+  charDescription: {fileID: 8337517606825308425, guid: e7719a6f346c1489ab35243a3d88c6a8,
     type: 3}
   speed: 70
   quality: 100
@@ -27,3 +28,9 @@ MonoBehaviour:
   role: Team Manager
   roleDescription: {fileID: 8337517606825308425, guid: 1b0208e6c9d374be8a0450e74559e5aa,
     type: 3}
+  assignedTask:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

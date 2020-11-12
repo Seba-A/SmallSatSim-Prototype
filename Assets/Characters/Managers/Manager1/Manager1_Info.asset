@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de26765bb7cd44438cde4066ab4ea06, type: 3}
   m_Name: Manager1_Info
   m_EditorClassIdentifier: 
+  characterImage: {fileID: 21300000, guid: 5a1dccc7bd50e46e39b953ce2b4eff79, type: 3}
   name: Sebastian
-  descriptionText: {fileID: 8337517606825308425, guid: a5069f829ba7e45f8a25e3744c9f7c86,
+  charDescription: {fileID: 8337517606825308425, guid: a5069f829ba7e45f8a25e3744c9f7c86,
     type: 3}
   speed: 55
   quality: 65
@@ -27,3 +28,9 @@ MonoBehaviour:
   role: Team Manager
   roleDescription: {fileID: 8337517606825308425, guid: 1b0208e6c9d374be8a0450e74559e5aa,
     type: 3}
+  assignedTask:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
