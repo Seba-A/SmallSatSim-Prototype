@@ -12,12 +12,17 @@ public class TaskTimer : MonoBehaviour
 
     private GameManager AddTo;
 
+
+    //private StatsDisplay statsDisplay;
+
     // Start is called before the first frame update
     void Start()
     {
         timeRemaining = gameObject.GetComponent<TaskV2>().timeRequired;
 
         AddTo = FindObjectOfType<GameManager>();
+
+        //statsDisplay = FindObjectOfType<StatsDisplay>();
     }
 
     void Update()
@@ -47,6 +52,7 @@ public class TaskTimer : MonoBehaviour
                 //slottable_Assign.startNextTask = true;
                 assignTaskPanel.GetComponent<Slottable_Assign>().tasks.Remove(gameObject.name);
                 AddScore();
+                ScorePenalty();
                 Destroy(gameObject);
             }
         }
@@ -61,5 +67,12 @@ public class TaskTimer : MonoBehaviour
         AddTo.efficiencyScore = AddTo.efficiencyScore + gameObject.GetComponent<TaskV2>().efficiency;
         AddTo.innovationScore = AddTo.innovationScore + gameObject.GetComponent<TaskV2>().innovation;
         AddTo.progressbarScore = AddTo.progressbarScore + gameObject.GetComponent<TaskV2>().progressbar;
+    }
+
+    public void ScorePenalty()
+    {
+        float myFloat = (float)gameObject.GetComponent<TaskV2>().redundancy + 0.1f;
+        Debug.Log("this is a float " + myFloat);
+        Debug.Log("this is an int " + (int)myFloat);
     }
 }
