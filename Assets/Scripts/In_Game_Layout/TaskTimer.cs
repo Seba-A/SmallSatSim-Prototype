@@ -10,13 +10,14 @@ public class TaskTimer : MonoBehaviour
 
     public GameObject assignTaskPanel;
 
-    //private Slottable_Assign slottable_Assign;
+    private GameManager AddTo;
 
     // Start is called before the first frame update
     void Start()
     {
         timeRemaining = gameObject.GetComponent<TaskV2>().timeRequired;
-        //slottable_Assign = GameObject.FindObjectOfType<Slottable_Assign>();
+
+        AddTo = FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -45,21 +46,20 @@ public class TaskTimer : MonoBehaviour
                 assignTaskPanel.GetComponent<Slottable_Assign>().startNextTask = true;
                 //slottable_Assign.startNextTask = true;
                 assignTaskPanel.GetComponent<Slottable_Assign>().tasks.Remove(gameObject.name);
+                AddScore();
                 Destroy(gameObject);
             }
         }
     }
 
-    /*//increase the score value
+    //increase the score value by the task's indicated values
     public void AddScore()
     {
-        //increase the value of the scores
-        GameObject.Find("Game Manager").GetComponent<GameManager>().redundancyScore =+ redundancyScore
-        redundancyScore =+ redundancyScore;
-        reliabilityScore = +reliabilityScore;
-        clarityScore = +clarityScore;
-        efficiencyScore = +efficiencyScore;
-        innovationScore = +innovationScore;
-        progressbarScore = +progressbarScore;
-    }*/
+        AddTo.redundancyScore = AddTo.redundancyScore + gameObject.GetComponent<TaskV2>().redundancy;
+        AddTo.reliabilityScore = AddTo.reliabilityScore + gameObject.GetComponent<TaskV2>().reliability;
+        AddTo.clarityScore = AddTo.clarityScore + gameObject.GetComponent<TaskV2>().clarity;
+        AddTo.efficiencyScore = AddTo.efficiencyScore + gameObject.GetComponent<TaskV2>().efficiency;
+        AddTo.innovationScore = AddTo.innovationScore + gameObject.GetComponent<TaskV2>().innovation;
+        AddTo.progressbarScore = AddTo.progressbarScore + gameObject.GetComponent<TaskV2>().progressbar;
+    }
 }
