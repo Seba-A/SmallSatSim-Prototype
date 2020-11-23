@@ -9,7 +9,6 @@ public class Slottable_Assign : MonoBehaviour, IDropHandler, IPointerEnterHandle
     public bool startNextTask = true;
 
     public string assignedFirstTaskName;
-    public bool isFirstSlotFilled = false;
 
     Draggable taskDropped = null;
     [SerializeField] private GameObject assignedFirstTask;
@@ -37,20 +36,12 @@ public class Slottable_Assign : MonoBehaviour, IDropHandler, IPointerEnterHandle
     {
         if (this.transform.GetChild(0) != null)
         {
-            isFirstSlotFilled = true;
-
             assignedFirstTask = taskDropped.gameObject;
             assignedFirstTaskName = taskDropped.name;
             //Debug.Log(assignedFirstTaskName);
 
             //add the name of the object dropped into the list
             tasks.Add(assignedFirstTaskName);
-
-            // trigger the timer
-            //StartCoroutine(CountDownTimer());
-
-            // add score
-            //GameObject.Find("GameManager").GetComponent<GameManager>().AddScore();
         }
     }
 
@@ -66,7 +57,10 @@ public class Slottable_Assign : MonoBehaviour, IDropHandler, IPointerEnterHandle
 
     public void Update()
     {
-        if (tasks.Count > 0)
+        //this is the old version used to check whether a task was the first in line
+        //this method gave issues as the name is not removed from the list
+
+        /*if (tasks.Count > 0)
         {
             foreach(string i in tasks)
             {
@@ -79,6 +73,19 @@ public class Slottable_Assign : MonoBehaviour, IDropHandler, IPointerEnterHandle
                 {
                     (GameObject.Find(i).GetComponent<TaskTimer>() as MonoBehaviour).enabled = false;
                 }
+            }
+        }*/
+
+        foreach (Transform child in transform)
+        {
+            if (this.transform.GetChild(0).name == child.name)
+            {
+                (GameObject.Find(child.name).GetComponent<TaskTimer>() as MonoBehaviour).enabled = true;
+                //Debug.Log(this.transform.GetChild(0).name);
+            }
+            else
+            {
+                (GameObject.Find(child.name).GetComponent<TaskTimer>() as MonoBehaviour).enabled = false;
             }
         }
     }

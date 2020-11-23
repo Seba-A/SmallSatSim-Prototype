@@ -12,6 +12,11 @@ public class TaskTimer : MonoBehaviour
 
     private GameManager AddTo;
 
+    public bool FirstTimeCompletion = false;
+
+    // return to task list once the task is completed and tick that will have to activate once the task has been completed the first time
+    public Transform parentToReturnToOnceCompleted;
+    public GameObject FirstCompletionTick;
 
     //private StatsDisplay statsDisplay;
 
@@ -21,6 +26,9 @@ public class TaskTimer : MonoBehaviour
         timeRemaining = gameObject.GetComponent<TaskV2>().timeRequired;
 
         AddTo = FindObjectOfType<GameManager>();
+
+        //Parent that the task has to return to once it has been completed
+        parentToReturnToOnceCompleted = this.transform.parent;
 
         //statsDisplay = FindObjectOfType<StatsDisplay>();
     }
@@ -49,11 +57,17 @@ public class TaskTimer : MonoBehaviour
                 timeRemaining = 0;
                 gameObject.GetComponent<TaskV2>().taskCompleted = true;
                 assignTaskPanel.GetComponent<Slottable_Assign>().startNextTask = true;
-                //slottable_Assign.startNextTask = true;
+                slottable_Assign.startNextTask = true;
                 assignTaskPanel.GetComponent<Slottable_Assign>().tasks.Remove(gameObject.name);
                 AddScore();
                 ScorePenalty();
-                Destroy(gameObject);
+
+                //return task to task list and set tick true
+                this.transform.SetParent(parentToReturnToOnceCompleted);
+                FirstTimeCompletion = true;
+                FirstCompletionTick.SetActive(true);
+
+                //Destroy(gameObject);
             }
         }
     }
