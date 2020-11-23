@@ -57,7 +57,7 @@ public class TaskTimer : MonoBehaviour
                 timeRemaining = 0;
                 gameObject.GetComponent<TaskV2>().taskCompleted = true;
                 assignTaskPanel.GetComponent<Slottable_Assign>().startNextTask = true;
-                slottable_Assign.startNextTask = true;
+                //slottable_Assign.startNextTask = true;
                 assignTaskPanel.GetComponent<Slottable_Assign>().tasks.Remove(gameObject.name);
                 AddScore();
                 ScorePenalty();
