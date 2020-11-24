@@ -7861,6 +7861,7 @@ GameObject:
   - component: {fileID: 724906478}
   - component: {fileID: 724906477}
   - component: {fileID: 724906476}
+  - component: {fileID: 724906483}
   m_Layer: 5
   m_Name: Task (2)
   m_TagString: Task
@@ -7904,7 +7905,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 623051769}
   timeRemaining: 0
-  assignTaskPanel: {fileID: 0}
+  assignTaskPanel: {fileID: 1963753407}
   FirstTimeCompletion: 0
   parentToReturnToOnceCompleted: {fileID: 0}
   FirstCompletionTick: {fileID: 1818665833}
@@ -7945,7 +7946,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
-  taskIsAssigned: 0
 --- !u!114 &724906479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8015,6 +8015,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724906474}
   m_CullTransparentMesh: 0
+--- !u!114 &724906483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724906474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96309839c3e0d344a9dc63cf9bd8cbeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskIsAssigned: 0
 --- !u!1 &737727135
 GameObject:
   m_ObjectHideFlags: 0
@@ -8332,6 +8345,7 @@ GameObject:
   - component: {fileID: 768469408}
   - component: {fileID: 768469407}
   - component: {fileID: 768469406}
+  - component: {fileID: 768469413}
   m_Layer: 5
   m_Name: Task (4)
   m_TagString: Task
@@ -8375,7 +8389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 623051769}
   timeRemaining: 0
-  assignTaskPanel: {fileID: 0}
+  assignTaskPanel: {fileID: 1963753407}
   FirstTimeCompletion: 0
   parentToReturnToOnceCompleted: {fileID: 0}
   FirstCompletionTick: {fileID: 609405697}
@@ -8416,7 +8430,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
-  taskIsAssigned: 0
 --- !u!114 &768469409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8486,6 +8499,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768469404}
   m_CullTransparentMesh: 0
+--- !u!114 &768469413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768469404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96309839c3e0d344a9dc63cf9bd8cbeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskIsAssigned: 0
 --- !u!1001 &773458392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15459,6 +15485,7 @@ GameObject:
   - component: {fileID: 1305138296}
   - component: {fileID: 1305138295}
   - component: {fileID: 1305138294}
+  - component: {fileID: 1305138301}
   m_Layer: 5
   m_Name: Task (1)
   m_TagString: Task
@@ -15502,7 +15529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 623051769}
   timeRemaining: 0
-  assignTaskPanel: {fileID: 0}
+  assignTaskPanel: {fileID: 1963753407}
   FirstTimeCompletion: 0
   parentToReturnToOnceCompleted: {fileID: 0}
   FirstCompletionTick: {fileID: 1450819728}
@@ -15543,7 +15570,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
-  taskIsAssigned: 0
 --- !u!114 &1305138297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15613,6 +15639,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1305138292}
   m_CullTransparentMesh: 0
+--- !u!114 &1305138301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305138292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96309839c3e0d344a9dc63cf9bd8cbeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskIsAssigned: 0
 --- !u!1 &1320362663 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7066391733255911137, guid: 270741a4840b72e46b43575edbb0e568,
@@ -16015,6 +16054,7 @@ GameObject:
   - component: {fileID: 1333269095}
   - component: {fileID: 1333269094}
   - component: {fileID: 1333269100}
+  - component: {fileID: 1333269101}
   m_Layer: 5
   m_Name: Task
   m_TagString: Task
@@ -16081,7 +16121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
-  taskIsAssigned: 0
 --- !u!114 &1333269096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16165,10 +16204,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 623051769}
   timeRemaining: 0
-  assignTaskPanel: {fileID: 0}
+  assignTaskPanel: {fileID: 1963753407}
   FirstTimeCompletion: 0
   parentToReturnToOnceCompleted: {fileID: 0}
   FirstCompletionTick: {fileID: 278321122}
+--- !u!114 &1333269101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333269092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96309839c3e0d344a9dc63cf9bd8cbeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskIsAssigned: 0
 --- !u!1 &1339385135
 GameObject:
   m_ObjectHideFlags: 0
@@ -20037,6 +20089,7 @@ GameObject:
   - component: {fileID: 1721342368}
   - component: {fileID: 1721342367}
   - component: {fileID: 1721342366}
+  - component: {fileID: 1721342373}
   m_Layer: 5
   m_Name: Task (3)
   m_TagString: Task
@@ -20080,7 +20133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 623051769}
   timeRemaining: 0
-  assignTaskPanel: {fileID: 0}
+  assignTaskPanel: {fileID: 1963753407}
   FirstTimeCompletion: 0
   parentToReturnToOnceCompleted: {fileID: 0}
   FirstCompletionTick: {fileID: 1509675936}
@@ -20121,7 +20174,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
-  taskIsAssigned: 0
 --- !u!114 &1721342369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20191,6 +20243,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721342364}
   m_CullTransparentMesh: 0
+--- !u!114 &1721342373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721342364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96309839c3e0d344a9dc63cf9bd8cbeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  taskIsAssigned: 0
 --- !u!1 &1755007065
 GameObject:
   m_ObjectHideFlags: 0
