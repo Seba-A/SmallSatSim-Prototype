@@ -27,9 +27,9 @@ public class Slottable_Assign : MonoBehaviour, IDropHandler, IPointerEnterHandle
 
             taskDropped.transform.SetParent(this.transform);
             //Debug.Log(taskDropped.transform.parent.name);
-        }
 
-        CheckIfFirstChild();
+            CheckIfFirstChild();
+        }
     }
 
     public void CheckIfFirstChild()
@@ -57,10 +57,10 @@ public class Slottable_Assign : MonoBehaviour, IDropHandler, IPointerEnterHandle
 
     public void Update()
     {
-        //this is the old version used to check whether a task was the first in line
-        //this method gave issues as the name is not removed from the list
+        //this is to check if the task names in a list is still a child of the assign panel
+        //this method gave issues as the name is not removed from the list: "Transform child out of bounds"
 
-        /*if (tasks.Count > 0)
+        if (tasks.Count > 0)
         {
             foreach(string i in tasks)
             {
@@ -74,19 +74,36 @@ public class Slottable_Assign : MonoBehaviour, IDropHandler, IPointerEnterHandle
                     (GameObject.Find(i).GetComponent<TaskTimer>() as MonoBehaviour).enabled = false;
                 }
             }
-        }*/
+        }
 
         foreach (Transform child in transform)
         {
-            if (this.transform.GetChild(0).name == child.name)
+            if (tasks.Contains(child.name))
             {
-                (GameObject.Find(child.name).GetComponent<TaskTimer>() as MonoBehaviour).enabled = true;
-                //Debug.Log(this.transform.GetChild(0).name);
+                
             }
             else
             {
-                (GameObject.Find(child.name).GetComponent<TaskTimer>() as MonoBehaviour).enabled = false;
+                tasks.Remove(child.name);
             }
         }
+
+        //problem: "Transform child out of bounds"
+
+        /*if(this.transform.childCount > 0)
+        {
+            foreach (Transform child in transform)
+            {
+                if (this.transform.GetChild(0).name == child.name)
+                {
+                    (GameObject.Find(child.name).GetComponent<TaskTimer>() as MonoBehaviour).enabled = true;
+                    //Debug.Log(this.transform.GetChild(0).name);
+                }
+                else
+                {
+                    (GameObject.Find(child.name).GetComponent<TaskTimer>() as MonoBehaviour).enabled = false;
+                }
+            }
+        }*/
     }
 }
