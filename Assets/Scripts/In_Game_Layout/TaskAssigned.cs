@@ -20,6 +20,7 @@ public class TaskAssigned : MonoBehaviour
         {
             //Debug.Log("No task has been assigned");
             taskIsAssigned = false;
+            gameObject.GetComponent<TaskTimer>().timeRemaining = gameObject.GetComponent<TaskV2>().timeRequired;
         }
     }
 }

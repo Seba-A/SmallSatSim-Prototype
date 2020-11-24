@@ -23,7 +23,7 @@ public class TaskTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeRemaining = gameObject.GetComponent<TaskV2>().timeRequired;
+        //timeRemaining = gameObject.GetComponent<TaskV2>().timeRequired;
 
         AddTo = FindObjectOfType<GameManager>();
 
