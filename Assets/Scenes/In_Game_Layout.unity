@@ -4610,7 +4610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Task 4
   description: here's some random description
-  timeRequired: 100
+  timeRequired: 10
   taskCompleted: 0
   redundancy: 100
   reliability: 150
@@ -9911,7 +9911,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Task 3
   description: here's some random description
-  timeRequired: 100
+  timeRequired: 15
   taskCompleted: 0
   redundancy: 100
   reliability: 150
@@ -16712,7 +16712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Task 1
   description: here's some random description
-  timeRequired: 100
+  timeRequired: 5
   taskCompleted: 0
   redundancy: 100
   reliability: 150
@@ -21795,7 +21795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Task 2
   description: here's some random description
-  timeRequired: 100
+  timeRequired: 10
   taskCompleted: 0
   redundancy: 100
   reliability: 150
@@ -26742,7 +26742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Task 5
   description: here's some random description
-  timeRequired: 100
+  timeRequired: 5
   taskCompleted: 0
   redundancy: 100
   reliability: 150

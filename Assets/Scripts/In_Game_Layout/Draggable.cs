@@ -11,6 +11,9 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     GameObject placeholder = null;
 
+    //to position the task at the bottom of the list
+    public bool justAssigned = false;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         //Debug.Log("OnBeginDrag");

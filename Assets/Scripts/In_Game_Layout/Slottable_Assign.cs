@@ -28,6 +28,8 @@ public class Slottable_Assign : MonoBehaviour, IDropHandler, IPointerEnterHandle
             taskDropped.transform.SetParent(this.transform);
             //Debug.Log(taskDropped.transform.parent.name);
 
+            taskDropped.justAssigned = true;
+
             CheckIfFirstChild();
         }
     }
@@ -58,7 +60,6 @@ public class Slottable_Assign : MonoBehaviour, IDropHandler, IPointerEnterHandle
     public void Update()
     {
         //this is to check if the task names in a list is still a child of the assign panel
-        //this method gave issues as the name is not removed from the list: "Transform child out of bounds"
 
         if (tasks.Count > 0)
         {
@@ -87,23 +88,5 @@ public class Slottable_Assign : MonoBehaviour, IDropHandler, IPointerEnterHandle
                 tasks.Remove(child.name);
             }
         }
-
-        //problem: "Transform child out of bounds"
-
-        /*if(this.transform.childCount > 0)
-        {
-            foreach (Transform child in transform)
-            {
-                if (this.transform.GetChild(0).name == child.name)
-                {
-                    (GameObject.Find(child.name).GetComponent<TaskTimer>() as MonoBehaviour).enabled = true;
-                    //Debug.Log(this.transform.GetChild(0).name);
-                }
-                else
-                {
-                    (GameObject.Find(child.name).GetComponent<TaskTimer>() as MonoBehaviour).enabled = false;
-                }
-            }
-        }*/
     }
 }

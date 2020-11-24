@@ -10,9 +10,18 @@ public class TaskUpDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        task_IndexNumber = transform.GetSiblingIndex();
-        transform.SetSiblingIndex(task_IndexNumber);
-        //Debug.Log(task_IndexNumber);
+        if (gameObject.GetComponent<Draggable>().justAssigned)
+        {
+            task_IndexNumber = numberOfTasksInList;
+            transform.SetSiblingIndex(task_IndexNumber);
+            gameObject.GetComponent<Draggable>().justAssigned = false;
+        }
+        else
+        {
+            task_IndexNumber = transform.GetSiblingIndex();
+            transform.SetSiblingIndex(task_IndexNumber);
+            //Debug.Log(task_IndexNumber);
+        }
 
         numberOfTasksInList = transform.parent.transform.childCount - 1;
     }
