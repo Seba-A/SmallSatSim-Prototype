@@ -11,9 +11,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     GameObject placeholder = null;
 
-    //to activate timer
-    public bool taskIsAssigned = false;
-
     public void OnBeginDrag(PointerEventData eventData)
     {
         //Debug.Log("OnBeginDrag");
@@ -56,20 +53,5 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         GetComponent<CanvasGroup>().blocksRaycasts = true;
 
         Destroy(placeholder);
-    }
-
-    //usign this to activate the timer
-    void Update()
-    {
-        if (this.transform.parent.name == "ContentTask")
-        {
-            //Debug.Log("Task has been assigned");
-            taskIsAssigned = true;
-        }
-        else
-        {
-            //Debug.Log("No task has been assigned");
-            taskIsAssigned = false;
-        }
     }
 }

@@ -23,7 +23,7 @@ public class TaskTimer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeRemaining = gameObject.GetComponent<TaskV2>().timeRequired;
+        //timeRemaining = gameObject.GetComponent<TaskV2>().timeRequired;
 
         AddTo = FindObjectOfType<GameManager>();
 
@@ -41,7 +41,7 @@ public class TaskTimer : MonoBehaviour
     // The timer is set
     public void TaskTime()
     {
-        if (gameObject.GetComponent<Draggable>().taskIsAssigned)
+        if (gameObject.GetComponent<TaskAssigned>().taskIsAssigned)
         {
             time.text = "Time: " + timeRemaining.ToString("0");
 
@@ -68,6 +68,9 @@ public class TaskTimer : MonoBehaviour
                 FirstCompletionTick.SetActive(true);
 
                 //Destroy(gameObject);
+
+                //reactivate the draggable thing
+                (GameObject.Find(this.transform.name).GetComponent<Draggable>() as MonoBehaviour).enabled = true;
             }
         }
     }
