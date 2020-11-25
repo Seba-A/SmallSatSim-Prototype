@@ -1684,7 +1684,7 @@ GameObject:
   - component: {fileID: 218730251}
   - component: {fileID: 218730250}
   m_Layer: 5
-  m_Name: Task (1)
+  m_Name: TaskB (1)
   m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3023,7 +3023,7 @@ GameObject:
   - component: {fileID: 319998880}
   - component: {fileID: 319998879}
   m_Layer: 5
-  m_Name: Task (1)
+  m_Name: TaskA (1)
   m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5853,7 +5853,7 @@ GameObject:
   - component: {fileID: 450022649}
   - component: {fileID: 450022648}
   m_Layer: 5
-  m_Name: Task (3)
+  m_Name: Task0 (3)
   m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7555,7 +7555,7 @@ GameObject:
   - component: {fileID: 513560408}
   - component: {fileID: 513560407}
   m_Layer: 5
-  m_Name: Task (4)
+  m_Name: TaskB (4)
   m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10761,7 +10761,7 @@ GameObject:
   - component: {fileID: 691180551}
   - component: {fileID: 691180550}
   m_Layer: 5
-  m_Name: Task (3)
+  m_Name: TaskB (3)
   m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11821,7 +11821,7 @@ GameObject:
   - component: {fileID: 770436923}
   - component: {fileID: 770436922}
   m_Layer: 5
-  m_Name: Task (4)
+  m_Name: TaskA (4)
   m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13688,7 +13688,7 @@ GameObject:
   - component: {fileID: 875599892}
   - component: {fileID: 875599891}
   m_Layer: 5
-  m_Name: Task (2)
+  m_Name: Task0 (2)
   m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14563,7 +14563,7 @@ GameObject:
   - component: {fileID: 918037772}
   - component: {fileID: 918037771}
   m_Layer: 5
-  m_Name: Task
+  m_Name: TaskB
   m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17548,7 +17548,7 @@ GameObject:
   - component: {fileID: 1007502879}
   - component: {fileID: 1007502878}
   m_Layer: 5
-  m_Name: Task (2)
+  m_Name: TaskA (2)
   m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21890,7 +21890,7 @@ GameObject:
   - component: {fileID: 1223200246}
   - component: {fileID: 1223200245}
   m_Layer: 5
-  m_Name: Task (3)
+  m_Name: TaskA (3)
   m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23803,7 +23803,7 @@ GameObject:
   - component: {fileID: 1333269101}
   - component: {fileID: 1333269102}
   m_Layer: 5
-  m_Name: Task
+  m_Name: Task0
   m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26158,7 +26158,7 @@ GameObject:
   - component: {fileID: 1483477771}
   - component: {fileID: 1483477770}
   m_Layer: 5
-  m_Name: Task (2)
+  m_Name: TaskB (2)
   m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28829,7 +28829,7 @@ GameObject:
   - component: {fileID: 1639525087}
   - component: {fileID: 1639525086}
   m_Layer: 5
-  m_Name: Task
+  m_Name: TaskA
   m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30484,7 +30484,7 @@ GameObject:
   - component: {fileID: 1745148203}
   - component: {fileID: 1745148202}
   m_Layer: 5
-  m_Name: Task (1)
+  m_Name: Task0 (1)
   m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36261,7 +36261,7 @@ GameObject:
   - component: {fileID: 2122714368}
   - component: {fileID: 2122714367}
   m_Layer: 5
-  m_Name: Task (4)
+  m_Name: Task0 (4)
   m_TagString: Task
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
