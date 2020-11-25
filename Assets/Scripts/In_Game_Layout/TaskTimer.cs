@@ -47,35 +47,63 @@ public class TaskTimer : MonoBehaviour
         {
             time.text = "Time: " + timeRemaining.ToString("0");
 
-            if (timeRemaining > 0)
+            if (FirstTimeCompletion)
             {
-                timeRemaining -= Time.deltaTime;
-                assignTaskPanel.GetComponent<Slottable_Assign>().startNextTask = false;
-                //slottable_Assign.startNextTask = false;
+                if (timeRemaining > 0)
+                {
+                    timeRemaining -= Time.deltaTime;
+                    assignTaskPanel.GetComponent<Slottable_Assign>().startNextTask = false;
+                    //slottable_Assign.startNextTask = false;
+                }
+                else
+                {
+                    //Debug.Log("Time has run out!");
+                    timeRemaining = 0;
+                    gameObject.GetComponent<TaskV2>().taskCompleted = true;
+                    assignTaskPanel.GetComponent<Slottable_Assign>().startNextTask = true;
+                    //slottable_Assign.startNextTask = true;
+
+                    assignTaskPanel.GetComponent<Slottable_Assign>().tasks.Remove(gameObject.name);
+
+                    AddScore();
+                    ScorePenalty();
+
+                    //return task to task list and set tick true
+                    this.transform.SetParent(parentToReturnToOnceCompleted);
+
+                    //reactivate the draggable thing
+                    (parentToReturnToOnceCompleted.transform.Find(this.transform.name).GetComponent<Draggable>() as MonoBehaviour).enabled = true;
+                }
             }
             else
             {
-                //Debug.Log("Time has run out!");
-                timeRemaining = 0;
-                gameObject.GetComponent<TaskV2>().taskCompleted = true;
-                assignTaskPanel.GetComponent<Slottable_Assign>().startNextTask = true;
-                //slottable_Assign.startNextTask = true;
+                if (timeRemaining > 0)
+                {
+                    timeRemaining -= Time.deltaTime;
+                    assignTaskPanel.GetComponent<Slottable_Assign>().startNextTask = false;
+                    //slottable_Assign.startNextTask = false;
+                }
+                else
+                {
+                    //Debug.Log("Time has run out!");
+                    timeRemaining = 0;
+                    gameObject.GetComponent<TaskV2>().taskCompleted = true;
+                    assignTaskPanel.GetComponent<Slottable_Assign>().startNextTask = true;
+                    //slottable_Assign.startNextTask = true;
 
-                assignTaskPanel.GetComponent<Slottable_Assign>().tasks.Remove(gameObject.name);
-                Debug.Log("remove object");
+                    assignTaskPanel.GetComponent<Slottable_Assign>().tasks.Remove(gameObject.name);
 
-                AddScore();
-                ScorePenalty();
+                    AddScore();
+                    ScorePenalty();
 
-                //return task to task list and set tick true
-                this.transform.SetParent(parentToReturnToOnceCompleted);
-                FirstTimeCompletion = true;
-                FirstCompletionTick.SetActive(true);
+                    //return task to task list and set tick true
+                    this.transform.SetParent(parentToReturnToOnceCompleted);
+                    FirstTimeCompletion = true;
+                    FirstCompletionTick.SetActive(true);
 
-                //Destroy(gameObject);
-
-                //reactivate the draggable thing
-                (parentToReturnToOnceCompleted.transform.Find(this.transform.name).GetComponent<Draggable>() as MonoBehaviour).enabled = true;
+                    //reactivate the draggable thing
+                    (parentToReturnToOnceCompleted.transform.Find(this.transform.name).GetComponent<Draggable>() as MonoBehaviour).enabled = true;
+                }
             }
         }
     }
