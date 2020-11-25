@@ -25,9 +25,4 @@ public class Slottable_MissionPanel : MonoBehaviour, IDropHandler, IPointerEnter
     {
         //Debug.Log("OnPointerExit");
     }
-
-    public void Update()
-    {
-        
-    }
 }
