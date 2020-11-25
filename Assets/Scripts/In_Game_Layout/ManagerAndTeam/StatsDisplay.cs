@@ -33,12 +33,6 @@ public class StatsDisplay : MonoBehaviour
         //DisplayCharacterStats();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void DisplayCharacterStats(int managerInt, string nameOfTeammate)
     {
         CharacterInfo selectedChar;
