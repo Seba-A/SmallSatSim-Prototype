@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class ClickingOnTeam : MonoBehaviour
 {
     RaycastHit hitInfo;
+    //Vector2 currentPos;
 
     [SerializeField] private GameObject charInfoPanel;
     [SerializeField] private GameObject charStats;
@@ -26,6 +27,8 @@ public class ClickingOnTeam : MonoBehaviour
         charInfoPanel = GameObject.Find("Canvas").transform.Find("Character Info Panel").gameObject;
         charStats = charInfoPanel.transform.Find("CharStats Panel").gameObject;
         charRolesNTasks = charInfoPanel.transform.Find("Roles & Tasks Placeholder").gameObject;
+
+        //currentPos = charInfoPanel.GetComponent<RectTransform>().position;
 
         // defining Keys used for storing team members' name
         selectedMembers[0] = "SelectedMember1";
@@ -60,6 +63,9 @@ public class ClickingOnTeam : MonoBehaviour
                         clicktime = 0;
 
                         charInfoPanel.SetActive(true);
+                        //currentPos.x = 0;
+                        //charInfoPanel.transform.position = new Vector2(currentPos.x, currentPos.y);
+
                         CloseAllCharInfo();       //function added here to avoid more than one character info opening at the same time
 
                         OpenCorrectCharInfo();
@@ -75,6 +81,13 @@ public class ClickingOnTeam : MonoBehaviour
                 {
                     //Debug.Log("Not UI");
                     charInfoPanel.SetActive(false);
+
+                    /*
+                    Vector2 currentPos = charInfoPanel.GetComponent<RectTransform>().position;
+                    currentPos.x = -1000;
+                    charInfoPanel.transform.position = new Vector2(currentPos.x, currentPos.y);
+                    */
+
                     CloseAllCharInfo();
                 }
             }
@@ -98,6 +111,7 @@ public class ClickingOnTeam : MonoBehaviour
         foreach (Transform child in charRolesNTasks.transform)
         {
             child.gameObject.SetActive(false);
+            //child.gameObject.transform.Translate(Vector3.right * 1000);
         }
     }
 
