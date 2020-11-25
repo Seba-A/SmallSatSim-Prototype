@@ -83,7 +83,6 @@ public class TaskTimer : MonoBehaviour
         AddTo.clarityScore = AddTo.clarityScore + gameObject.GetComponent<TaskV2>().clarity;
         AddTo.efficiencyScore = AddTo.efficiencyScore + gameObject.GetComponent<TaskV2>().efficiency;
         AddTo.innovationScore = AddTo.innovationScore + gameObject.GetComponent<TaskV2>().innovation;
-        AddTo.progressbarScore = AddTo.progressbarScore + gameObject.GetComponent<TaskV2>().progressbar;
     }
 
     public void ScorePenalty()

@@ -18,7 +18,6 @@ public class TaskV2 : MonoBehaviour
     public int clarity;
     public int efficiency;
     public int innovation;
-    public int progressbar;
 
     public TextMeshProUGUI nameTask;
     public TextMeshProUGUI descriptionText;
