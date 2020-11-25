@@ -7,7 +7,7 @@ public class Slottable_MissionPanel : MonoBehaviour, IDropHandler, IPointerEnter
 {
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log(eventData.pointerDrag.name + " was dropped on " + gameObject.name);
+        //Debug.Log(eventData.pointerDrag.name + " was dropped on " + gameObject.name);
 
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         if (d != null)

@@ -7,7 +7,6 @@ public class TaskUpDown : MonoBehaviour
     int task_IndexNumber;
     int numberOfTasksInList;
 
-    // Update is called once per frame
     void Update()
     {
         if (gameObject.GetComponent<Draggable>().justAssigned)

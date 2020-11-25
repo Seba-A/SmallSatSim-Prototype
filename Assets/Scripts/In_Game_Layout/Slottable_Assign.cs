@@ -18,7 +18,7 @@ public class Slottable_Assign : MonoBehaviour, IDropHandler, IPointerEnterHandle
 
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log(eventData.pointerDrag.name + " was dropped on " + gameObject.name);
+        //Debug.Log(eventData.pointerDrag.name + " was dropped on " + gameObject.name);
 
         taskDropped = eventData.pointerDrag.GetComponent<Draggable>();
         if (taskDropped != null)
@@ -62,7 +62,7 @@ public class Slottable_Assign : MonoBehaviour, IDropHandler, IPointerEnterHandle
     public void Update()
     {
         //this is to check if the task names in a list is still a child of the assign panel
-        Debug.Log(tasks.Count);
+        //Debug.Log(tasks.Count);
         if (tasks.Count > 0)
         {
             foreach(string i in tasks)
