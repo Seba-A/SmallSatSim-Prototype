@@ -123,5 +123,7 @@ public class TaskTimer : MonoBehaviour
         float myFloat = (float)gameObject.GetComponent<TaskV2>().redundancy + 0.1f;
         Debug.Log("this is a float " + myFloat);
         Debug.Log("this is an int " + (int)myFloat);
+        int test = (int)(gameObject.GetComponent<TaskV2>().redundancy + ((float)gameObject.GetComponent<TaskV2>().redundancy / 2));
+        Debug.Log("this is a test: " + test);
     }
 }
