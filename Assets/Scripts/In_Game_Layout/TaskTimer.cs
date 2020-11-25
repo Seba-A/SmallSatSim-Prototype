@@ -18,6 +18,8 @@ public class TaskTimer : MonoBehaviour
     public Transform parentToReturnToOnceCompleted;
     public GameObject FirstCompletionTick;
 
+    public GameObject MissionPanel;
+
     //private StatsDisplay statsDisplay;
 
     // Start is called before the first frame update
@@ -73,7 +75,12 @@ public class TaskTimer : MonoBehaviour
                 //Destroy(gameObject);
 
                 //reactivate the draggable thing
+<<<<<<< HEAD
                 (parentToReturnToOnceCompleted.transform.Find(this.transform.name).GetComponent<Draggable>() as MonoBehaviour).enabled = true;
+=======
+                (GameObject.Find(this.transform.name).GetComponent<Draggable>() as MonoBehaviour).enabled = true;
+                //MissionPanel.transform.
+>>>>>>> 32aa35ea13d8ae52419ad232ebf5617472e0b370
             }
         }
     }
