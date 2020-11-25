@@ -15,7 +15,9 @@ public class EndTrigger : MonoBehaviour
         {
             gameManager.CompleteLevel();
         }
+        else
+        {
+            gameManager.NotCompleteLevel();
+        }
     }
-
-    //gameManager.CompleteLevel();
 }

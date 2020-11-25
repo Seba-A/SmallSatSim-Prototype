@@ -57,4 +57,8 @@ public class GameManager : MonoBehaviour
     {
         completeLevelUI.SetActive(true);
     }
+    public void NotCompleteLevel()
+    {
+        completeLevelUI.SetActive(false);
+    }
 }
