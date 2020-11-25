@@ -4633,7 +4633,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
-  justAssigned: 0
 --- !u!114 &450022653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9935,7 +9934,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
-  justAssigned: 0
 --- !u!114 &875599896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12840,7 +12838,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1841004273}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.33786872
+  m_Size: 0.34111717
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -13852,8 +13850,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.35, y: 109.91}
-  m_SizeDelta: {x: 200.8117, y: 197.12354}
+  m_AnchoredPosition: {x: 0.35, y: 111.14998}
+  m_SizeDelta: {x: 200.8117, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1132222744
 MonoBehaviour:
@@ -16737,7 +16735,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
-  justAssigned: 0
 --- !u!114 &1333269096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21821,7 +21818,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
-  justAssigned: 0
 --- !u!114 &1745148207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26769,7 +26765,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
-  justAssigned: 0
 --- !u!114 &2122714372
 MonoBehaviour:
   m_ObjectHideFlags: 0
