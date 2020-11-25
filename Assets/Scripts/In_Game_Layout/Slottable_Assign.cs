@@ -28,6 +28,8 @@ public class Slottable_Assign : MonoBehaviour, IDropHandler, IPointerEnterHandle
             taskDropped.transform.SetParent(this.transform);
             //Debug.Log(taskDropped.transform.parent.name);
 
+            taskDropped.GetComponent<TaskTimer>().assignTaskPanel = this.gameObject;
+
             taskDropped.justAssigned = true;
 
             CheckIfFirstChild();
@@ -60,7 +62,7 @@ public class Slottable_Assign : MonoBehaviour, IDropHandler, IPointerEnterHandle
     public void Update()
     {
         //this is to check if the task names in a list is still a child of the assign panel
-
+        Debug.Log(tasks.Count);
         if (tasks.Count > 0)
         {
             foreach(string i in tasks)
@@ -75,18 +77,6 @@ public class Slottable_Assign : MonoBehaviour, IDropHandler, IPointerEnterHandle
                     (GameObject.Find(i).GetComponent<TaskTimer>() as MonoBehaviour).enabled = false;
                 }
             }
-        }
-
-        foreach (Transform child in transform)
-        {
-            if (tasks.Contains(child.name))
-            {
-                
-            }
-            else
-            {
-                tasks.Remove(child.name);
-            }
-        }
+        }        
     }
 }

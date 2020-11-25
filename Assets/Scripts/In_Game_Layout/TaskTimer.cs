@@ -58,7 +58,10 @@ public class TaskTimer : MonoBehaviour
                 gameObject.GetComponent<TaskV2>().taskCompleted = true;
                 assignTaskPanel.GetComponent<Slottable_Assign>().startNextTask = true;
                 //slottable_Assign.startNextTask = true;
+
                 assignTaskPanel.GetComponent<Slottable_Assign>().tasks.Remove(gameObject.name);
+                Debug.Log("remove object");
+
                 AddScore();
                 ScorePenalty();
 
@@ -70,7 +73,7 @@ public class TaskTimer : MonoBehaviour
                 //Destroy(gameObject);
 
                 //reactivate the draggable thing
-                (GameObject.Find(this.transform.name).GetComponent<Draggable>() as MonoBehaviour).enabled = true;
+                (parentToReturnToOnceCompleted.transform.Find(this.transform.name).GetComponent<Draggable>() as MonoBehaviour).enabled = true;
             }
         }
     }

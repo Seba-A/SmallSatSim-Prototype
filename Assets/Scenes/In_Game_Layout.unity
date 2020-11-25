@@ -4135,7 +4135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 623051769}
   timeRemaining: 0
-  assignTaskPanel: {fileID: 1963753407}
+  assignTaskPanel: {fileID: 656433250}
   FirstTimeCompletion: 0
   parentToReturnToOnceCompleted: {fileID: 0}
   FirstCompletionTick: {fileID: 1929726541}
@@ -7151,6 +7151,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654786511}
   m_CullTransparentMesh: 0
+--- !u!1 &656433250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6441610773653999134, guid: 9a0cf18bda6ad4021be973eac04200f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1455310676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &681869430
 GameObject:
   m_ObjectHideFlags: 0
@@ -9239,7 +9245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 623051769}
   timeRemaining: 0
-  assignTaskPanel: {fileID: 1963753407}
+  assignTaskPanel: {fileID: 656433250}
   FirstTimeCompletion: 0
   parentToReturnToOnceCompleted: {fileID: 0}
   FirstCompletionTick: {fileID: 21071179}
@@ -15232,7 +15238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 623051769}
   timeRemaining: 0
-  assignTaskPanel: {fileID: 1963753407}
+  assignTaskPanel: {fileID: 656433250}
   FirstTimeCompletion: 0
   parentToReturnToOnceCompleted: {fileID: 0}
   FirstCompletionTick: {fileID: 278321122}
@@ -19709,7 +19715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 623051769}
   timeRemaining: 0
-  assignTaskPanel: {fileID: 1963753407}
+  assignTaskPanel: {fileID: 656433250}
   FirstTimeCompletion: 0
   parentToReturnToOnceCompleted: {fileID: 0}
   FirstCompletionTick: {fileID: 1696098245}
@@ -21859,12 +21865,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950574752}
   m_CullTransparentMesh: 0
---- !u!1 &1963753407 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6441610773653999134, guid: 9a0cf18bda6ad4021be973eac04200f4,
-    type: 3}
-  m_PrefabInstance: {fileID: 6441610775079793057}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1965998266
 GameObject:
   m_ObjectHideFlags: 0
@@ -23894,7 +23894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: {fileID: 623051769}
   timeRemaining: 0
-  assignTaskPanel: {fileID: 1963753407}
+  assignTaskPanel: {fileID: 656433250}
   FirstTimeCompletion: 0
   parentToReturnToOnceCompleted: {fileID: 0}
   FirstCompletionTick: {fileID: 1324692828}
