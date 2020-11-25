@@ -22,7 +22,7 @@ public class RolesTasksDisplay : MonoBehaviour
         else
         {
             string nameToCompare = clickedCharName.Substring(4, 8);
-            Debug.Log("Name to compare is: " + nameToCompare);
+            //Debug.Log("Name to compare is: " + nameToCompare);
 
             charRolesNTasks.transform.Find("Roles&Tasks_" + nameToCompare).gameObject.SetActive(true);
         }
