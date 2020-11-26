@@ -54,7 +54,7 @@ public class ClickingOnTeam : MonoBehaviour
                     // double-click opens the character info panel
                     if (clicked > 1 && Time.time - clicktime < clickdelay)
                     {
-                        Debug.Log("Double Clicked on: " + hitInfo.collider.gameObject.name);
+                        //Debug.Log("Double Clicked on: " + hitInfo.collider.gameObject.name);
 
                         clicked = 0;
                         clicktime = 0;
@@ -135,7 +135,7 @@ public class ClickingOnTeam : MonoBehaviour
 
             charRolesNTasks.GetComponent<RolesTasksDisplay>().DisplayCharacterRolesNTasks(hitInfo.transform.parent.gameObject.name, Screen.width);
             //charRolesNTasks.transform.Find("Manager Roles N Tasks").gameObject.SetActive(true);
-            Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
+            //Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
         }
         else
         {
@@ -166,7 +166,7 @@ public class ClickingOnTeam : MonoBehaviour
             //Display Character Roles and Tasks
             charRolesNTasks.GetComponent<RolesTasksDisplay>().DisplayCharacterRolesNTasks(hitInfo.collider.gameObject.name, Screen.width);
 
-            Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
+            //Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
         }
     }
 }

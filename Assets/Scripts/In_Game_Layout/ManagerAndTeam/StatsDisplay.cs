@@ -40,7 +40,7 @@ public class StatsDisplay : MonoBehaviour
         if (nameOfTeammate == "0")
         {
             selectedChar = managerStatsList[managerInt];
-            Debug.Log("confirmManagerInt is: " + managerInt);
+            //Debug.Log("confirmManagerInt is: " + managerInt);
         }
         else
         { 
@@ -51,7 +51,7 @@ public class StatsDisplay : MonoBehaviour
                 if (element.name == nameOfTeammate)
                 {
                     confirmTeammateInt = System.Array.IndexOf(managerAndTeam.GetComponent<GetManagerAndTeam>().teamMemberList, element);
-                    Debug.Log("confirmTeammateInt is: " + confirmTeammateInt);
+                    //Debug.Log("confirmTeammateInt is: " + confirmTeammateInt);
                 }
             }
 

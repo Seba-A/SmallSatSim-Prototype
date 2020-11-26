@@ -31,9 +31,9 @@ public class RoleSelection : MonoBehaviour
         roleUIPanel = this.gameObject;
 
         primaryDropdown.value = PlayerPrefs.GetInt(roleUIPanel.name + primaryRole, 0);
-        Debug.Log("Displaying primary role: " + primaryDropdown.value);
+        //Debug.Log("Displaying primary role: " + primaryDropdown.value);
         secondaryDropdown.value = PlayerPrefs.GetInt(roleUIPanel.name + secondaryRole, 0);
-        Debug.Log("Displaying secondary role: " + secondaryDropdown.value);
+        //Debug.Log("Displaying secondary role: " + secondaryDropdown.value);
     }
 
     public void SavePrimaryRole()

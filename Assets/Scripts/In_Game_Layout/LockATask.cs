@@ -7,6 +7,8 @@ public class LockATask : MonoBehaviour
     public Transform parentMission;
     public List<GameObject> Targets;
 
+    public bool UnlockTask = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,9 +25,12 @@ public class LockATask : MonoBehaviour
     {
         foreach(GameObject target in Targets)
         {
+            //parentMission.transform.Find(this.transform.name).GetComponent<TaskTimer>().FirstTimeCompletion
             if (gameObject.GetComponent<TaskTimer>().FirstTimeCompletion)
             {
                 (target.GetComponent<Draggable>() as MonoBehaviour).enabled = true;
+                UnlockTask = true;
+                
                 Debug.Log(target.transform.name);
             }
             else
@@ -33,7 +38,20 @@ public class LockATask : MonoBehaviour
                 (target.GetComponent<Draggable>() as MonoBehaviour).enabled = false;
             }
 
+            /*
+            if (UnlockTask && parentMission.transform.Find(this.transform.name).GetComponent<TaskTimer>().FirstTimeCompletion)
+            {
+                Debug.Log("We did it");
+            }*/
             //Debug.Log(target.transform.name);
+        }
+    }
+
+    public void ReactivateLockedTasks()
+    {
+        foreach (GameObject target in Targets)
+        {
+            (target.GetComponent<Draggable>() as MonoBehaviour).enabled = true;
         }
     }
 }

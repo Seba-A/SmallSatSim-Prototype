@@ -27,12 +27,14 @@ public class ComputeProductStats : MonoBehaviour
         AddTo.efficiencyScore = AddTo.efficiencyScore + (int)(((float)gameObject.GetComponent<TaskV2>().efficiency * ComputeAverage("Efficiency")) / repeatIndex);
         AddTo.innovationScore = AddTo.innovationScore + (int)(((float)gameObject.GetComponent<TaskV2>().innovation * ComputeAverage("Innovation")) / repeatIndex);
 
+        /*
         Debug.Log("Redundancy multiplier is: " + ComputeAverage("Redundancy"));
         Debug.Log("Reliability multiplier is: " + ComputeAverage("Reliability"));
         Debug.Log("Clarity multiplier is: " + ComputeAverage("Clarity"));
         Debug.Log("Efficiency multiplier is: " + ComputeAverage("Efficiency"));
         Debug.Log("Innovation multiplier is: " + ComputeAverage("Innovation"));
         Debug.Log("TaskTime multiplier is: " + ComputeAverage("TaskTime"));
+        */
     }
 
     public float ScorePenalty(int CharStat, int IdealStat)
