@@ -13525,9 +13525,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50d2095ddb5310a468d6098b15490d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Phase0: 0
-  PhaseA: 0
-  PhaseB: 0
+  Phase0: 50
+  PhaseA: 20
+  PhaseB: 30
   PhaseC: 0
   PhaseD: 0
 --- !u!1 &874261453
