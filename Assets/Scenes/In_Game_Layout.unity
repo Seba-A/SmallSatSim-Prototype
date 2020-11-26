@@ -17618,7 +17618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96309839c3e0d344a9dc63cf9bd8cbeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  taskIsAssigned: 1
+  taskIsAssigned: 0
 --- !u!114 &1007502880
 MonoBehaviour:
   m_ObjectHideFlags: 0
