@@ -115,7 +115,7 @@ public class TaskTimer : MonoBehaviour
     public void TimerRunning()
     {
         // Character speed affects how fast the task is completed.
-        timeRemaining -= Time.deltaTime * gameObject.GetComponent<ComputeProductStats>().ScorePenalty(100, 50);
+        timeRemaining -= Time.deltaTime * gameObject.GetComponent<ComputeProductStats>().ComputeAverage("TaskTime");
         
         assignTaskPanel.GetComponent<Slottable_Assign>().startNextTask = false;
         //slottable_Assign.startNextTask = false;
@@ -134,7 +134,7 @@ public class TaskTimer : MonoBehaviour
         gameObject.GetComponent<ComputeProductStats>().AddScore(RepeatPenalty);
         //ScorePenalty(100, 50);
 
-        gameObject.GetComponent<ComputeProductStats>().ComputeAverage("Innovation");
+        //gameObject.GetComponent<ComputeProductStats>().ComputeAverage("Innovation");
 
 
         //return task to task list

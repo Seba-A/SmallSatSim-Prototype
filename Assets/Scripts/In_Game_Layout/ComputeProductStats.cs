@@ -21,13 +21,18 @@ public class ComputeProductStats : MonoBehaviour
     //increase the score value by the task's indicated values
     public void AddScore(float repeatIndex)
     {
-        AddTo.redundancyScore = AddTo.redundancyScore + (int)((float)gameObject.GetComponent<TaskV2>().redundancy / repeatIndex);
-        AddTo.reliabilityScore = AddTo.reliabilityScore + (int)((float)gameObject.GetComponent<TaskV2>().reliability / repeatIndex);
-        AddTo.clarityScore = AddTo.clarityScore + (int)((float)gameObject.GetComponent<TaskV2>().clarity / repeatIndex);
-        AddTo.efficiencyScore = AddTo.efficiencyScore + (int)((float)gameObject.GetComponent<TaskV2>().efficiency / repeatIndex);
-        AddTo.innovationScore = AddTo.innovationScore + (int)((float)gameObject.GetComponent<TaskV2>().innovation / repeatIndex);
+        AddTo.redundancyScore = AddTo.redundancyScore + (int)(((float)gameObject.GetComponent<TaskV2>().redundancy * ComputeAverage("Redundancy")) / repeatIndex);
+        AddTo.reliabilityScore = AddTo.reliabilityScore + (int)(((float)gameObject.GetComponent<TaskV2>().reliability * ComputeAverage("Reliability")) / repeatIndex);
+        AddTo.clarityScore = AddTo.clarityScore + (int)(((float)gameObject.GetComponent<TaskV2>().clarity * ComputeAverage("Clarity")) / repeatIndex);
+        AddTo.efficiencyScore = AddTo.efficiencyScore + (int)(((float)gameObject.GetComponent<TaskV2>().efficiency * ComputeAverage("Efficiency")) / repeatIndex);
+        AddTo.innovationScore = AddTo.innovationScore + (int)(((float)gameObject.GetComponent<TaskV2>().innovation * ComputeAverage("Innovation")) / repeatIndex);
 
-
+        Debug.Log("Redundancy multiplier is: " + ComputeAverage("Redundancy"));
+        Debug.Log("Reliability multiplier is: " + ComputeAverage("Reliability"));
+        Debug.Log("Clarity multiplier is: " + ComputeAverage("Clarity"));
+        Debug.Log("Efficiency multiplier is: " + ComputeAverage("Efficiency"));
+        Debug.Log("Innovation multiplier is: " + ComputeAverage("Innovation"));
+        Debug.Log("TaskTime multiplier is: " + ComputeAverage("TaskTime"));
     }
 
     public float ScorePenalty(int CharStat, int IdealStat)
@@ -79,28 +84,37 @@ public class ComputeProductStats : MonoBehaviour
         switch (statToBeComputed)
         {
             case "Redundancy":
-
+                //character +Quality, +Focus, +Creativity
+                avgMultiplier = (ScorePenalty(charQuality, idealQuality) + ScorePenalty(charFocus, idealFocus) + ScorePenalty(charCreativity, idealCreativity)) / 3;
                 break;
+
             case "Reliability":
-
+                //character -Speed, +Quality
+                avgMultiplier = (Mathf.Abs(ScorePenalty(charSpeed, idealSpeed) - 2) + ScorePenalty(charQuality, idealQuality)) / 2;
                 break;
+
             case "Clarity":
-
+                //character -Speed, +Quality, +Relationship
+                avgMultiplier = (Mathf.Abs(ScorePenalty(charSpeed, idealSpeed) - 2) + ScorePenalty(charQuality, idealQuality) + ScorePenalty(charRelationship, idealRelationship)) / 3;
                 break;
+
             case "Efficiency":
-
+                // chracter +Relationship, +Focus, -Creativity
+                avgMultiplier = (ScorePenalty(charRelationship, idealRelationship) + ScorePenalty(charFocus, idealFocus) + Mathf.Abs(ScorePenalty(charCreativity, idealCreativity) - 2)) / 3;
                 break;
+
             case "Innovation":
-                // character +relationship, -focus, +creativity
+                // character +Relationship, -Focus, +Creativity
                 avgMultiplier = (ScorePenalty(charRelationship, idealRelationship) + Mathf.Abs(ScorePenalty(charFocus, idealFocus) - 2) + ScorePenalty(charCreativity, idealCreativity)) / 3;
                 break;
+
             case "TaskTime":
-                // character +speed and +focus
+                // character +Speed, +Focus
                 avgMultiplier = (ScorePenalty(charSpeed, idealSpeed) + ScorePenalty(charFocus, idealFocus))/ 2;
                 break;
         }
 
-        Debug.Log(avgMultiplier);
+        //Debug.Log(avgMultiplier);
 
         return avgMultiplier;
     }
@@ -110,7 +124,7 @@ public class ComputeProductStats : MonoBehaviour
         GameObject relevantMember = gameObject.GetComponent<TaskTimer>().assignTaskPanel.transform.parent.parent.gameObject;
         int memberIndex = int.Parse(relevantMember.name.Substring(relevantMember.name.Length - 1, 1)) - 1;
         string memberName = managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeam[memberIndex].name.Substring(0, 7);
-        Debug.Log(memberName);
+        //Debug.Log(memberName);
 
         int memberIndexInFullList = 999;
 
@@ -121,25 +135,25 @@ public class ComputeProductStats : MonoBehaviour
             if (elementMemberName == memberName)
             {
                 memberIndexInFullList = System.Array.IndexOf(managerAndTeam.GetComponent<GetManagerAndTeam>().teamMemberList, element);
-                Debug.Log(memberIndexInFullList);
+                //Debug.Log(memberIndexInFullList);
             }
         }
 
         CharacterInfo relevantMemberInfo = charStats.GetComponent<StatsDisplay>().memberStatsList[memberIndexInFullList];
 
         charSpeed = relevantMemberInfo.speed;
-        Debug.Log(charSpeed);
+        //Debug.Log(charSpeed);
 
         charQuality = relevantMemberInfo.quality;
-        Debug.Log(charQuality);
+        //Debug.Log(charQuality);
 
         charRelationship = relevantMemberInfo.relationship;
-        Debug.Log(charRelationship);
+        //Debug.Log(charRelationship);
 
         charFocus = relevantMemberInfo.focus;
-        Debug.Log(charFocus);
+        //Debug.Log(charFocus);
 
         charCreativity = relevantMemberInfo.creativity;
-        Debug.Log(charCreativity);
+        //Debug.Log(charCreativity);
     }
 }
