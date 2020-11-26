@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class LockATask : MonoBehaviour
 {
+    public Transform parent;
     public List<GameObject> Targets;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        parent = this.transform.parent;
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class LockATask : MonoBehaviour
     {
         foreach(GameObject target in Targets)
         {
-            if (this.GetComponent<TaskTimer>().FirstTimeCompletion)
+            if (gameObject.GetComponent<TaskTimer>().FirstTimeCompletion)
             {
                 (target.GetComponent<Draggable>() as MonoBehaviour).enabled = true;
                 Debug.Log(target.transform.name);
