@@ -114,7 +114,9 @@ public class TaskTimer : MonoBehaviour
 
     public void TimerRunning()
     {
-        timeRemaining -= Time.deltaTime * ScorePenalty(100, 50);      // Character speed affects how fast the task is completed.
+        // Character speed affects how fast the task is completed.
+        timeRemaining -= Time.deltaTime * gameObject.GetComponent<ComputeProductStats>().ScorePenalty(100, 50);
+        
         assignTaskPanel.GetComponent<Slottable_Assign>().startNextTask = false;
         //slottable_Assign.startNextTask = false;
     }
@@ -129,7 +131,7 @@ public class TaskTimer : MonoBehaviour
 
         assignTaskPanel.GetComponent<Slottable_Assign>().tasks.Remove(gameObject.name);
 
-        AddScore(RepeatPenalty);
+        gameObject.GetComponent<ComputeProductStats>().AddScore(RepeatPenalty);
         //ScorePenalty(100, 50);
 
         //return task to task list
@@ -142,42 +144,5 @@ public class TaskTimer : MonoBehaviour
         //Debug.Log(RepeatPenalty);
     }
 
-    //increase the score value by the task's indicated values
-    public void AddScore(float repeatIndex)
-    {
-        AddTo.redundancyScore = AddTo.redundancyScore + (int)((float)gameObject.GetComponent<TaskV2>().redundancy / repeatIndex);
-        AddTo.reliabilityScore = AddTo.reliabilityScore + (int)((float)gameObject.GetComponent<TaskV2>().reliability / repeatIndex);
-        AddTo.clarityScore = AddTo.clarityScore + (int)((float)gameObject.GetComponent<TaskV2>().clarity / repeatIndex);
-        AddTo.efficiencyScore = AddTo.efficiencyScore + (int)((float)gameObject.GetComponent<TaskV2>().efficiency / repeatIndex);
-        AddTo.innovationScore = AddTo.innovationScore + (int)((float)gameObject.GetComponent<TaskV2>().innovation / repeatIndex);
-    }
-
-    public float ScorePenalty(int CharStat, int IdealStat)
-    {
-        float ratioStat = (float)CharStat / (float)IdealStat;
-        float ratioToMultiply = 1;
-
-        if (ratioStat <= 1)
-        {
-            ratioToMultiply = ratioStat; 
-        }
-        else if (ratioStat > 1 && ratioStat <= 1.5)
-        {
-            ratioToMultiply = 1.1f;
-        }
-        else if (ratioStat > 1.5)
-        {
-            ratioToMultiply = 1.2f;
-        }
-
-        return ratioToMultiply;
-
-        /*
-        float myFloat = (float)gameObject.GetComponent<TaskV2>().redundancy + 0.1f;
-        //Debug.Log("this is a float " + myFloat);
-        //Debug.Log("this is an int " + (int)myFloat);
-        int test = (int)(gameObject.GetComponent<TaskV2>().redundancy + ((float)gameObject.GetComponent<TaskV2>().redundancy / 2));
-        //Debug.Log("this is a test: " + test);
-        */
-    }
+    
 }

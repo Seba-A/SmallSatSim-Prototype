@@ -19,11 +19,11 @@ public class TaskV2 : MonoBehaviour
     public int efficiency;
     public int innovation;
 
-    public int idealSpeed;
-    public int idealQuality;
-    public int idealRelationship;
-    public int idealFocus;
-    public int idealCreativity;
+    public int idealTaskSpeed;
+    public int idealTaskQuality;
+    public int idealTaskRelationship;
+    public int idealTaskFocus;
+    public int idealTaskCreativity;
 
     public TextMeshProUGUI nameTask;
     public TextMeshProUGUI descriptionText;

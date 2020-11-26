@@ -1683,6 +1683,7 @@ GameObject:
   - component: {fileID: 218730252}
   - component: {fileID: 218730251}
   - component: {fileID: 218730250}
+  - component: {fileID: 218730259}
   m_Layer: 5
   m_Name: TaskB (1)
   m_TagString: Task
@@ -1779,11 +1780,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
-  idealSpeed: 0
-  idealQuality: 0
-  idealRelationship: 0
-  idealFocus: 0
-  idealCreativity: 0
+  idealTaskSpeed: 0
+  idealTaskQuality: 0
+  idealTaskRelationship: 0
+  idealTaskFocus: 0
+  idealTaskCreativity: 0
   nameTask: {fileID: 1048345857}
   descriptionText: {fileID: 390730002}
 --- !u!114 &218730254
@@ -1869,6 +1870,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218730248}
   m_CullTransparentMesh: 0
+--- !u!114 &218730259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218730248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33241df8c2ca7470b9ef4e788dd6b0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &227362524
 GameObject:
   m_ObjectHideFlags: 0
@@ -3027,6 +3040,7 @@ GameObject:
   - component: {fileID: 319998881}
   - component: {fileID: 319998880}
   - component: {fileID: 319998879}
+  - component: {fileID: 319998888}
   m_Layer: 5
   m_Name: TaskA (1)
   m_TagString: Task
@@ -3123,11 +3137,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
-  idealSpeed: 0
-  idealQuality: 0
-  idealRelationship: 0
-  idealFocus: 0
-  idealCreativity: 0
+  idealTaskSpeed: 0
+  idealTaskQuality: 0
+  idealTaskRelationship: 0
+  idealTaskFocus: 0
+  idealTaskCreativity: 0
   nameTask: {fileID: 1663960018}
   descriptionText: {fileID: 1712814746}
 --- !u!114 &319998883
@@ -3213,6 +3227,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319998877}
   m_CullTransparentMesh: 0
+--- !u!114 &319998888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319998877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33241df8c2ca7470b9ef4e788dd6b0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &323644182
 GameObject:
   m_ObjectHideFlags: 0
@@ -5862,6 +5888,7 @@ GameObject:
   - component: {fileID: 450022650}
   - component: {fileID: 450022649}
   - component: {fileID: 450022648}
+  - component: {fileID: 450022657}
   m_Layer: 5
   m_Name: Task0 (3)
   m_TagString: Task
@@ -5958,11 +5985,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
-  idealSpeed: 0
-  idealQuality: 0
-  idealRelationship: 0
-  idealFocus: 0
-  idealCreativity: 0
+  idealTaskSpeed: 0
+  idealTaskQuality: 0
+  idealTaskRelationship: 0
+  idealTaskFocus: 0
+  idealTaskCreativity: 0
   nameTask: {fileID: 2061906586}
   descriptionText: {fileID: 654786513}
 --- !u!114 &450022652
@@ -6048,6 +6075,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450022646}
   m_CullTransparentMesh: 0
+--- !u!114 &450022657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450022646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33241df8c2ca7470b9ef4e788dd6b0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &451806331
 GameObject:
   m_ObjectHideFlags: 0
@@ -7569,6 +7608,7 @@ GameObject:
   - component: {fileID: 513560409}
   - component: {fileID: 513560408}
   - component: {fileID: 513560407}
+  - component: {fileID: 513560416}
   m_Layer: 5
   m_Name: TaskB (4)
   m_TagString: Task
@@ -7665,11 +7705,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
-  idealSpeed: 0
-  idealQuality: 0
-  idealRelationship: 0
-  idealFocus: 0
-  idealCreativity: 0
+  idealTaskSpeed: 0
+  idealTaskQuality: 0
+  idealTaskRelationship: 0
+  idealTaskFocus: 0
+  idealTaskCreativity: 0
   nameTask: {fileID: 963016067}
   descriptionText: {fileID: 849985498}
 --- !u!114 &513560411
@@ -7755,6 +7795,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 513560405}
   m_CullTransparentMesh: 0
+--- !u!114 &513560416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513560405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33241df8c2ca7470b9ef4e788dd6b0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519742947
 GameObject:
   m_ObjectHideFlags: 0
@@ -10774,6 +10826,7 @@ GameObject:
   - component: {fileID: 691180552}
   - component: {fileID: 691180551}
   - component: {fileID: 691180550}
+  - component: {fileID: 691180559}
   m_Layer: 5
   m_Name: TaskB (3)
   m_TagString: Task
@@ -10870,11 +10923,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
-  idealSpeed: 0
-  idealQuality: 0
-  idealRelationship: 0
-  idealFocus: 0
-  idealCreativity: 0
+  idealTaskSpeed: 0
+  idealTaskQuality: 0
+  idealTaskRelationship: 0
+  idealTaskFocus: 0
+  idealTaskCreativity: 0
   nameTask: {fileID: 2049759376}
   descriptionText: {fileID: 584402937}
 --- !u!114 &691180554
@@ -10960,6 +11013,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691180548}
   m_CullTransparentMesh: 0
+--- !u!114 &691180559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691180548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33241df8c2ca7470b9ef4e788dd6b0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &700597842
 GameObject:
   m_ObjectHideFlags: 0
@@ -11839,6 +11904,7 @@ GameObject:
   - component: {fileID: 770436924}
   - component: {fileID: 770436923}
   - component: {fileID: 770436922}
+  - component: {fileID: 770436931}
   m_Layer: 5
   m_Name: TaskA (4)
   m_TagString: Task
@@ -11935,11 +12001,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
-  idealSpeed: 0
-  idealQuality: 0
-  idealRelationship: 0
-  idealFocus: 0
-  idealCreativity: 0
+  idealTaskSpeed: 0
+  idealTaskQuality: 0
+  idealTaskRelationship: 0
+  idealTaskFocus: 0
+  idealTaskCreativity: 0
   nameTask: {fileID: 1189693447}
   descriptionText: {fileID: 1360630756}
 --- !u!114 &770436926
@@ -12025,6 +12091,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 770436920}
   m_CullTransparentMesh: 0
+--- !u!114 &770436931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770436920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33241df8c2ca7470b9ef4e788dd6b0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &773458392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13712,6 +13790,7 @@ GameObject:
   - component: {fileID: 875599892}
   - component: {fileID: 875599891}
   - component: {fileID: 875599900}
+  - component: {fileID: 875599901}
   m_Layer: 5
   m_Name: Task0 (2)
   m_TagString: Task
@@ -13808,11 +13887,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
-  idealSpeed: 0
-  idealQuality: 0
-  idealRelationship: 0
-  idealFocus: 0
-  idealCreativity: 0
+  idealTaskSpeed: 0
+  idealTaskQuality: 0
+  idealTaskRelationship: 0
+  idealTaskFocus: 0
+  idealTaskCreativity: 0
   nameTask: {fileID: 942547258}
   descriptionText: {fileID: 1461536953}
 --- !u!114 &875599895
@@ -13914,6 +13993,18 @@ MonoBehaviour:
   Targets:
   - {fileID: 319998877}
   - {fileID: 1007502876}
+--- !u!114 &875599901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875599889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33241df8c2ca7470b9ef4e788dd6b0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &887645337
 GameObject:
   m_ObjectHideFlags: 0
@@ -14608,6 +14699,7 @@ GameObject:
   - component: {fileID: 918037773}
   - component: {fileID: 918037772}
   - component: {fileID: 918037771}
+  - component: {fileID: 918037780}
   m_Layer: 5
   m_Name: TaskB
   m_TagString: Task
@@ -14704,11 +14796,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
-  idealSpeed: 0
-  idealQuality: 0
-  idealRelationship: 0
-  idealFocus: 0
-  idealCreativity: 0
+  idealTaskSpeed: 0
+  idealTaskQuality: 0
+  idealTaskRelationship: 0
+  idealTaskFocus: 0
+  idealTaskCreativity: 0
   nameTask: {fileID: 443069271}
   descriptionText: {fileID: 830569297}
 --- !u!114 &918037775
@@ -14794,6 +14886,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918037769}
   m_CullTransparentMesh: 0
+--- !u!114 &918037780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918037769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33241df8c2ca7470b9ef4e788dd6b0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &924047657
 GameObject:
   m_ObjectHideFlags: 0
@@ -17598,6 +17702,7 @@ GameObject:
   - component: {fileID: 1007502880}
   - component: {fileID: 1007502879}
   - component: {fileID: 1007502878}
+  - component: {fileID: 1007502887}
   m_Layer: 5
   m_Name: TaskA (2)
   m_TagString: Task
@@ -17694,11 +17799,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
-  idealSpeed: 0
-  idealQuality: 0
-  idealRelationship: 0
-  idealFocus: 0
-  idealCreativity: 0
+  idealTaskSpeed: 0
+  idealTaskQuality: 0
+  idealTaskRelationship: 0
+  idealTaskFocus: 0
+  idealTaskCreativity: 0
   nameTask: {fileID: 898716626}
   descriptionText: {fileID: 365039808}
 --- !u!114 &1007502882
@@ -17784,6 +17889,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007502876}
   m_CullTransparentMesh: 0
+--- !u!114 &1007502887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007502876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33241df8c2ca7470b9ef4e788dd6b0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1016412768
 GameObject:
   m_ObjectHideFlags: 0
@@ -21945,6 +22062,7 @@ GameObject:
   - component: {fileID: 1223200247}
   - component: {fileID: 1223200246}
   - component: {fileID: 1223200245}
+  - component: {fileID: 1223200254}
   m_Layer: 5
   m_Name: TaskA (3)
   m_TagString: Task
@@ -22041,11 +22159,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
-  idealSpeed: 0
-  idealQuality: 0
-  idealRelationship: 0
-  idealFocus: 0
-  idealCreativity: 0
+  idealTaskSpeed: 0
+  idealTaskQuality: 0
+  idealTaskRelationship: 0
+  idealTaskFocus: 0
+  idealTaskCreativity: 0
   nameTask: {fileID: 1802134775}
   descriptionText: {fileID: 1458339971}
 --- !u!114 &1223200249
@@ -22131,6 +22249,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223200243}
   m_CullTransparentMesh: 0
+--- !u!114 &1223200254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223200243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33241df8c2ca7470b9ef4e788dd6b0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1226868177
 GameObject:
   m_ObjectHideFlags: 0
@@ -23863,6 +23993,7 @@ GameObject:
   - component: {fileID: 1333269100}
   - component: {fileID: 1333269101}
   - component: {fileID: 1333269102}
+  - component: {fileID: 1333269103}
   m_Layer: 5
   m_Name: Task0
   m_TagString: Task
@@ -23915,11 +24046,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
-  idealSpeed: 60
-  idealQuality: 60
-  idealRelationship: 60
-  idealFocus: 60
-  idealCreativity: 60
+  idealTaskSpeed: 0
+  idealTaskQuality: 0
+  idealTaskRelationship: 0
+  idealTaskFocus: 0
+  idealTaskCreativity: 0
   nameTask: {fileID: 1172425316}
   descriptionText: {fileID: 1205565421}
 --- !u!114 &1333269095
@@ -24047,6 +24178,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d67054aa5fa3cd64ca11f349690f2657, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1333269103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333269092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33241df8c2ca7470b9ef4e788dd6b0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1349020857
@@ -25218,6 +25361,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6441610774015764662, guid: 9a0cf18bda6ad4021be973eac04200f4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.3500061
+      objectReference: {fileID: 0}
     - target: {fileID: 6441610774501676080, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
       propertyPath: m_Name
@@ -25286,7 +25434,7 @@ PrefabInstance:
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
@@ -25326,7 +25474,7 @@ PrefabInstance:
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
@@ -26089,6 +26237,7 @@ GameObject:
   - component: {fileID: 1483477772}
   - component: {fileID: 1483477771}
   - component: {fileID: 1483477770}
+  - component: {fileID: 1483477779}
   m_Layer: 5
   m_Name: TaskB (2)
   m_TagString: Task
@@ -26185,11 +26334,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
-  idealSpeed: 0
-  idealQuality: 0
-  idealRelationship: 0
-  idealFocus: 0
-  idealCreativity: 0
+  idealTaskSpeed: 0
+  idealTaskQuality: 0
+  idealTaskRelationship: 0
+  idealTaskFocus: 0
+  idealTaskCreativity: 0
   nameTask: {fileID: 1130996999}
   descriptionText: {fileID: 1156724571}
 --- !u!114 &1483477774
@@ -26275,6 +26424,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483477768}
   m_CullTransparentMesh: 0
+--- !u!114 &1483477779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483477768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33241df8c2ca7470b9ef4e788dd6b0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1485761696
 GameObject:
   m_ObjectHideFlags: 0
@@ -27620,6 +27781,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6441610774015764662, guid: 9a0cf18bda6ad4021be973eac04200f4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.3500061
+      objectReference: {fileID: 0}
     - target: {fileID: 6441610774501676080, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
       propertyPath: m_Name
@@ -27688,7 +27854,7 @@ PrefabInstance:
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
@@ -27728,7 +27894,7 @@ PrefabInstance:
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
@@ -28765,6 +28931,7 @@ GameObject:
   - component: {fileID: 1639525088}
   - component: {fileID: 1639525087}
   - component: {fileID: 1639525086}
+  - component: {fileID: 1639525095}
   m_Layer: 5
   m_Name: TaskA
   m_TagString: Task
@@ -28861,11 +29028,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
-  idealSpeed: 0
-  idealQuality: 0
-  idealRelationship: 0
-  idealFocus: 0
-  idealCreativity: 0
+  idealTaskSpeed: 0
+  idealTaskQuality: 0
+  idealTaskRelationship: 0
+  idealTaskFocus: 0
+  idealTaskCreativity: 0
   nameTask: {fileID: 976325607}
   descriptionText: {fileID: 2053866854}
 --- !u!114 &1639525090
@@ -28951,6 +29118,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639525084}
   m_CullTransparentMesh: 0
+--- !u!114 &1639525095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639525084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33241df8c2ca7470b9ef4e788dd6b0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1655920082
 GameObject:
   m_ObjectHideFlags: 0
@@ -30425,6 +30604,7 @@ GameObject:
   - component: {fileID: 1745148204}
   - component: {fileID: 1745148203}
   - component: {fileID: 1745148202}
+  - component: {fileID: 1745148211}
   m_Layer: 5
   m_Name: Task0 (1)
   m_TagString: Task
@@ -30521,11 +30701,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
-  idealSpeed: 0
-  idealQuality: 0
-  idealRelationship: 0
-  idealFocus: 0
-  idealCreativity: 0
+  idealTaskSpeed: 0
+  idealTaskQuality: 0
+  idealTaskRelationship: 0
+  idealTaskFocus: 0
+  idealTaskCreativity: 0
   nameTask: {fileID: 804855213}
   descriptionText: {fileID: 1402560663}
 --- !u!114 &1745148206
@@ -30611,6 +30791,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1745148200}
   m_CullTransparentMesh: 0
+--- !u!114 &1745148211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745148200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33241df8c2ca7470b9ef4e788dd6b0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1755007065
 GameObject:
   m_ObjectHideFlags: 0
@@ -33982,6 +34174,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6441610774015764662, guid: 9a0cf18bda6ad4021be973eac04200f4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.3500061
+      objectReference: {fileID: 0}
     - target: {fileID: 6441610774501676080, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
       propertyPath: m_Name
@@ -34050,7 +34247,7 @@ PrefabInstance:
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
@@ -34090,7 +34287,7 @@ PrefabInstance:
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
@@ -34341,6 +34538,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6441610774015764662, guid: 9a0cf18bda6ad4021be973eac04200f4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.3500061
+      objectReference: {fileID: 0}
     - target: {fileID: 6441610774501676080, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
       propertyPath: m_Name
@@ -34409,7 +34611,7 @@ PrefabInstance:
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
@@ -34449,7 +34651,7 @@ PrefabInstance:
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
@@ -36206,6 +36408,7 @@ GameObject:
   - component: {fileID: 2122714369}
   - component: {fileID: 2122714368}
   - component: {fileID: 2122714367}
+  - component: {fileID: 2122714376}
   m_Layer: 5
   m_Name: Task0 (4)
   m_TagString: Task
@@ -36302,11 +36505,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
-  idealSpeed: 0
-  idealQuality: 0
-  idealRelationship: 0
-  idealFocus: 0
-  idealCreativity: 0
+  idealTaskSpeed: 0
+  idealTaskQuality: 0
+  idealTaskRelationship: 0
+  idealTaskFocus: 0
+  idealTaskCreativity: 0
   nameTask: {fileID: 1327350696}
   descriptionText: {fileID: 1777137685}
 --- !u!114 &2122714371
@@ -36392,6 +36595,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122714365}
   m_CullTransparentMesh: 0
+--- !u!114 &2122714376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122714365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33241df8c2ca7470b9ef4e788dd6b0f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2126298841
 GameObject:
   m_ObjectHideFlags: 0
@@ -36678,6 +36893,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6441610774015764662, guid: 9a0cf18bda6ad4021be973eac04200f4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.3500061
+      objectReference: {fileID: 0}
     - target: {fileID: 6441610774501676080, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
       propertyPath: m_Name
@@ -36746,7 +36966,7 @@ PrefabInstance:
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
@@ -36786,7 +37006,7 @@ PrefabInstance:
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6441610774501676083, guid: 9a0cf18bda6ad4021be973eac04200f4,
         type: 3}
