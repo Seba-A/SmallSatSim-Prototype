@@ -24,11 +24,12 @@ public class LockATask : MonoBehaviour
         {
             if (this.GetComponent<TaskTimer>().FirstTimeCompletion)
             {
+                (target.GetComponent<Draggable>() as MonoBehaviour).enabled = true;
                 Debug.Log(target.transform.name);
             }
             else
             {
-
+                (target.GetComponent<Draggable>() as MonoBehaviour).enabled = false;
             }
 
             //Debug.Log(target.transform.name);
