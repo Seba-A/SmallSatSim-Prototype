@@ -80,7 +80,7 @@ public class TeamChacManager : MonoBehaviour
             {
                 Destroy(child.gameObject);
             }
-            Debug.Log("Clear all child");
+            //Debug.Log("Clear all child");
 
             // Create random member (without repeat) by comparing each element of previousRandomIndex
             for (int j = 0; j < 4; j++)
@@ -91,14 +91,14 @@ public class TeamChacManager : MonoBehaviour
                     j = 0;      // if there is a need to re-generate a new randomTeamIndex, the counter j is re-set to zero.
                 }
             }
-            Debug.Log(randomTeamIndex[i]);
+            //Debug.Log(randomTeamIndex[i]);
 
             previousRandomIndex[i] = randomTeamIndex[i];
-            Debug.Log(previousRandomIndex[i]);
+            //Debug.Log(previousRandomIndex[i]);
 
             // Clone the appropraite prefab (team member) based on the random index
             randomTeamMember[i] = Instantiate(teamMembersList[randomTeamIndex[i]], memberPlaceholders[i].transform.position, memberPlaceholders[i].transform.rotation);
-            Debug.Log("a random team member is selected");
+            //Debug.Log("a random team member is selected");
 
             // set the parent of the instantiated team member to be the empty gameobject
             randomTeamMember[i].transform.SetParent(memberPlaceholders[i].transform);
@@ -114,7 +114,7 @@ public class TeamChacManager : MonoBehaviour
         shuffleTries--;
         shuffleTriesText.text = "Tries Left: " + shuffleTries;
 
-        Debug.Log("Times left to reshuffle team: " + shuffleTries);
+        //Debug.Log("Times left to reshuffle team: " + shuffleTries);
     }
 
     // Selecting Team Members and Saving Team Data
@@ -136,10 +136,10 @@ public class TeamChacManager : MonoBehaviour
 
         // save player preference with prefab's name
         PlayerPrefs.SetString(selectedMembers[memberIndex], selectedPrefabName);
-        Debug.Log(selectedPrefabName + " is saved to Key: " + selectedMembers[memberIndex] + " with member index: " + memberIndex);
+        //Debug.Log(selectedPrefabName + " is saved to Key: " + selectedMembers[memberIndex] + " with member index: " + memberIndex);
 
         selectionAttempts++;
-        Debug.Log("attempts: " + selectionAttempts);
+        //Debug.Log("attempts: " + selectionAttempts);
     }
 
     #endregion
@@ -156,7 +156,7 @@ public class TeamChacManager : MonoBehaviour
         managerAndTeam[3].SetActive(false);
         managerAndTeam[4].SetActive(true);
         managerAndTeam[5].SetActive(false);
-        Debug.Log("Now time to select your manager, again.");
+        //Debug.Log("Now time to select your manager, again.");
 
         // Destroy previously imported Manager
         // Note: Relevant buttons and UI has been disabled in Unity GameObject's Inspector Window

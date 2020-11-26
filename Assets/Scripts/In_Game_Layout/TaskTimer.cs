@@ -114,7 +114,7 @@ public class TaskTimer : MonoBehaviour
 
     public void TimerRunning()
     {
-        timeRemaining -= Time.deltaTime;
+        timeRemaining -= Time.deltaTime * ScorePenalty(100, 50);      // Character speed affects how fast the task is completed.
         assignTaskPanel.GetComponent<Slottable_Assign>().startNextTask = false;
         //slottable_Assign.startNextTask = false;
     }
@@ -130,7 +130,7 @@ public class TaskTimer : MonoBehaviour
         assignTaskPanel.GetComponent<Slottable_Assign>().tasks.Remove(gameObject.name);
 
         AddScore(RepeatPenalty);
-        ScorePenalty();
+        //ScorePenalty(100, 50);
 
         //return task to task list
         this.transform.SetParent(parentToReturnToOnceCompleted);
@@ -152,12 +152,32 @@ public class TaskTimer : MonoBehaviour
         AddTo.innovationScore = AddTo.innovationScore + (int)((float)gameObject.GetComponent<TaskV2>().innovation / repeatIndex);
     }
 
-    public void ScorePenalty()
+    public float ScorePenalty(int CharStat, int IdealStat)
     {
+        float ratioStat = (float)CharStat / (float)IdealStat;
+        float ratioToMultiply = 1;
+
+        if (ratioStat <= 1)
+        {
+            ratioToMultiply = ratioStat; 
+        }
+        else if (ratioStat > 1 && ratioStat <= 1.5)
+        {
+            ratioToMultiply = 1.1f;
+        }
+        else if (ratioStat > 1.5)
+        {
+            ratioToMultiply = 1.2f;
+        }
+
+        return ratioToMultiply;
+
+        /*
         float myFloat = (float)gameObject.GetComponent<TaskV2>().redundancy + 0.1f;
         //Debug.Log("this is a float " + myFloat);
         //Debug.Log("this is an int " + (int)myFloat);
         int test = (int)(gameObject.GetComponent<TaskV2>().redundancy + ((float)gameObject.GetComponent<TaskV2>().redundancy / 2));
         //Debug.Log("this is a test: " + test);
+        */
     }
 }

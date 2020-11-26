@@ -1779,6 +1779,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
+  idealSpeed: 0
+  idealQuality: 0
+  idealRelationship: 0
+  idealFocus: 0
+  idealCreativity: 0
   nameTask: {fileID: 1048345857}
   descriptionText: {fileID: 390730002}
 --- !u!114 &218730254
@@ -3118,6 +3123,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
+  idealSpeed: 0
+  idealQuality: 0
+  idealRelationship: 0
+  idealFocus: 0
+  idealCreativity: 0
   nameTask: {fileID: 1663960018}
   descriptionText: {fileID: 1712814746}
 --- !u!114 &319998883
@@ -5948,6 +5958,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
+  idealSpeed: 0
+  idealQuality: 0
+  idealRelationship: 0
+  idealFocus: 0
+  idealCreativity: 0
   nameTask: {fileID: 2061906586}
   descriptionText: {fileID: 654786513}
 --- !u!114 &450022652
@@ -7650,6 +7665,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
+  idealSpeed: 0
+  idealQuality: 0
+  idealRelationship: 0
+  idealFocus: 0
+  idealCreativity: 0
   nameTask: {fileID: 963016067}
   descriptionText: {fileID: 849985498}
 --- !u!114 &513560411
@@ -10850,6 +10870,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
+  idealSpeed: 0
+  idealQuality: 0
+  idealRelationship: 0
+  idealFocus: 0
+  idealCreativity: 0
   nameTask: {fileID: 2049759376}
   descriptionText: {fileID: 584402937}
 --- !u!114 &691180554
@@ -11910,6 +11935,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
+  idealSpeed: 0
+  idealQuality: 0
+  idealRelationship: 0
+  idealFocus: 0
+  idealCreativity: 0
   nameTask: {fileID: 1189693447}
   descriptionText: {fileID: 1360630756}
 --- !u!114 &770436926
@@ -13778,6 +13808,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
+  idealSpeed: 0
+  idealQuality: 0
+  idealRelationship: 0
+  idealFocus: 0
+  idealCreativity: 0
   nameTask: {fileID: 942547258}
   descriptionText: {fileID: 1461536953}
 --- !u!114 &875599895
@@ -13875,7 +13910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18611f43b96527e4f8d7a7653a471aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parent: {fileID: 0}
+  parentMission: {fileID: 0}
   Targets:
   - {fileID: 319998877}
   - {fileID: 1007502876}
@@ -14669,6 +14704,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
+  idealSpeed: 0
+  idealQuality: 0
+  idealRelationship: 0
+  idealFocus: 0
+  idealCreativity: 0
   nameTask: {fileID: 443069271}
   descriptionText: {fileID: 830569297}
 --- !u!114 &918037775
@@ -17654,6 +17694,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
+  idealSpeed: 0
+  idealQuality: 0
+  idealRelationship: 0
+  idealFocus: 0
+  idealCreativity: 0
   nameTask: {fileID: 898716626}
   descriptionText: {fileID: 365039808}
 --- !u!114 &1007502882
@@ -21996,6 +22041,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
+  idealSpeed: 0
+  idealQuality: 0
+  idealRelationship: 0
+  idealFocus: 0
+  idealCreativity: 0
   nameTask: {fileID: 1802134775}
   descriptionText: {fileID: 1458339971}
 --- !u!114 &1223200249
@@ -23865,6 +23915,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
+  idealSpeed: 60
+  idealQuality: 60
+  idealRelationship: 60
+  idealFocus: 60
+  idealCreativity: 60
   nameTask: {fileID: 1172425316}
   descriptionText: {fileID: 1205565421}
 --- !u!114 &1333269095
@@ -26130,6 +26185,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
+  idealSpeed: 0
+  idealQuality: 0
+  idealRelationship: 0
+  idealFocus: 0
+  idealCreativity: 0
   nameTask: {fileID: 1130996999}
   descriptionText: {fileID: 1156724571}
 --- !u!114 &1483477774
@@ -28801,6 +28861,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
+  idealSpeed: 0
+  idealQuality: 0
+  idealRelationship: 0
+  idealFocus: 0
+  idealCreativity: 0
   nameTask: {fileID: 976325607}
   descriptionText: {fileID: 2053866854}
 --- !u!114 &1639525090
@@ -30456,6 +30521,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
+  idealSpeed: 0
+  idealQuality: 0
+  idealRelationship: 0
+  idealFocus: 0
+  idealCreativity: 0
   nameTask: {fileID: 804855213}
   descriptionText: {fileID: 1402560663}
 --- !u!114 &1745148206
@@ -36232,6 +36302,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
+  idealSpeed: 0
+  idealQuality: 0
+  idealRelationship: 0
+  idealFocus: 0
+  idealCreativity: 0
   nameTask: {fileID: 1327350696}
   descriptionText: {fileID: 1777137685}
 --- !u!114 &2122714371

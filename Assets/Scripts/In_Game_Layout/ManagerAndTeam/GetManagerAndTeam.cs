@@ -31,7 +31,7 @@ public class GetManagerAndTeam : MonoBehaviour
         GetMyManager();
         GetMyTeamInfo();
 
-        Debug.Log("Selected manager and team members successfully imported to " + SceneManager.GetActiveScene().name);
+        //Debug.Log("Selected manager and team members successfully imported to " + SceneManager.GetActiveScene().name);
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class GetManagerAndTeam : MonoBehaviour
 
         confirmedManager = Instantiate(managerList[managerInt], myManager.transform.position, myManager.transform.rotation);
         confirmedManager.name = confirmedManager.name.Substring(0, confirmedManager.name.Length - 7);
-        Debug.Log("The confirmed manager is: " + confirmedManager.name);
+        //Debug.Log("The confirmed manager is: " + confirmedManager.name);
 
         confirmedManager.transform.SetParent(myManager.transform);
 
@@ -71,7 +71,7 @@ public class GetManagerAndTeam : MonoBehaviour
         for (int i = 0; i < myTeam.Count; i++)
         {
             teamString[i] = PlayerPrefs.GetString(selectedMembers[i]);
-            Debug.Log(teamString[i]);
+            //Debug.Log(teamString[i]);
 
             foreach (GameObject element in teamMemberList)
             {
@@ -84,7 +84,7 @@ public class GetManagerAndTeam : MonoBehaviour
 
             confirmedTeam[i] = Instantiate(teamMemberList[confirmTeamInt[i]], myTeamStats.transform.position, myTeamStats.transform.rotation);
             confirmedTeam[i].name = confirmedTeam[i].name.Substring(0, confirmedTeam[i].name.Length - 7);
-            Debug.Log("Member " + i + " of name " + confirmedTeam[i].name + " is now added to the team.");
+            //Debug.Log("Member " + i + " of name " + confirmedTeam[i].name + " is now added to the team.");
 
             //confirmedTeam[i].transform.SetParent(myTeamInfo.transform);
             //confirmedTeam[i].gameObject.SetActive(false);

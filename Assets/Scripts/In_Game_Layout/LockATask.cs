@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class LockATask : MonoBehaviour
 {
-    public Transform parent;
+    public Transform parentMission;
     public List<GameObject> Targets;
 
     // Start is called before the first frame update
     void Start()
     {
-        parent = this.transform.parent;
+        parentMission = this.transform.parent;
     }
 
     // Update is called once per frame
