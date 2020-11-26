@@ -6,7 +6,15 @@ using UnityEngine.EventSystems;
 public class ClickingOnTeam : MonoBehaviour
 {
     RaycastHit hitInfo;
-    //Vector2 currentPos;
+
+    // the following value is obtained by manually positioning the panel in the Scene view, then the position.x is obtained at void start()
+    private readonly float charInfoPanel_posX_shown = 1384.0f;
+    private readonly float charRolesNTasksPanel_posX_shown = 1236.875f;
+
+    // any value is fine as long as it is beyond the canvas
+    private readonly float charInfoPanel_posX_hidden = 2000.0f;     
+    private readonly float charRolesNTasksPanel_posX_hidden = 2000.0f;
+
 
     [SerializeField] private GameObject charInfoPanel;
     [SerializeField] private GameObject charStats;
@@ -27,8 +35,6 @@ public class ClickingOnTeam : MonoBehaviour
         charInfoPanel = GameObject.Find("Canvas").transform.Find("Character Info Panel").gameObject;
         charStats = charInfoPanel.transform.Find("CharStats Panel").gameObject;
         charRolesNTasks = charInfoPanel.transform.Find("Roles & Tasks Placeholder").gameObject;
-
-        //currentPos = charInfoPanel.GetComponent<RectTransform>().position;
 
         // defining Keys used for storing team members' name
         selectedMembers[0] = "SelectedMember1";
@@ -62,9 +68,7 @@ public class ClickingOnTeam : MonoBehaviour
                         clicked = 0;
                         clicktime = 0;
 
-                        charInfoPanel.SetActive(true);
-                        //currentPos.x = 0;
-                        //charInfoPanel.transform.position = new Vector2(currentPos.x, currentPos.y);
+                        ShowCharInfoPanel();
 
                         CloseAllCharInfo();       //function added here to avoid more than one character info opening at the same time
 
@@ -80,13 +84,7 @@ public class ClickingOnTeam : MonoBehaviour
                 else if (charInfoPanel && !OverUIObject())
                 {
                     //Debug.Log("Not UI");
-                    charInfoPanel.SetActive(false);
-
-                    /*
-                    Vector2 currentPos = charInfoPanel.GetComponent<RectTransform>().position;
-                    currentPos.x = -1000;
-                    charInfoPanel.transform.position = new Vector2(currentPos.x, currentPos.y);
-                    */
+                    HideCharInfoPanel();
 
                     CloseAllCharInfo();
                 }
@@ -104,14 +102,29 @@ public class ClickingOnTeam : MonoBehaviour
         return results.Count > 0;
     }
 
+    private void ShowCharInfoPanel()
+    {
+        //charInfoPanel.SetActive(true);
+
+        charInfoPanel.transform.position = new Vector2(charInfoPanel_posX_shown, charInfoPanel.transform.position.y);
+    }
+
+    private void HideCharInfoPanel()
+    {
+        //charInfoPanel.SetActive(false);
+
+        charInfoPanel.transform.position = new Vector2(charInfoPanel_posX_hidden, charInfoPanel.transform.position.y);
+    }
+
     private void CloseAllCharInfo()
     {
         //charStats.SetActive(false);
 
         foreach (Transform child in charRolesNTasks.transform)
         {
-            child.gameObject.SetActive(false);
-            //child.gameObject.transform.Translate(Vector3.right * 1000);
+            //child.gameObject.SetActive(false);
+
+            child.gameObject.transform.position = new Vector2(charRolesNTasksPanel_posX_hidden, child.gameObject.transform.position.y);
         }
     }
 
@@ -127,7 +140,7 @@ public class ClickingOnTeam : MonoBehaviour
             clickedManager = PlayerPrefs.GetInt(selectedManager);
             charStats.GetComponent<StatsDisplay>().DisplayCharacterStats(clickedManager, clickedTeammate);
 
-            charRolesNTasks.GetComponent<RolesTasksDisplay>().DisplayCharacterRolesNTasks(hitInfo.transform.parent.gameObject.name);
+            charRolesNTasks.GetComponent<RolesTasksDisplay>().DisplayCharacterRolesNTasks(hitInfo.transform.parent.gameObject.name, charRolesNTasksPanel_posX_shown);
             //charRolesNTasks.transform.Find("Manager Roles N Tasks").gameObject.SetActive(true);
             Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
         }
@@ -158,7 +171,7 @@ public class ClickingOnTeam : MonoBehaviour
             }
 
             //Display Character Roles and Tasks
-            charRolesNTasks.GetComponent<RolesTasksDisplay>().DisplayCharacterRolesNTasks(hitInfo.collider.gameObject.name);
+            charRolesNTasks.GetComponent<RolesTasksDisplay>().DisplayCharacterRolesNTasks(hitInfo.collider.gameObject.name, charRolesNTasksPanel_posX_shown);
 
             Debug.Log("Displaying info of: " + hitInfo.collider.gameObject.name);
         }
