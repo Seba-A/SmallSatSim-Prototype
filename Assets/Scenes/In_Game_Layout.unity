@@ -24046,11 +24046,11 @@ MonoBehaviour:
   clarity: 300
   efficiency: 22
   innovation: 32
-  idealTaskSpeed: 0
-  idealTaskQuality: 0
-  idealTaskRelationship: 0
-  idealTaskFocus: 0
-  idealTaskCreativity: 0
+  idealTaskSpeed: 60
+  idealTaskQuality: 60
+  idealTaskRelationship: 60
+  idealTaskFocus: 60
+  idealTaskCreativity: 60
   nameTask: {fileID: 1172425316}
   descriptionText: {fileID: 1205565421}
 --- !u!114 &1333269095

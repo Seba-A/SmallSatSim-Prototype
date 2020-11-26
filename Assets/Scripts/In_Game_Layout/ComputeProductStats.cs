@@ -5,11 +5,17 @@ using UnityEngine;
 public class ComputeProductStats : MonoBehaviour
 {
     private GameManager AddTo;
+    private GameObject managerAndTeam;
+    private GameObject charStats;
+
+    int charSpeed = 0, charQuality = 0, charRelationship = 0, charFocus = 0, charCreativity = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         AddTo = FindObjectOfType<GameManager>();
+        managerAndTeam = GameObject.Find("Manager And Team");
+        charStats = GameObject.Find("Canvas").transform.Find("Character Info Panel").gameObject.transform.Find("CharStats Panel").gameObject;
     }
 
     //increase the score value by the task's indicated values
@@ -20,6 +26,8 @@ public class ComputeProductStats : MonoBehaviour
         AddTo.clarityScore = AddTo.clarityScore + (int)((float)gameObject.GetComponent<TaskV2>().clarity / repeatIndex);
         AddTo.efficiencyScore = AddTo.efficiencyScore + (int)((float)gameObject.GetComponent<TaskV2>().efficiency / repeatIndex);
         AddTo.innovationScore = AddTo.innovationScore + (int)((float)gameObject.GetComponent<TaskV2>().innovation / repeatIndex);
+
+
     }
 
     public float ScorePenalty(int CharStat, int IdealStat)
@@ -60,13 +68,13 @@ public class ComputeProductStats : MonoBehaviour
     {
         float avgMultiplier = 1.0f;
 
-        int charSpeed = 60, charQuality = 60, charRelationship = 60, charFocus = 60, charCreativity = 60;
-
         int idealSpeed = gameObject.GetComponent<TaskV2>().idealTaskSpeed;
         int idealQuality = gameObject.GetComponent<TaskV2>().idealTaskQuality;
         int idealRelationship = gameObject.GetComponent<TaskV2>().idealTaskRelationship;
         int idealFocus = gameObject.GetComponent<TaskV2>().idealTaskFocus;
         int idealCreativity = gameObject.GetComponent<TaskV2>().idealTaskCreativity;
+
+        GetCharacterStats();
 
         switch (statToBeComputed)
         {
@@ -83,16 +91,55 @@ public class ComputeProductStats : MonoBehaviour
 
                 break;
             case "Innovation":
-
+                // character +relationship, -focus, +creativity
+                avgMultiplier = (ScorePenalty(charRelationship, idealRelationship) + Mathf.Abs(ScorePenalty(charFocus, idealFocus) - 2) + ScorePenalty(charCreativity, idealCreativity)) / 3;
                 break;
             case "TaskTime":
                 // character +speed and +focus
-                
-
                 avgMultiplier = (ScorePenalty(charSpeed, idealSpeed) + ScorePenalty(charFocus, idealFocus))/ 2;
                 break;
         }
 
+        Debug.Log(avgMultiplier);
+
         return avgMultiplier;
+    }
+
+    public void GetCharacterStats()
+    {
+        GameObject relevantMember = gameObject.GetComponent<TaskTimer>().assignTaskPanel.transform.parent.parent.gameObject;
+        int memberIndex = int.Parse(relevantMember.name.Substring(relevantMember.name.Length - 1, 1)) - 1;
+        string memberName = managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeam[memberIndex].name.Substring(0, 7);
+        Debug.Log(memberName);
+
+        int memberIndexInFullList = 999;
+
+        foreach (GameObject element in managerAndTeam.GetComponent<GetManagerAndTeam>().teamMemberList)
+        {
+            string elementMemberName = element.name.Substring(0, 7);
+
+            if (elementMemberName == memberName)
+            {
+                memberIndexInFullList = System.Array.IndexOf(managerAndTeam.GetComponent<GetManagerAndTeam>().teamMemberList, element);
+                Debug.Log(memberIndexInFullList);
+            }
+        }
+
+        CharacterInfo relevantMemberInfo = charStats.GetComponent<StatsDisplay>().memberStatsList[memberIndexInFullList];
+
+        charSpeed = relevantMemberInfo.speed;
+        Debug.Log(charSpeed);
+
+        charQuality = relevantMemberInfo.quality;
+        Debug.Log(charQuality);
+
+        charRelationship = relevantMemberInfo.relationship;
+        Debug.Log(charRelationship);
+
+        charFocus = relevantMemberInfo.focus;
+        Debug.Log(charFocus);
+
+        charCreativity = relevantMemberInfo.creativity;
+        Debug.Log(charCreativity);
     }
 }

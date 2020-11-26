@@ -134,6 +134,9 @@ public class TaskTimer : MonoBehaviour
         gameObject.GetComponent<ComputeProductStats>().AddScore(RepeatPenalty);
         //ScorePenalty(100, 50);
 
+        gameObject.GetComponent<ComputeProductStats>().ComputeAverage("Innovation");
+
+
         //return task to task list
         this.transform.SetParent(parentToReturnToOnceCompleted);
 
