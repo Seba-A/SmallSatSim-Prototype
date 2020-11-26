@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LockATask : MonoBehaviour
 {
-    public List<GameObject> targets;
+    public List<GameObject> Targets;
 
     // Start is called before the first frame update
     void Start()
@@ -15,11 +15,23 @@ public class LockATask : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        CheckFor();
     }
 
     public void CheckFor()
     {
-
+        foreach(GameObject target in Targets)
+        {
+            if (this.gameObject.GetComponent<TaskTimer>().FirstTimeCompletion)
+            {
+                Debug.Log(target.transform.name);
+            }
+            else
+            {
+                //(target.GetComponent<Draggable>() as MonoBehaviour).enabled = false;
+            }
+            
+            //Debug.Log(target.transform.name);
+        }
     }
 }
