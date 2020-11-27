@@ -48,7 +48,7 @@ public class GetMainChac : MonoBehaviour
                 break;
         }
 
-        Debug.Log(myManager.name + " is now the selected Manager.");
+        //Debug.Log(myManager.name + " is now the selected Manager.");
 
         //making the instantiated manager a child of myManager
         myManager.transform.parent = this.transform;
@@ -60,6 +60,6 @@ public class GetMainChac : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
-        Debug.Log("Previously selected manager is deleted.");
+        //Debug.Log("Previously selected manager is deleted.");
     }
 }

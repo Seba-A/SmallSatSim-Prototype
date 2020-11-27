@@ -47,7 +47,7 @@ public class SelectionManager : MonoBehaviour
         {
             selectText.text = "Unselect";
             parentObject.GetComponent<Image>().color = new Color32(140, 230, 140, 100);
-            Debug.Log(parentObject.name + " is selected.");
+            //Debug.Log(parentObject.name + " is selected.");
 
             // Save selected member
             selectionTeamManager.GetComponent<TeamChacManager>().SaveSelectedMember(parentObject.name);
@@ -59,13 +59,13 @@ public class SelectionManager : MonoBehaviour
         {
             selectText.text = "Select";
             parentObject.GetComponent<Image>().color = new Color32(225, 225, 225, 100);
-            Debug.Log(parentObject.name + " is unselected.");
+            //Debug.Log(parentObject.name + " is unselected.");
 
             isMemberSelected = false;
             selectionTeamManager.GetComponent<TeamChacManager>().noOfMemberSelected--;
         }
 
         // Update number of team members player have actually selected
-        Debug.Log("Number of members selected is now: " + selectionTeamManager.GetComponent<TeamChacManager>().noOfMemberSelected);
+        //Debug.Log("Number of members selected is now: " + selectionTeamManager.GetComponent<TeamChacManager>().noOfMemberSelected);
     }
 }

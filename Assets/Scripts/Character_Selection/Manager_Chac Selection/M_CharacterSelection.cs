@@ -64,7 +64,7 @@ public class M_CharacterSelection : MonoBehaviour
         managerAndTeam[4].SetActive(true);
         managerAndTeam[5].SetActive(false);
         managerAndTeam[6].SetActive(true);
-        Debug.Log("Now time to select your team.");
+        //Debug.Log("Now time to select your team.");
 
         // get the selected character as the main character
         mainCharacter = GameObject.Find("MainChac");

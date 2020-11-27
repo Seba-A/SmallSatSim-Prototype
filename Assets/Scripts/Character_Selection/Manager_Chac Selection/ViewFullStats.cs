@@ -33,7 +33,7 @@ public class ViewFullStats : MonoBehaviour
         // find selected character
         selectedChac = GameObject.Find(chacName);
         selectedChacPosOri = selectedChac.transform.position;
-        Debug.Log("Selected character is now " + chacName);
+        //Debug.Log("Selected character is now " + chacName);
 
         // hide all other unselected objects
         foreach (GameObject character in managerChac)
@@ -53,7 +53,7 @@ public class ViewFullStats : MonoBehaviour
         // show the Character Selection Screen
         chacSelectScreen.SetActive(true);
         chacSelectScreen.GetComponent<M_CharacterSelection>().DisplayChacFullStats(chacName);
-        Debug.Log("Full Stats of " + chacName + " has been displayed.");
+        //Debug.Log("Full Stats of " + chacName + " has been displayed.");
     }
 
     public void HideFullChacStats()

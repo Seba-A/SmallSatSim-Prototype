@@ -41,8 +41,8 @@ public class RoleSelection : MonoBehaviour
         // player preference key is the combination of UIpanel name plus the generic key
         PlayerPrefs.SetInt(roleUIPanel.name + primaryRole, primaryDropdown.value);
         PlayerPrefs.Save();
-        Debug.Log(primaryDropdown.value + " is selected.");
-        Debug.Log("Primary Role of " + memberAttached.name + " is now: " + primaryDropdown.captionText.text);
+        //Debug.Log(primaryDropdown.value + " is selected.");
+        //Debug.Log("Primary Role of " + memberAttached.name + " is now: " + primaryDropdown.captionText.text);
 
         /*
         // show the relevant role effects
@@ -60,8 +60,8 @@ public class RoleSelection : MonoBehaviour
         // player preference key is the combination of UIpanel name plus the generic key
         PlayerPrefs.SetInt(roleUIPanel.name + secondaryRole, secondaryDropdown.value);
         PlayerPrefs.Save();
-        Debug.Log(secondaryDropdown.value + " is selected.");
-        Debug.Log("Secondary Role of " + memberAttached.name + " is now: " + secondaryDropdown.captionText.text);
+        //Debug.Log(secondaryDropdown.value + " is selected.");
+        //Debug.Log("Secondary Role of " + memberAttached.name + " is now: " + secondaryDropdown.captionText.text);
 
         /*
         // show the relevant role effects

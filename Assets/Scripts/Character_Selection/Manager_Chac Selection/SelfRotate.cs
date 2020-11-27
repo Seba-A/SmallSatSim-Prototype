@@ -51,7 +51,7 @@ public class SelfRotate : MonoBehaviour
             isObjectClicked = true;
 
             findNameObjectClicked();
-            Debug.Log(nameObjectClicked + " is clicked.");
+            //Debug.Log(nameObjectClicked + " is clicked.");
 
             // Viewing the Manager's Full Stat 
             chacManager.GetComponent<ViewFullStats>().ViewFullChacStats(nameObjectClicked);
@@ -68,7 +68,7 @@ public class SelfRotate : MonoBehaviour
             isObjectClicked = true;
 
             findNameObjectClicked();
-            Debug.Log(nameObjectClicked + " is clicked.");
+            //Debug.Log(nameObjectClicked + " is clicked.");
 
             navManager.GetComponent<NavigationManager>().NavigateWithClick(nameObjectClicked);
         }
