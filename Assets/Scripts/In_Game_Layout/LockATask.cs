@@ -4,23 +4,28 @@ using UnityEngine;
 
 public class LockATask : MonoBehaviour
 {
-    public Transform parentMission;
-    public List<GameObject> Targets;
+    public List<GameObject> TasksToCompleteFirstList;
 
     public bool UnlockTask = false;
+
+    //int NumberOfTasksToComplete;
 
     // Start is called before the first frame update
     void Start()
     {
-        parentMission = this.transform.parent;
+        //NumberOfTasksToComplete = TasksToCompleteFirstList.Count;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckFor();
+        //This is for the version that sits on the taskk that needs to be completed first (Old Version)
+        //CheckFor();
+
+        CheckIfRequiredTaskIsCompleted();
     }
 
+    /*
     public void CheckFor()
     {
         foreach(GameObject target in Targets)
@@ -37,21 +42,31 @@ public class LockATask : MonoBehaviour
             {
                 (target.GetComponent<Draggable>() as MonoBehaviour).enabled = false;
             }
-
-            /*
-            if (UnlockTask && parentMission.transform.Find(this.transform.name).GetComponent<TaskTimer>().FirstTimeCompletion)
-            {
-                Debug.Log("We did it");
-            }*/
-            //Debug.Log(target.transform.name);
         }
-    }
+    }*/
 
-    public void ReactivateLockedTasks()
+    public void CheckIfRequiredTaskIsCompleted()
     {
-        foreach (GameObject target in Targets)
+        foreach(GameObject target in TasksToCompleteFirstList)
         {
-            (target.GetComponent<Draggable>() as MonoBehaviour).enabled = true;
+            if (target.GetComponent<TaskTimer>().FirstTimeCompletion)
+            {
+                UnlockTask = true;
+                Debug.Log("Task completed");
+            }
+            else
+            {
+                (this.gameObject.GetComponent<Draggable>() as MonoBehaviour).enabled = false; UnlockTask = false;
+                UnlockTask = false;
+                Debug.Log("Not completed");
+                break;
+            }
+        }
+
+        if (UnlockTask == true)
+        {
+            (this.gameObject.GetComponent<Draggable>() as MonoBehaviour).enabled = false; UnlockTask = true;
+            Debug.Log("Unlock the task");
         }
     }
 }
