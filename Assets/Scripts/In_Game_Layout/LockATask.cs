@@ -52,21 +52,22 @@ public class LockATask : MonoBehaviour
             if (target.GetComponent<TaskTimer>().FirstTimeCompletion)
             {
                 UnlockTask = true;
-                Debug.Log("Task completed");
+                //Debug.Log("Task completed");
             }
             else
             {
                 (this.gameObject.GetComponent<Draggable>() as MonoBehaviour).enabled = false; UnlockTask = false;
                 UnlockTask = false;
-                Debug.Log("Not completed");
+                //Debug.Log("Not completed");
                 break;
             }
         }
 
         if (UnlockTask == true)
         {
-            (this.gameObject.GetComponent<Draggable>() as MonoBehaviour).enabled = false; UnlockTask = true;
-            Debug.Log("Unlock the task");
+            //this bool is found in TaskV2
+            this.gameObject.GetComponent<TaskV2>().HasParents = true;
+            //Debug.Log("Unlock the task");
         }
     }
 }

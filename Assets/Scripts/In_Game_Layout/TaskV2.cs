@@ -28,6 +28,8 @@ public class TaskV2 : MonoBehaviour
     public TextMeshProUGUI nameTask;
     public TextMeshProUGUI descriptionText;
 
+    public bool HasParents;
+
     // Start is called before the first frame update
     void Start()
     {
