@@ -1032,7 +1032,7 @@ GameObject:
   - component: {fileID: 123155054}
   - component: {fileID: 123155053}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Money Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4009,7 +4009,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &355546400
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6736,6 +6736,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e774aa6cba9838f4ea7dcfb4c527dfaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OverallExperience: {fileID: 1628151037}
+  OverallReputation: {fileID: 1686580659}
+  OverallExperienceScore: 0
+  OverallReputationScore: 0
   redundancy: {fileID: 1431465086}
   reliability: {fileID: 288620190}
   clarity: {fileID: 190398096}
@@ -13943,6 +13947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 870976308}
   - component: {fileID: 870976309}
+  - component: {fileID: 870976310}
   m_Layer: 5
   m_Name: Mission 1
   m_TagString: Untagged
@@ -13991,6 +13996,18 @@ MonoBehaviour:
   PhaseB: 30
   PhaseC: 0
   PhaseD: 0
+--- !u!114 &870976310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870976307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 832ff14e252a9e440887a9bf0f604307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &874261453
 GameObject:
   m_ObjectHideFlags: 0
@@ -29597,6 +29614,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1612208860}
   m_CullTransparentMesh: 0
+--- !u!1 &1628151037 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 256099014070971439, guid: 30e4b2c4bd246964d97603d92d1996ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 890049625}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1630506766
 GameObject:
   m_ObjectHideFlags: 0
@@ -31011,6 +31034,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683431784}
   m_CullTransparentMesh: 0
+--- !u!1 &1686580659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 256099014070971439, guid: 30e4b2c4bd246964d97603d92d1996ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 256099014861817466}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1696098245
 GameObject:
   m_ObjectHideFlags: 0
