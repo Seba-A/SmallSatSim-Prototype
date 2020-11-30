@@ -7,6 +7,12 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject OverallExperience;
+    public GameObject OverallReputation;
+
+    public int OverallExperienceScore;
+    public int OverallReputationScore;
+
     public GameObject redundancy;
     public GameObject reliability;
     public GameObject clarity;
@@ -26,12 +32,18 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        OverallExperienceScore = 0;
+        OverallReputationScore = 0;
+
+        //this value will need to be set to 0 when the mission panel is made active
+        //Added a new script "SetMissionScore" to do so, this is attached to the Mission 1 panel
+        /*
         redundancyScore = 0;
         reliabilityScore = 0;
         clarityScore = 0;
         efficiencyScore = 0;
         innovationScore = 0;
-        progressbarScore = 0;
+        progressbarScore = 0;*/
 
         UpdateTheScore();
     }
@@ -45,6 +57,9 @@ public class GameManager : MonoBehaviour
     //set the score of each progress bar to 0 at the satr of the game
     private void UpdateTheScore()
     {
+        OverallExperience.GetComponent<ProgressBar>().current = OverallReputationScore;
+        OverallReputation.GetComponent<ProgressBar>().current = OverallReputationScore;
+
         redundancy.GetComponent<ProgressBar>().current = redundancyScore;
         reliability.GetComponent<ProgressBar>().current = reliabilityScore;
         clarity.GetComponent<ProgressBar>().current = clarityScore;
@@ -60,5 +75,18 @@ public class GameManager : MonoBehaviour
     public void NotCompleteLevel()
     {
         completeLevelUI.SetActive(false);
+    }
+
+    public void AddTOOverallReputation()
+    {
+
+    }
+    public void AddTOOverallExperience()
+    {
+
+    }
+    public void MoneyGained()
+    {
+
     }
 }
