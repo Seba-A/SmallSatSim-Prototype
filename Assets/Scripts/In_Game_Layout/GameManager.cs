@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         OverallExperienceScore = 0;
         OverallReputationScore = 0;
 
-        //this value will need to be set to 0 when the mission panel is made active
+        //this value will need to be set to 0 when the mission panel is made active no in the gamemanager
         //Added a new script "SetMissionScore" to do so, this is attached to the Mission 1 panel
         /*
         redundancyScore = 0;
