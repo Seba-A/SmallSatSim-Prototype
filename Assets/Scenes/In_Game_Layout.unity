@@ -4032,7 +4032,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000015258789, y: -11}
+  m_AnchoredPosition: {x: 0, y: -11}
   m_SizeDelta: {x: 113.85544, y: 335.00238}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &355546401
@@ -9202,7 +9202,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000015258789, y: -6.3851013}
+  m_AnchoredPosition: {x: 0, y: -6.3851013}
   m_SizeDelta: {x: 0.14465332, y: -392.39655}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581229770
@@ -14663,7 +14663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.8314972, y: 37.222}
+  m_AnchoredPosition: {x: 1.8314819, y: 37.222}
   m_SizeDelta: {x: 3.8076172, y: -392.3891}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &894389143
@@ -16014,7 +16014,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.07234192, y: 188.705}
+  m_AnchoredPosition: {x: 0.07232666, y: 188.705}
   m_SizeDelta: {x: 0.28930664, y: -377.41086}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &953154415
@@ -25318,7 +25318,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.03617859, y: 114.2}
+  m_AnchoredPosition: {x: 0.036193848, y: 114.2}
   m_SizeDelta: {x: 0.21704102, y: -343.57785}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1362465138
@@ -26392,7 +26392,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.07234192, y: -147.427}
+  m_AnchoredPosition: {x: 0.07232666, y: -147.427}
   m_SizeDelta: {x: 0.43389893, y: -294.85373}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1434873701
@@ -30078,9 +30078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18611f43b96527e4f8d7a7653a471aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TasksToCompleteFirstList:
-  - {fileID: 1333269092}
-  - {fileID: 1745148200}
+  TasksToCompleteFirstList: []
   UnlockTask: 0
 --- !u!1 &1655920082
 GameObject:
