@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -120,5 +121,10 @@ public class GameManager : MonoBehaviour
     public void MoneyGained()
     {
 
+    }
+
+    public void BackToHome()
+    {
+        SceneManager.LoadScene("In_Game_Home");
     }
 }
