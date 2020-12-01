@@ -13,11 +13,10 @@ public class GameManager_Home : MonoBehaviour
 
     public int OverallExperienceScore;
     public int OverallReputationScore;
+    public float OverallMoney;
 
     private int repeatMissionCount = 0;
     private float repeatMissionPenalty = 1.0f;
-
-    private int reputationScore_Mission1;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +42,25 @@ public class GameManager_Home : MonoBehaviour
 
     public void AddToOverallReputation()
     {
-        switch (repeatMissionCount)
+        int reputationScore_Mission1 = 1;
+        OverallReputationScore += (int)(reputationScore_Mission1 * GetMissionPenalty(repeatMissionCount));
+    }
+
+    public void AddToOverallExperience()
+    {
+        int experienceScore_Mission1 = 1;
+        OverallExperienceScore += (int)(experienceScore_Mission1 * GetMissionPenalty(repeatMissionCount));
+    }
+
+    public void MoneyGained()
+    {
+        int money_Mission1 = 1;
+        OverallMoney += (int)(money_Mission1 * GetMissionPenalty(repeatMissionCount));
+    }
+
+    private float GetMissionPenalty(int missionCount)
+    {
+        switch (missionCount)
         {
             case 0:
                 repeatMissionPenalty = 1.0f;
@@ -62,21 +79,13 @@ public class GameManager_Home : MonoBehaviour
                 break;
         }
 
-        OverallReputationScore += (int)(reputationScore_Mission1 * repeatMissionPenalty);
+        return repeatMissionPenalty;
     }
 
-    public void AddToOverallExperience()
-    {
-
-    }
-
-    public void MoneyGained()
-    {
-
-    }
-
+    // improve to work for all missions
     public void Mission1()
     {
         SceneManager.LoadScene("Mission 1");
     }
 }
+

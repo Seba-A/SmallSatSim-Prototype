@@ -8,8 +8,14 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public int OverallExperienceScore;
-    public int OverallReputationScore;
+    public int experienceScore_Mission1;
+    public int reputationScore_Mission1;
+    public float money_Mission1;
+
+    // ideal (maximum) reputation, experience, and money that can be obtained from this mission
+    public float idealReputation = 100.0f;
+    public float idealExperience = 100.0f;
+    public float idealMoney = 100.0f;
 
     public GameObject redundancy;
     public GameObject reliability;
@@ -27,11 +33,15 @@ public class GameManager : MonoBehaviour
 
     public Button finishMissionButton;
 
+    private int overallProductScore;
+    public int idealOverallProductScore = 75;
+    private float failureProbability;
+
     // Start is called before the first frame update
     void Start()
     {
-        OverallExperienceScore = 0;
-        OverallReputationScore = 0;
+        reputationScore_Mission1 = 0;
+        experienceScore_Mission1 = 0;
 
         //this value will need to be set to 0 when the mission panel is made active no in the gamemanager
         //Added a new script "SetMissionScore" to do so, this is attached to the Mission 1 panel
@@ -72,55 +82,69 @@ public class GameManager : MonoBehaviour
         finishMissionButton.gameObject.SetActive(false);
     }
 
-    /* How to define mission success:
-     * 
-     * Sum up Redundancy, Reliability, Clarity, Efficiency, Innovation  => OverallProductScore
-     * 
-     * Comparing player OverallProductScore to expected OverallProductScore for launch (benchmark = 75%):
-     * 
-     * diffScore = playerScore / expectedScore; 
-     * 
-     * if (diffScore > 1.2f)
-     * then failureProbability = 5;
-     * 
-     * if (diffScore > 1.0f && diffScore <= 1.2f)
-     * then failureProbability = 10;
-     * 
-     * if (diffScore > 0.8f && diffScore <= 1.0f)
-     * then failureProbability = 20;
-     * 
-     * if (diffScore > 0.6f && diffScore <= 0.8f)
-     * then failureProbability = 40;
-     * 
-     * if (diffScore > 0.4f && diffScore <= 0.6f)
-     * then failureProbability = 60;
-     * 
-     * if (diffScore <= 0.4f)
-     * then failureProbability = 85;
-     * 
-     *
-     * int failureProbabilityScore = UnityEngine.Random.Range(1, 101);    //assuming that 0-100 have equally chances of being selected
-     * 
-     * if (failureProbabilityScore <= failureProbability)
-     * then FAIL!;
-     * 
-     * 
-     */
+    public void CalculateFailureProbability()
+    {
+        overallProductScore = redundancyScore + reliabilityScore + clarityScore + efficiencyScore + innovationScore;
+
+        float diffScore = overallProductScore / idealOverallProductScore;
+
+        if (diffScore > 1.2f)
+        {
+            failureProbability = 5.0f;
+        }
+        else if (diffScore > 1.0f && diffScore <= 1.2f)
+        {
+            failureProbability = 10.0f;
+        }
+        else if (diffScore > 0.8f && diffScore <= 1.0f)
+        {
+            failureProbability = 20.0f;
+        }
+        else if (diffScore > 0.6f && diffScore <= 0.8f)
+        {
+            failureProbability = 40.0f;
+        }
+        else if (diffScore > 0.4f && diffScore <= 0.6f)
+        {
+            failureProbability = 60.0f;
+        }
+        else if (diffScore <= 0.4f)
+        {
+            failureProbability = 85.0f;
+        }
+    }
+
+    public void DetermineMissionSuccess()   // eventually this will display (at least) two different text -- one for pass, one for fail
+    {
+        int failureProbabilityScore = UnityEngine.Random.Range(1, 101);    //assuming that 0-100 have equally chances of being selected
+        if (failureProbabilityScore <= failureProbability)
+        {
+            Debug.Log("You FAILED, Loser!");
+        }
+        else
+        {
+            Debug.Log("You lucky bastard.");
+        }
+    }
+
+    public void CheckTaskCompleted()
+    {
+
+    }
 
     public void CalculateReputation()
     {
-        // total reputation that can be obtained from this mission
-        int totalReputation = 100;
+        reputationScore_Mission1 = (int)(idealReputation * (1 - (failureProbability/100)));
     }
 
     public void CalculateExperience()
     {
-
+        experienceScore_Mission1 = (int)(idealExperience * (1 - (failureProbability / 100)));
     }
 
     public void MoneyGained()
     {
-
+        money_Mission1 = idealMoney * (1 - (failureProbability / 100));
     }
 
     public void BackToHome()
