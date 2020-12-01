@@ -7,7 +7,7 @@ public class CameraControllerV2 : MonoBehaviour
     public Transform target;
 
     public float ZoomSpeed = 5.0f;
-    public float PanSpeed = 10.0f;
+    public float PanSpeed = 25.0f;
     public float PanBuffer = 50.0f;
 
     private Plane _Plane;
