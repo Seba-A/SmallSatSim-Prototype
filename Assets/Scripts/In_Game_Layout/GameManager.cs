@@ -71,14 +71,52 @@ public class GameManager : MonoBehaviour
         finishMissionButton.gameObject.SetActive(false);
     }
 
-    public void AddToOverallReputation()
+    /* How to define mission success:
+     * 
+     * Sum up Redundancy, Reliability, Clarity, Efficiency, Innovation  => OverallProductScore
+     * 
+     * Comparing player OverallProductScore to expected OverallProductScore for launch (benchmark = 75%):
+     * 
+     * diffScore = playerScore / expectedScore; 
+     * 
+     * if (diffScore > 1.2f)
+     * then failureProbability = 5;
+     * 
+     * if (diffScore > 1.0f && diffScore <= 1.2f)
+     * then failureProbability = 10;
+     * 
+     * if (diffScore > 0.8f && diffScore <= 1.0f)
+     * then failureProbability = 20;
+     * 
+     * if (diffScore > 0.6f && diffScore <= 0.8f)
+     * then failureProbability = 40;
+     * 
+     * if (diffScore > 0.4f && diffScore <= 0.6f)
+     * then failureProbability = 60;
+     * 
+     * if (diffScore <= 0.4f)
+     * then failureProbability = 85;
+     * 
+     *
+     * int failureProbabilityScore = UnityEngine.Random.Range(1, 101);    //assuming that 0-100 have equally chances of being selected
+     * 
+     * if (failureProbabilityScore <= failureProbability)
+     * then FAIL!;
+     * 
+     * 
+     */
+
+    public void CalculateReputation()
+    {
+        // total reputation that can be obtained from this mission
+        int totalReputation = 100;
+    }
+
+    public void CalculateExperience()
     {
 
     }
-    public void AddToOverallExperience()
-    {
 
-    }
     public void MoneyGained()
     {
 

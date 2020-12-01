@@ -13,6 +13,11 @@ public class GameManager_Home : MonoBehaviour
     public int OverallExperienceScore;
     public int OverallReputationScore;
 
+    private int repeatMissionCount = 0;
+    private int repeatMissionPenalty = 1;
+
+    private int reputationScore_Mission1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,11 +40,18 @@ public class GameManager_Home : MonoBehaviour
         OverallReputation.GetComponent<ProgressBar>().current = OverallReputationScore;
     }
 
-    public void AddTOOverallReputation()
+    public void AddToOverallReputation()
     {
+        if (repeatMissionCount == 0)
+        {
+            repeatMissionPenalty = 1;
+        }
 
+
+        OverallReputationScore += reputationScore_Mission1 * repeatMissionPenalty;
     }
-    public void AddTOOverallExperience()
+
+    public void AddToOverallExperience()
     {
 
     }
