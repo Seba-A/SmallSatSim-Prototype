@@ -14,7 +14,7 @@ public class GameManager_Home : MonoBehaviour
     public int OverallReputationScore;
 
     private int repeatMissionCount = 0;
-    private int repeatMissionPenalty = 1;
+    private float repeatMissionPenalty = 1.0f;
 
     private int reputationScore_Mission1;
 
@@ -42,13 +42,26 @@ public class GameManager_Home : MonoBehaviour
 
     public void AddToOverallReputation()
     {
-        if (repeatMissionCount == 0)
+        switch (repeatMissionCount)
         {
-            repeatMissionPenalty = 1;
+            case 0:
+                repeatMissionPenalty = 1.0f;
+                break;
+            case 1:
+                repeatMissionPenalty = 0.7f;
+                break;
+            case 2:
+                repeatMissionPenalty = 0.5f;
+                break;
+            case 3:
+                repeatMissionPenalty = 0.3f;
+                break;
+            default:
+                repeatMissionPenalty = 0.1f;
+                break;
         }
 
-
-        OverallReputationScore += reputationScore_Mission1 * repeatMissionPenalty;
+        OverallReputationScore += (int)(reputationScore_Mission1 * repeatMissionPenalty);
     }
 
     public void AddToOverallExperience()
