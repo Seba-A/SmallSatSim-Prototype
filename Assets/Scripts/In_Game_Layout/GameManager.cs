@@ -7,9 +7,6 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject OverallExperience;
-    public GameObject OverallReputation;
-
     public int OverallExperienceScore;
     public int OverallReputationScore;
 
@@ -57,9 +54,6 @@ public class GameManager : MonoBehaviour
     //set the score of each progress bar to 0 at the satr of the game
     private void UpdateTheScore()
     {
-        OverallExperience.GetComponent<ProgressBar>().current = OverallReputationScore;
-        OverallReputation.GetComponent<ProgressBar>().current = OverallReputationScore;
-
         redundancy.GetComponent<ProgressBar>().current = redundancyScore;
         reliability.GetComponent<ProgressBar>().current = reliabilityScore;
         clarity.GetComponent<ProgressBar>().current = clarityScore;
