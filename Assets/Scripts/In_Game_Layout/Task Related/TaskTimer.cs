@@ -74,6 +74,9 @@ public class TaskTimer : MonoBehaviour
                     //to activate the tick on the task
                     FirstTimeCompletion = true;
                     FirstCompletionTick.SetActive(true);
+
+                    //add the name to the list that will check if you have completed all the tasks in GameManager
+                    AddTo.CompletedTasks.Add(this.gameObject.name);
                 }
             }
 

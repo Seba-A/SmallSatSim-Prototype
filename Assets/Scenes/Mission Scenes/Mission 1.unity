@@ -3428,7 +3428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &355546400
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5769,8 +5769,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e774aa6cba9838f4ea7dcfb4c527dfaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OverallExperienceScore: 0
-  OverallReputationScore: 0
+  experienceScore_Mission1: 0
+  reputationScore_Mission1: 0
+  money_Mission1: 0
+  idealReputation: 100
+  idealExperience: 100
+  idealMoney: 100
   redundancy: {fileID: 1431465086}
   reliability: {fileID: 288620190}
   clarity: {fileID: 190398096}
@@ -5784,6 +5788,9 @@ MonoBehaviour:
   innovationScore: 0
   progressbarScore: 0
   finishMissionButton: {fileID: 1042279143}
+  idealOverallProductScore: 75
+  CompletedTasks: []
+  numberOfTasks: 0
 --- !u!1 &475191203
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,24 +34,19 @@ public class GameManager : MonoBehaviour
     public Button finishMissionButton;
 
     private int overallProductScore;
-    public int idealOverallProductScore = 75;
+    public int idealOverallProductScore = 750;
     private float failureProbability;
+
+    //completed tasks
+    public List<string> CompletedTasks;
+    public int numberOfTasks;
+    private float CompletedtasksRatioPenalty;
 
     // Start is called before the first frame update
     void Start()
     {
         reputationScore_Mission1 = 0;
         experienceScore_Mission1 = 0;
-
-        //this value will need to be set to 0 when the mission panel is made active no in the gamemanager
-        //Added a new script "SetMissionScore" to do so, this is attached to the Mission 1 panel
-        /*
-        redundancyScore = 0;
-        reliabilityScore = 0;
-        clarityScore = 0;
-        efficiencyScore = 0;
-        innovationScore = 0;
-        progressbarScore = 0;*/
 
         UpdateTheScore();
     }
@@ -62,7 +57,6 @@ public class GameManager : MonoBehaviour
         UpdateTheScore();
     }
 
-    //set the score of each progress bar to 0 at the satr of the game
     private void UpdateTheScore()
     {
         redundancy.GetComponent<ProgressBar>().current = redundancyScore;
@@ -82,11 +76,11 @@ public class GameManager : MonoBehaviour
         finishMissionButton.gameObject.SetActive(false);
     }
 
-    public void CalculateFailureProbability()
+    public float  CalculateFailureProbability()
     {
         overallProductScore = redundancyScore + reliabilityScore + clarityScore + efficiencyScore + innovationScore;
 
-        float diffScore = overallProductScore / idealOverallProductScore;
+        float diffScore = (float)overallProductScore / (float)idealOverallProductScore;
 
         if (diffScore > 1.2f)
         {
@@ -112,6 +106,8 @@ public class GameManager : MonoBehaviour
         {
             failureProbability = 85.0f;
         }
+
+        return failureProbability;
     }
 
     public void DetermineMissionSuccess()   // eventually this will display (at least) two different text -- one for pass, one for fail
@@ -127,24 +123,122 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void CheckTaskCompleted()
+    public float CheckTaskCompleted()
     {
+        float CompletedTasksRatio = (float)CompletedTasks.Count / (float)numberOfTasks;
 
+        if (CompletedTasksRatio >= 1.0f)
+        {
+            CompletedtasksRatioPenalty = 1.0f;
+        }
+        else if(CompletedTasksRatio < 1.0f && CompletedTasksRatio >= 0.85f)
+        {
+            CompletedtasksRatioPenalty = CompletedTasksRatio;
+        }
+        else if(CompletedTasksRatio < 0.85f && CompletedTasksRatio >= 0.75f)
+        {
+            CompletedtasksRatioPenalty = 0.75f;
+        }
+        else if(CompletedTasksRatio < 0.75f && CompletedTasksRatio >= 0.70f)
+        {
+            CompletedtasksRatioPenalty = 0.7f;
+        }
+        else if(CompletedTasksRatio < 0.70f && CompletedTasksRatio >= 0.55f)
+        {
+            CompletedtasksRatioPenalty = 0.5f;
+        }
+        else if(CompletedTasksRatio < 0.55f)
+        {
+            CompletedtasksRatioPenalty = 0.15f;
+        }
+
+        return CompletedtasksRatioPenalty;
+    }
+
+    public void DetermineMissionComment()
+    {
+        CalculateFailureProbability();
+        CheckTaskCompleted();
+
+        if (CompletedtasksRatioPenalty >= 0.85f)
+        {
+            if(failureProbability <= 20.0f)
+            {
+                Debug.Log("did a good job Motherfucker");
+            }
+            else if (failureProbability == 40.0f)
+            {
+                Debug.Log("did a meh job Motherfucker");
+            }
+            else if (failureProbability == 60.0f)
+            {
+                Debug.Log("did a bad job Motherfucker");
+            }
+            else if (failureProbability == 85.0f)
+            {
+                Debug.Log("that was baaaaaaaaddddd");
+            }
+        }
+        else if (CompletedtasksRatioPenalty < 0.85f && CompletedtasksRatioPenalty >= 0.7f)
+        {
+            if (failureProbability <= 20.0f)
+            {
+                Debug.Log("did a meh job Motherfucker");
+            }
+            else if (failureProbability == 40.0f)
+            {
+                Debug.Log("did a bad job Motherfucker");
+            }
+            else if (failureProbability == 60.0f)
+            {
+                Debug.Log("that was baaaaaaaaddddd");
+            }
+            else if (failureProbability == 85.0f)
+            {
+                Debug.Log("WTF are you serious, this was shit");
+            }
+        }
+        else if (CompletedtasksRatioPenalty == 0.5f)
+        {
+            if (failureProbability <= 20.0f)
+            {
+                Debug.Log("that was baaaaaaaaddddd");
+            }
+            else if (failureProbability == 40.0f)
+            {
+                Debug.Log("WTF are you serious, this was shit");
+            }
+            else if (failureProbability >= 60.0f)
+            {
+                Debug.Log("yooo this was the worst shit I have ever seen in my life");
+            }
+        }
+        else if (CompletedtasksRatioPenalty == 0.15f)
+        {
+            if (failureProbability <= 20.0f)
+            {
+                Debug.Log("WTF are you serious, this was shit");
+            }
+            else if (failureProbability >= 40.0f)
+            {
+                Debug.Log("yooo this was the worst shit I have ever seen in my life");
+            }
+        }
     }
 
     public void CalculateReputation()
     {
-        reputationScore_Mission1 = (int)(idealReputation * (1 - (failureProbability/100)));
+        reputationScore_Mission1 = (int)((idealReputation * (1 - (failureProbability/100))) * CheckTaskCompleted());
     }
 
     public void CalculateExperience()
     {
-        experienceScore_Mission1 = (int)(idealExperience * (1 - (failureProbability / 100)));
+        experienceScore_Mission1 = (int)((idealExperience * (1 - (failureProbability / 100))) * CheckTaskCompleted());
     }
 
     public void MoneyGained()
     {
-        money_Mission1 = idealMoney * (1 - (failureProbability / 100));
+        money_Mission1 = (idealMoney * (1 - (failureProbability / 100))) * CheckTaskCompleted();
     }
 
     public void BackToHome()
