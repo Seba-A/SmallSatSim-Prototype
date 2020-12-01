@@ -33,6 +33,6 @@ public class TeamConfirmation : MonoBehaviour
 
     public void ConfirmTeamComposition()
     {
-        SceneManager.LoadScene("In_Game_Layout");
+        SceneManager.LoadScene("In_Game_Home");
     }
 }

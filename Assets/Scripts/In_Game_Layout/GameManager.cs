@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public int innovationScore;
     public int progressbarScore;
 
-    public GameObject completeLevelUI;
+    public Button finishMissionButton;
 
     // Start is called before the first frame update
     void Start()
@@ -64,18 +64,18 @@ public class GameManager : MonoBehaviour
 
     public void CompleteLevel()
     {
-        completeLevelUI.SetActive(true);
+        finishMissionButton.gameObject.SetActive(true);
     }
     public void NotCompleteLevel()
     {
-        completeLevelUI.SetActive(false);
+        finishMissionButton.gameObject.SetActive(false);
     }
 
-    public void AddTOOverallReputation()
+    public void AddToOverallReputation()
     {
 
     }
-    public void AddTOOverallExperience()
+    public void AddToOverallExperience()
     {
 
     }
