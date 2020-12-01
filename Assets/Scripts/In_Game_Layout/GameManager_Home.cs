@@ -69,6 +69,7 @@ public class GameManager_Home : MonoBehaviour
     {
 
     }
+
     public void MoneyGained()
     {
 
