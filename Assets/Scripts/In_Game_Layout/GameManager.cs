@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int experienceScore_Mission1;
     public int reputationScore_Mission1;
     public float money_Mission1;
+    public float TimeOfMission_Minutes = 5;
 
     // ideal (maximum) reputation, experience, and money that can be obtained from this mission
     public float idealReputation = 100.0f;
@@ -55,6 +56,13 @@ public class GameManager : MonoBehaviour
     public void Update()
     {
         UpdateTheScore();
+    }
+
+    //this function is used to set the timer of the mission
+    public int CalculateTimeInSeconds()
+    {
+        int timeInSeconds = (int)(TimeOfMission_Minutes * 60.0f);
+        return timeInSeconds;
     }
 
     private void UpdateTheScore()
