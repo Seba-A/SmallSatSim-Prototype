@@ -37,13 +37,15 @@ public class TimerBar : MonoBehaviour
         }
         else
         {
+            //Debug.Log("You're out of time");
             timeRemaining = 0;
-            Debug.Log("You're out of time");
+            
+            Time.timeScale = 0f;
 
             //activate UI to give the player choice to get a penalty and continue or to just end the mission
         }
 
         timerBar.GetComponent<ProgressBar>().current = (int)timeRemaining;
-        Debug.Log(timerBar.GetComponent<ProgressBar>().current);
+        //Debug.Log(timerBar.GetComponent<ProgressBar>().current);
     }
 }
