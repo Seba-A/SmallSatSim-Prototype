@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
     public int experienceScore_Mission1;
     public int reputationScore_Mission1;
     public float money_Mission1;
+    public float TimeOfMission_Minutes = 1;
+    public float ExtendTimerOf_Minutes = 1;
+    public int MaxNumberOfPopUp = 7;
+    public int MinNumberOfPopUp = 3;
 
     // ideal (maximum) reputation, experience, and money that can be obtained from this mission
     public float idealReputation = 100.0f;
@@ -49,12 +53,21 @@ public class GameManager : MonoBehaviour
         experienceScore_Mission1 = 0;
 
         UpdateTheScore();
+
+        Time.timeScale = 1f;
     }
 
     //timer
     public void Update()
     {
         UpdateTheScore();
+    }
+
+    //this function is used to set the timer of the mission
+    public int CalculateTimeInSeconds(float timeInMinutes)
+    {
+        int timeInSeconds = (int)(timeInMinutes * 60.0f);
+        return timeInSeconds;
     }
 
     private void UpdateTheScore()
@@ -244,5 +257,10 @@ public class GameManager : MonoBehaviour
     public void BackToHome()
     {
         SceneManager.LoadScene("In_Game_Home");
+    }
+
+    public void Time_Zero()
+    {
+        Time.timeScale = 0f;
     }
 }

@@ -90,7 +90,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimum: 0
   maximum: 150
-  current: 50
+  current: 18
   mask: {fileID: 7066391734339129208}
   fill: {fileID: 7066391733665302224}
   color: {r: 0.24098714, g: 0.8490566, b: 0.15619439, a: 1}
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.33333334
+  m_FillAmount: 0.12
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
