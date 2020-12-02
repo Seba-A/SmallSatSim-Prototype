@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public float money_Mission1;
     public float TimeOfMission_Minutes = 1;
     public float ExtendTimerOf_Minutes = 1;
+    public int MaxNumberOfPopUp = 6;
+    public int MinNumberOfPopUp = 3;
 
     // ideal (maximum) reputation, experience, and money that can be obtained from this mission
     public float idealReputation = 100.0f;
