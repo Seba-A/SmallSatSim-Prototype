@@ -7,9 +7,7 @@ using TMPro;
 public class StatsDisplay : MonoBehaviour
 {
     public GameObject managerAndTeam;
-
-    public CharacterInfo[] managerStatsList;
-    public CharacterInfo[] memberStatsList;
+    public GameObject charInfoPanel;
 
     public Image charImage;
     public TextMeshProUGUI nameText;
@@ -33,29 +31,26 @@ public class StatsDisplay : MonoBehaviour
         //DisplayCharacterStats();
     }
 
-    public void DisplayCharacterStats(int managerInt, string nameOfTeammate)
+    public void DisplayCharacterStats(int managerInt, string nameOfTeammate)    // both managerInt & nameOfTeammate are obtained from PlayerPref
     {
-        CharacterInfo selectedChar;
+        CharacterInfo selectedChar = null;
 
-        if (nameOfTeammate == "0")
+        if (nameOfTeammate == "nothing")    //Displaying manager stats
+
         {
-            selectedChar = managerStatsList[managerInt];
-            //Debug.Log("confirmManagerInt is: " + managerInt);
+            selectedChar = charInfoPanel.GetComponent<ConfirmedCharacterInfoList>().managerInfo;
+            //Debug.Log("confirmManagerInt is: " + managerInt + " from " + charInfoPanel.GetComponent<ConfirmedCharacterInfoList>().managerInfo);
         }
-        else
-        { 
-            int confirmTeammateInt = 0;
-
-            foreach (GameObject element in managerAndTeam.GetComponent<GetManagerAndTeam>().teamMemberList)
+        else    //Displaying member stats
+        {
+            foreach (CharacterInfo element in charInfoPanel.GetComponent<ConfirmedCharacterInfoList>().teamMemberInfo)
             {
-                if (element.name == nameOfTeammate)
+                //Debug.Log(element.ToString().Substring(0, 7) + " < IS THE SAME? > " + nameOfTeammate);
+                if (element.ToString().Substring(0, 7) == nameOfTeammate.Substring(0, 7))
                 {
-                    confirmTeammateInt = System.Array.IndexOf(managerAndTeam.GetComponent<GetManagerAndTeam>().teamMemberList, element);
-                    //Debug.Log("confirmTeammateInt is: " + confirmTeammateInt);
+                    selectedChar = element;
                 }
             }
-
-            selectedChar = memberStatsList[confirmTeammateInt];
         }
 
         charImage.sprite = selectedChar.characterImage;

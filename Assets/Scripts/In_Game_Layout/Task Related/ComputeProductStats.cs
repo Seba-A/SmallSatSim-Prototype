@@ -6,7 +6,7 @@ public class ComputeProductStats : MonoBehaviour
 {
     private GameManager AddTo;
     private GameObject managerAndTeam;
-    private GameObject charStats;
+    private GameObject charInfoPanel;
 
     int charSpeed = 0, charQuality = 0, charRelationship = 0, charFocus = 0, charCreativity = 0;
 
@@ -15,7 +15,7 @@ public class ComputeProductStats : MonoBehaviour
     {
         AddTo = FindObjectOfType<GameManager>();
         managerAndTeam = GameObject.Find("Manager And Team");
-        charStats = GameObject.Find("Canvas").transform.Find("Character Info Panel").gameObject.transform.Find("CharStats Panel").gameObject;
+        charInfoPanel = GameObject.Find("Canvas").transform.Find("Character Info Panel").gameObject;
     }
 
     //increase the score value by the task's indicated values
@@ -141,7 +141,7 @@ public class ComputeProductStats : MonoBehaviour
             }
         }
 
-        CharacterInfo relevantMemberInfo = charStats.GetComponent<StatsDisplay>().memberStatsList[memberIndexInFullList];
+        CharacterInfo relevantMemberInfo = charInfoPanel.GetComponent<ConfirmedCharacterInfoList>().teamInfoList[memberIndexInFullList];
 
         charSpeed = relevantMemberInfo.speed;
         //Debug.Log(charSpeed);

@@ -10,7 +10,7 @@ public class GetManagerAndTeam : MonoBehaviour
     public GameObject confirmedManager;     // selected manager that will be instantiated
 
     public List<GameObject> myTeam;         // placeholder 3D-objects in the Scene
-    public GameObject myTeamStats;           // placeholder UI for position in Canvas Character Info Panel
+    public GameObject myTeamStats;           // placeholder UI for position in Canvas Character Stats Panel
     public GameObject[] teamMemberList;     // full list of team member prefab
     public List<GameObject> confirmedTeam;  // selected team member that will be instantiated
 
@@ -21,15 +21,15 @@ public class GetManagerAndTeam : MonoBehaviour
     void Start()
     {
         // defining Keys for storing team members' name
-        selectedMembers[0] = "SelectedMember1";
-        selectedMembers[1] = "SelectedMember2";
-        selectedMembers[2] = "SelectedMember3";
-        selectedMembers[3] = "SelectedMember4";
+        for (int i = 0; i < 4; i++)
+        {
+            selectedMembers[i] = "SelectedMember" + (i + 1).ToString();
+        }
 
         confirmedManager = myManager.GetComponent<GameObject>();
 
         GetMyManager();
-        GetMyTeamInfo();
+        GetMyTeam();
 
         //Debug.Log("Selected manager and team members successfully imported to " + SceneManager.GetActiveScene().name);
     }
@@ -61,7 +61,7 @@ public class GetManagerAndTeam : MonoBehaviour
         confirmedManager.AddComponent<ClickingOnTeam>();
     }
 
-    public void GetMyTeamInfo()
+    public void GetMyTeam()
     {
         // NOTE: Team member info is in the form of UI. Not 3D-objects!
 
@@ -86,8 +86,11 @@ public class GetManagerAndTeam : MonoBehaviour
             confirmedTeam[i].name = confirmedTeam[i].name.Substring(0, confirmedTeam[i].name.Length - 7);
             //Debug.Log("Member " + i + " of name " + confirmedTeam[i].name + " is now added to the team.");
 
-            //confirmedTeam[i].transform.SetParent(myTeamInfo.transform);
-            //confirmedTeam[i].gameObject.SetActive(false);
+            /*
+            // attaching team members to CharStatsPanel -- not needed anymore because we are using scriptable object
+            confirmedTeam[i].transform.SetParent(myTeamStats.transform);
+            confirmedTeam[i].gameObject.SetActive(false);
+            */
 
             // remove the Select Button game object on each member
             Destroy(confirmedTeam[i].transform.Find("Select Button").gameObject);

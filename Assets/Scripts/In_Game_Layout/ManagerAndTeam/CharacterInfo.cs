@@ -28,8 +28,13 @@ public class CharacterInfo : ScriptableObject
 
 
     // Character Role(s)
-    public string role;
-    public TextMeshProUGUI roleDescription;
+    public string primaryRole;
+    public TextMeshProUGUI primaryRoleDescription;
+    public TextMeshProUGUI primaryRoleEffect;
+
+    public string secondaryRole;
+    public TextMeshProUGUI secondaryRoleDescription;
+    public TextMeshProUGUI secondaryRoleEffect;
 
     public void RoleEffects()
     {

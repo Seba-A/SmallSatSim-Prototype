@@ -27,11 +27,11 @@ public class ClickingOnTeam : MonoBehaviour
         charStats = charInfoPanel.transform.Find("CharStats Panel").gameObject;
         charRolesNTasks = charInfoPanel.transform.Find("Roles & Tasks Placeholder").gameObject;
 
-        // defining Keys used for storing team members' name
-        selectedMembers[0] = "SelectedMember1";
-        selectedMembers[1] = "SelectedMember2";
-        selectedMembers[2] = "SelectedMember3";
-        selectedMembers[3] = "SelectedMember4";
+        // calling the same Keys that stores selected team members' name
+        for (int i = 0; i < 4; i++)
+        {
+            selectedMembers[i] = "SelectedMember" + (i + 1).ToString();
+        }
 
         managerAndTeam = GameObject.Find("Manager And Team");
     }
@@ -104,8 +104,6 @@ public class ClickingOnTeam : MonoBehaviour
     {
         //charInfoPanel.SetActive(false);
 
-        //charInfoPanel.transform.position = new Vector2(charInfoPanel_posX_hidden, charInfoPanel.transform.position.y);
-
         charInfoPanel.transform.position = new Vector2(Screen.width * 2, charInfoPanel.transform.position.y);
     }
 
@@ -126,7 +124,7 @@ public class ClickingOnTeam : MonoBehaviour
         //charStats.SetActive(true);
 
         int clickedManager = 999;
-        string clickedTeammate = "0";
+        string clickedTeammate = "nothing";
 
         if (hitInfo.transform.parent.gameObject.name == "Manager")
         {
@@ -157,9 +155,6 @@ public class ClickingOnTeam : MonoBehaviour
                 case "TeamMember 4":
                     clickedTeammate = PlayerPrefs.GetString(selectedMembers[3]);
                     charStats.GetComponent<StatsDisplay>().DisplayCharacterStats(clickedManager, clickedTeammate);
-                    break;
-                case "Example Teammate":
-                    charRolesNTasks.transform.Find("Roles&Tasks_Member X").gameObject.SetActive(true);
                     break;
             }
 
