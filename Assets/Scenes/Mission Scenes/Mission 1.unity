@@ -5992,7 +5992,7 @@ MonoBehaviour:
   money_Mission1: 0
   TimeOfMission_Minutes: 1
   ExtendTimerOf_Minutes: 1
-  MaxNumberOfPopUp: 6
+  MaxNumberOfPopUp: 7
   MinNumberOfPopUp: 3
   idealReputation: 100
   idealExperience: 100
