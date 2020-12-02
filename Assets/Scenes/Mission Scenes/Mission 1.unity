@@ -30714,6 +30714,7 @@ MonoBehaviour:
   TimerToZero: {fileID: 1963211614}
   TimeButtons: {fileID: 1668292855}
   NoExtension: {fileID: 2130060390}
+  ExtensionButton: {fileID: 1935787766}
   TimeIsZero: 0
   ExtentionAlreadyGiven: 0
   CloseThisUI: 0
@@ -30899,7 +30900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1935787767
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31113,7 +31114,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1963211615
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33842,7 +33843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2130060391
 RectTransform:
   m_ObjectHideFlags: 0
