@@ -2949,6 +2949,7 @@ MonoBehaviour:
   OverallReputation: {fileID: 1686580659}
   OverallExperienceScore: 0
   OverallReputationScore: 0
+  OverallMoney: 0
 --- !u!1 &483049967
 GameObject:
   m_ObjectHideFlags: 0
@@ -4009,6 +4010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   managerAndTeam: {fileID: 711426166}
+  charInfoPanel: {fileID: 979407073}
   managerStatsList:
   - {fileID: 11400000, guid: acacdd7ec09114779a5daeff32775aa8, type: 2}
   - {fileID: 11400000, guid: c74d56787fd2749fdadd12d5062ff0cc, type: 2}
@@ -7004,6 +7006,7 @@ GameObject:
   - component: {fileID: 979407074}
   - component: {fileID: 979407076}
   - component: {fileID: 979407075}
+  - component: {fileID: 979407077}
   m_Layer: 5
   m_Name: Character Info Panel
   m_TagString: Untagged
@@ -7069,6 +7072,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979407073}
   m_CullTransparentMesh: 0
+--- !u!114 &979407077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979407073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f9d0a4629b514fff9fb4e9bace77e0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  managerAndTeam: {fileID: 711426166}
+  managerInfo: {fileID: 0}
+  teamMemberInfo: []
+  managerInfoList:
+  - {fileID: 11400000, guid: acacdd7ec09114779a5daeff32775aa8, type: 2}
+  - {fileID: 11400000, guid: c74d56787fd2749fdadd12d5062ff0cc, type: 2}
+  - {fileID: 11400000, guid: b2db14ea134ba4de6970ddd15a3df3f8, type: 2}
+  - {fileID: 11400000, guid: c40e98d19bf2a406a88adda4417aa20c, type: 2}
+  - {fileID: 11400000, guid: 8f67e155aa33f418fa9167017a553ea0, type: 2}
+  teamInfoList:
+  - {fileID: 11400000, guid: 6eb9aad00341249dca046f45e11a4eba, type: 2}
+  - {fileID: 11400000, guid: d7c0358402c8b40169b4dcd42d08aa8f, type: 2}
+  - {fileID: 11400000, guid: 18f76fac01e2d47e5a172dc750ce87e9, type: 2}
+  - {fileID: 11400000, guid: 856f88925950a48c48b798dd20602957, type: 2}
+  - {fileID: 11400000, guid: 01477af54ec8e4a0a866427b0fa8220c, type: 2}
+  - {fileID: 11400000, guid: 7fb798fdc565849ef896a60d3f51e1e1, type: 2}
+  - {fileID: 11400000, guid: 9f928e35dc7db49cdb5d24b45c7d65d1, type: 2}
+  - {fileID: 11400000, guid: 85e1b8a57d5c348e5bb8ca8aa48d5c71, type: 2}
+  - {fileID: 11400000, guid: 46884c611d10740ed8bc62ed4efc5545, type: 2}
 --- !u!1 &986286625
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/*  
+ *  This script is attached to every Roles&Tasks_Member X prefab
+ */
+
 [RequireComponent(typeof(Dropdown))]
 public class RoleSelection : MonoBehaviour
 {
@@ -29,9 +33,10 @@ public class RoleSelection : MonoBehaviour
     void Start()
     {
         roleUIPanel = this.gameObject;
+        //Debug.Log(roleUIPanel.name);
 
         primaryDropdown.value = PlayerPrefs.GetInt(roleUIPanel.name + primaryRole, 0);
-        //Debug.Log("Displaying primary role: " + primaryDropdown.value);
+        Debug.Log("Displaying primary role: " + primaryDropdown.value);
         secondaryDropdown.value = PlayerPrefs.GetInt(roleUIPanel.name + secondaryRole, 0);
         //Debug.Log("Displaying secondary role: " + secondaryDropdown.value);
     }
