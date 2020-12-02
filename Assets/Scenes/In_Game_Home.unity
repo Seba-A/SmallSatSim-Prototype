@@ -4011,22 +4011,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   managerAndTeam: {fileID: 711426166}
   charInfoPanel: {fileID: 979407073}
-  managerStatsList:
-  - {fileID: 11400000, guid: acacdd7ec09114779a5daeff32775aa8, type: 2}
-  - {fileID: 11400000, guid: c74d56787fd2749fdadd12d5062ff0cc, type: 2}
-  - {fileID: 11400000, guid: b2db14ea134ba4de6970ddd15a3df3f8, type: 2}
-  - {fileID: 11400000, guid: c40e98d19bf2a406a88adda4417aa20c, type: 2}
-  - {fileID: 11400000, guid: 8f67e155aa33f418fa9167017a553ea0, type: 2}
-  memberStatsList:
-  - {fileID: 11400000, guid: 6eb9aad00341249dca046f45e11a4eba, type: 2}
-  - {fileID: 11400000, guid: d7c0358402c8b40169b4dcd42d08aa8f, type: 2}
-  - {fileID: 11400000, guid: 18f76fac01e2d47e5a172dc750ce87e9, type: 2}
-  - {fileID: 11400000, guid: 856f88925950a48c48b798dd20602957, type: 2}
-  - {fileID: 11400000, guid: 01477af54ec8e4a0a866427b0fa8220c, type: 2}
-  - {fileID: 11400000, guid: 7fb798fdc565849ef896a60d3f51e1e1, type: 2}
-  - {fileID: 11400000, guid: 9f928e35dc7db49cdb5d24b45c7d65d1, type: 2}
-  - {fileID: 11400000, guid: 85e1b8a57d5c348e5bb8ca8aa48d5c71, type: 2}
-  - {fileID: 11400000, guid: 46884c611d10740ed8bc62ed4efc5545, type: 2}
   charImage: {fileID: 2087439547}
   nameText: {fileID: 1997345309}
   keyStatsText: {fileID: 427104997}
@@ -4781,20 +4765,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 290e0569525294dfba751b5362c205f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charInfoPanel: {fileID: 0}
   myManager: {fileID: 1668874223}
+  confirmedManager: {fileID: 0}
+  confirmedManagerInfo: {fileID: 0}
+  myTeam:
+  - {fileID: 341490665}
+  - {fileID: 1630506766}
+  - {fileID: 483049967}
+  - {fileID: 575125500}
+  myTeamStats: {fileID: 0}
+  confirmedTeam:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  confirmedTeamInfo: []
   managerList:
   - {fileID: 929067022522409760, guid: 8684ee775d1f7405c8fd3fe4a64b0070, type: 3}
   - {fileID: 1412210961632965964, guid: 5de5b3f561853496c83c18e5c9d05f2c, type: 3}
   - {fileID: 3799165551437177711, guid: ce80852e03cd9455fa3a4493ff98ebf7, type: 3}
   - {fileID: 1181047763869341770, guid: 19e0ef764976c40588be74f4678518da, type: 3}
   - {fileID: 4752343780131309939, guid: e91f0ec5e1a98444f98c89e9c989d09d, type: 3}
-  confirmedManager: {fileID: 0}
-  myTeam:
-  - {fileID: 341490665}
-  - {fileID: 1630506766}
-  - {fileID: 483049967}
-  - {fileID: 575125500}
-  myTeamStats: {fileID: 624948972}
   teamMemberList:
   - {fileID: 190764561168828950, guid: c304c35163bf444f7b7579c8c97e47e1, type: 3}
   - {fileID: 1375190418814986072, guid: 7ee4076dd97a34b7e8fdd0341b07ddeb, type: 3}
@@ -4805,11 +4797,6 @@ MonoBehaviour:
   - {fileID: 190764561168828950, guid: df94c24739d8d42dfb1dead8c7e8e787, type: 3}
   - {fileID: 190764561168828950, guid: 09bffd0a6b0c7492dab0103f2f3b6c5e, type: 3}
   - {fileID: 190764561168828950, guid: 6872e16c0f6b84f15a33113dfd43d285, type: 3}
-  confirmedTeam:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &721657723
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,9 +7,6 @@ public class ConfirmedCharacterInfoList : MonoBehaviour
 {
     public GameObject managerAndTeam;
 
-    private readonly string selectedManager = "SelectedManager";
-    private readonly string[] selectedMembers = new string[4];
-
     // confirmed manager and team
     public CharacterInfo managerInfo;
     public CharacterInfo[] teamMemberInfo;
@@ -18,58 +15,50 @@ public class ConfirmedCharacterInfoList : MonoBehaviour
     public CharacterInfo[] managerInfoList;
     public CharacterInfo[] teamInfoList;
 
-    void Start()
-    {
-        // calling the same Keys that stores selected team members' name
-        for (int i=0; i<4; i++)
-        {
-            selectedMembers[i] = "SelectedMember" + (i + 1).ToString();
-        }
+    // PlayerPref Keys for Manager and Team Gameobjects
+    private readonly string selectedManager = "SelectedManager";
+    private readonly string[] selectedMembers = new string[4] { "SelectedMember1", "SelectedMember2", "SelectedMember3", "SelectedMember4" };
 
+    // PlayerPref Keys for Character Info
+    private readonly string charInfo = "_info_";
 
-        GetCharacterInfo();
-
-        /*  // Appending element to array: https://answers.unity.com/questions/1033253/c-how-to-append-to-an-array.html
-        int size = 5;
-
-        Array.Resize(ref teamMemberInfo, teamMemberInfo.Length + size);
-        teamMemberInfo[teamMemberInfo.Length - size] = teamInfoList[0];
-        teamMemberInfo[teamMemberInfo.Length - size + 1] = teamInfoList[1];
-
-        Array.Resize(ref teamMemberInfo, teamMemberInfo.Length + 1);
-        teamMemberInfo[teamMemberInfo.Length - size + 1] = teamInfoList[2];
-        */
-    }
+    // PlayerPref Keys for Character Roles
+    private readonly string primaryRole = " PrimaryRoleOption";
+    private readonly string secondaryRole = " SecondaryRoleOption";
 
     public void GetCharacterInfo()
     {
-        // Get Manager Info
-        int managerInt = PlayerPrefs.GetInt(selectedManager);
-        managerInfo = managerInfoList[managerInt];
 
-        // Get Team Info
-        string[] teamString = new string[4];
-
-        for (int i = 0; i < selectedMembers.Length; i++)
-        {
-            teamString[i] = PlayerPrefs.GetString(selectedMembers[i]);
-            //Debug.Log(teamString[i]);
-
-            foreach (CharacterInfo element in teamInfoList)
-            {
-                //Debug.Log(element.ToString().Substring(0, 7));
-                if (element.ToString().Substring(0, 7) == teamString[i].Substring(0,7))
-                {
-                    Array.Resize(ref teamMemberInfo, teamMemberInfo.Length + 1);
-                    teamMemberInfo[teamMemberInfo.Length - 1] = element;
-                }
-            }
-        }
     }
 
-    public void UpdateCharacterInfo()
+    public void UpdateCharacterInfo(string charName)
     {
-        
+        CharacterInfo charToUpdate = null;
+
+        switch (charName)
+        {
+            case "Manager":
+                charToUpdate = managerInfo;
+                break;
+            case "Team Member 1":
+                charToUpdate = teamMemberInfo[0];
+                break;
+            case "Team Member 2":
+                charToUpdate = teamMemberInfo[1];
+                break;
+            case "Team Member 3":
+                charToUpdate = teamMemberInfo[2];
+                break;
+            case "Team Member 4":
+                charToUpdate = teamMemberInfo[3];
+                break;
+        }
+
+        PlayerPrefs.SetInt(charName + charInfo + "speed", charToUpdate.speed);
+        PlayerPrefs.SetInt(charName + charInfo + "quality", charToUpdate.quality);
+        PlayerPrefs.SetInt(charName + charInfo + "relationship", charToUpdate.relationship);
+        PlayerPrefs.SetInt(charName + charInfo + "focus", charToUpdate.focus);
+        PlayerPrefs.SetInt(charName + charInfo + "creativity", charToUpdate.creativity);
 
     }
 }
