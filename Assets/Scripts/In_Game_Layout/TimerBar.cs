@@ -7,26 +7,24 @@ public class TimerBar : MonoBehaviour
     public GameManager gameManager;
     public GameObject timerBar;
 
-    private float timeRemaining;
+    public float timeRemaining;
     
     // Start is called before the first frame update
     void Start()
     {
         timerBar.GetComponent<ProgressBar>().maximum = gameManager.CalculateTimeInSeconds();
         timerBar.GetComponent<ProgressBar>().current = timerBar.GetComponent<ProgressBar>().maximum;
-        float timeRemaining = (float)timerBar.GetComponent<ProgressBar>().current;
+        timeRemaining = (float)timerBar.GetComponent<ProgressBar>().current;
 
-        Debug.Log("this is the maximum value " + timerBar.GetComponent<ProgressBar>().maximum);
-        Debug.Log("this is the current value " + timerBar.GetComponent<ProgressBar>().current);
-        Debug.Log(timerBar.GetComponent<ProgressBar>().maximum);
+        //Debug.Log("this is the maximum value " + timerBar.GetComponent<ProgressBar>().maximum);
+        //Debug.Log("this is the current value " + timerBar.GetComponent<ProgressBar>().current);
+        //Debug.Log(timerBar.GetComponent<ProgressBar>().maximum);
     }
 
     // Update is called once per frame
     void Update()
     {
         TimerForTimeBar();
-
-        //timerBar.GetComponent<ProgressBar>().current = (int)timeRemaining;
     }
 
     void TimerForTimeBar()
@@ -35,7 +33,7 @@ public class TimerBar : MonoBehaviour
         {
             timeRemaining -= Time.deltaTime;
 
-            Debug.Log("time left " + timeRemaining);
+            //Debug.Log("time left " + timeRemaining);
         }
         else
         {
@@ -44,5 +42,8 @@ public class TimerBar : MonoBehaviour
 
             //activate UI to give the player choice to get a penalty and continue or to just end the mission
         }
+
+        timerBar.GetComponent<ProgressBar>().current = (int)timeRemaining;
+        Debug.Log(timerBar.GetComponent<ProgressBar>().current);
     }
 }
