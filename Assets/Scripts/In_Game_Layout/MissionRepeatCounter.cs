@@ -5,21 +5,16 @@ using UnityEngine;
 public class MissionRepeatCounter : MonoBehaviour
 {
     public int TimesMissionIsReapeated;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        TimesMissionIsReapeated = 0;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private readonly string repeatMissionCount = "NumberOfTimesMissionIsRepeated";    
 
-    void IncreaseRepeatCount()
+    public void IncreaseRepeatCount(string missionSceneName)
     {
+        TimesMissionIsReapeated = PlayerPrefs.GetInt(missionSceneName + repeatMissionCount);
+        //Debug.Log(TimesMissionIsReapeated);
         TimesMissionIsReapeated++;
+        //Debug.Log(TimesMissionIsReapeated);
+
+        PlayerPrefs.SetInt(missionSceneName + repeatMissionCount, TimesMissionIsReapeated);
     }
 }

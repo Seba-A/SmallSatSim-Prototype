@@ -8,9 +8,9 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public int experienceScore_Mission1;
-    public int reputationScore_Mission1;
-    public float money_Mission1;
+    public int experienceScore_Mission;
+    public int reputationScore_Mission;
+    public float money_Mission;
     public float TimeOfMission_Minutes = 1;
     public float ExtendTimerOf_Minutes = 1;
     public int MaxNumberOfPopUp = 7;
@@ -46,6 +46,9 @@ public class GameManager : MonoBehaviour
     public int numberOfTasks;
     private float CompletedtasksRatioPenalty;
 
+    private float repeatMissionPenalty = 1.0f;
+    private readonly string repeatMissionCount = "NumberOfTimesMissionIsRepeated";
+
     public TextMeshProUGUI reputationText;
     public TextMeshProUGUI experienceText;
     public TextMeshProUGUI moneyText;
@@ -53,16 +56,16 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("Resetting Company and Product Stats...");
         this.GetComponent<UpdateCompanyStats>().ResetCompanyStats();
         this.GetComponent<UpdateProductStats>().ResetProductStats();
+        //Debug.Log("All Company and Product Stats are reset.");
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        reputationScore_Mission1 = 0;
-        experienceScore_Mission1 = 0;
+        reputationScore_Mission = 0;
+        experienceScore_Mission = 0;
 
         UpdateTheScore();
 
@@ -253,17 +256,41 @@ public class GameManager : MonoBehaviour
 
     public void CalculateReputation()
     {
-        reputationScore_Mission1 = (int)((idealReputation * (1 - (CalculateFailureProbability() / 100))) * CheckTaskCompleted());
+        reputationScore_Mission = (int)((idealReputation * (1 - (CalculateFailureProbability() / 100))) * CheckTaskCompleted() * GetMissionPenalty(PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + repeatMissionCount)));
     }
 
     public void CalculateExperience()
     {
-        experienceScore_Mission1 = (int)((idealExperience * (1 - (CalculateFailureProbability() / 100))) * CheckTaskCompleted());
+        experienceScore_Mission = (int)((idealExperience * (1 - (CalculateFailureProbability() / 100))) * CheckTaskCompleted() * GetMissionPenalty(PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + repeatMissionCount)));
     }
 
     public void MoneyGained()
     {
-        money_Mission1 = (float)((idealMoney * (1 - (CalculateFailureProbability() / 100))) * CheckTaskCompleted());
+        money_Mission = (float)((idealMoney * (1 - (CalculateFailureProbability() / 100))) * CheckTaskCompleted() * GetMissionPenalty(PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + repeatMissionCount)));
+    }
+
+    private float GetMissionPenalty(int missionCount)
+    {
+        switch (missionCount)
+        {
+            case 0:
+                repeatMissionPenalty = 1.0f;
+                break;
+            case 1:
+                repeatMissionPenalty = 0.7f;
+                break;
+            case 2:
+                repeatMissionPenalty = 0.5f;
+                break;
+            case 3:
+                repeatMissionPenalty = 0.3f;
+                break;
+            default:
+                repeatMissionPenalty = 0.1f;
+                break;
+        }
+
+        return repeatMissionPenalty;
     }
 
     public void DisplayCompanyStats()
@@ -276,9 +303,9 @@ public class GameManager : MonoBehaviour
         CalculateExperience();
         MoneyGained();
 
-        reputationText.text = "Overall Reputation: " + reputationScore_Mission1;
-        experienceText.text = "Overall Experience: " + experienceScore_Mission1;
-        moneyText.text = "Money: " + money_Mission1.ToString();
+        reputationText.text = "Overall Reputation: " + reputationScore_Mission;
+        experienceText.text = "Overall Experience: " + experienceScore_Mission;
+        moneyText.text = "Money: " + money_Mission;
     }
 
     public void BackToHome()
@@ -296,7 +323,7 @@ public class GameManager : MonoBehaviour
         
         // Save Company Stats gained
         this.GetComponent<UpdateCompanyStats>().SaveCompanyStats();
-        Debug.Log("Company Stats gained are saved.");
+        //Debug.Log("Company Stats gained are saved.");
 
         SceneManager.LoadScene("In_Game_Home");
     }

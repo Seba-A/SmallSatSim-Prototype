@@ -15,8 +15,8 @@ public class GameManager_Home : MonoBehaviour
     public int OverallReputationScore;
     public float OverallMoney;
 
-    private int repeatMissionCount = 0;
-    private float repeatMissionPenalty = 1.0f;
+    public GameObject missionSelectionPanel;
+    private GameObject contentListOfMissions;
 
     public TextMeshProUGUI confirmMissionText;
     public string lastMissionSelected;
@@ -24,22 +24,39 @@ public class GameManager_Home : MonoBehaviour
     // PlayerPrefs Keys
     private readonly string countLoadsToHome = "NumberOfLoadsToHomeScene";
     public readonly string lastMissionPlayed = "LastMissionPlayed";
+    private readonly string repeatMissionCount = "NumberOfTimesMissionIsRepeated";
 
     private readonly string[] companyStatsName = { "reputation", "experience", "money" };
     private readonly string companyStats = "_companyStats_";
 
+    private void Awake()
+    {
+        contentListOfMissions = missionSelectionPanel.transform.Find("Scroll Area").transform.GetChild(0).gameObject;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        OverallExperienceScore = 0;
-        OverallReputationScore = 0;
-        Debug.Log("number of times Home Scene is accessed: " + PlayerPrefs.GetInt(countLoadsToHome));
-
+        // Resetting all saved data when loading into Home Scene the first time
         if (PlayerPrefs.GetInt(countLoadsToHome) == 1 && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("In_Game_Home"))
         {
             GameObject.Find("Canvas").transform.Find("Character Info Panel").GetComponent<ConfirmedCharacterInfoList>().ResetCharacterInfo();
-            Debug.Log("All character stats saved are reset.");
+            //Debug.Log("All character stats saved are reset.");
+
+            foreach (Transform child in contentListOfMissions.transform)
+            {
+                PlayerPrefs.SetInt(child.name + repeatMissionCount, -1);
+            }
+            //Debug.Log("All mission count is reset.");
+
+            this.GetComponent<UpdateCompanyStats>().ResetCompanyStats();
+            //Debug.Log("All company stats are reset.");
         }
+
+        OverallExperienceScore = PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + companyStats + "experience");
+        OverallReputationScore = PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + companyStats + "reputation");
+        OverallMoney = PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + companyStats + "money");
+        //Debug.Log("number of times Home Scene is accessed: " + PlayerPrefs.GetInt(countLoadsToHome));
 
         UpdateTheScore();
 
@@ -72,51 +89,25 @@ public class GameManager_Home : MonoBehaviour
 
     public void AddToOverallReputation(string missionSceneName)
     {
-        int reputationScore_Mission1 = PlayerPrefs.GetInt(missionSceneName + companyStats + "reputation");
-        //Debug.Log(reputationScore_Mission1);
-        OverallReputationScore += (int)(reputationScore_Mission1 * GetMissionPenalty(repeatMissionCount));
+        OverallReputationScore += PlayerPrefs.GetInt(missionSceneName + companyStats + "reputation");
+        //Debug.Log(OverallReputationScore);
     }
 
     public void AddToOverallExperience(string missionSceneName)
     {
-        int experienceScore_Mission1 = PlayerPrefs.GetInt(missionSceneName + companyStats + "experience");
-        //Debug.Log(experienceScore_Mission1);
-        OverallExperienceScore += (int)(experienceScore_Mission1 * GetMissionPenalty(repeatMissionCount));
+        OverallExperienceScore += PlayerPrefs.GetInt(missionSceneName + companyStats + "experience");
+        //Debug.Log(OverallExperienceScore);
     }
 
     public void MoneyGained(string missionSceneName)
     {
-        float money_Mission1 = PlayerPrefs.GetFloat(missionSceneName + companyStats + "money");
-        //Debug.Log(money_Mission1);
-        OverallMoney += (int)(money_Mission1 * GetMissionPenalty(repeatMissionCount));
-    }
-
-    private float GetMissionPenalty(int missionCount)
-    {
-        switch (missionCount)
-        {
-            case 0:
-                repeatMissionPenalty = 1.0f;
-                break;
-            case 1:
-                repeatMissionPenalty = 0.7f;
-                break;
-            case 2:
-                repeatMissionPenalty = 0.5f;
-                break;
-            case 3:
-                repeatMissionPenalty = 0.3f;
-                break;
-            default:
-                repeatMissionPenalty = 0.1f;
-                break;
-        }
-
-        return repeatMissionPenalty;
+        OverallMoney += PlayerPrefs.GetFloat(missionSceneName + companyStats + "money");
+        //Debug.Log(OverallMoney);
     }
 
     public void LoadMission()
     {
+        // Saving Char Stats
         string[] charGeneralName = { "Manager", "Team Member 1", "Team Member 2", "Team Member 3", "Team Member 4" };
         foreach (string character in charGeneralName)
         {
@@ -124,6 +115,20 @@ public class GameManager_Home : MonoBehaviour
         }
         //Debug.Log("Character stats saved.");
 
+        // Saving Company Stats
+        this.GetComponent<UpdateCompanyStats>().SaveCompanyStats_HomeScene();
+
+        // Adding mission count
+        foreach (Transform child in contentListOfMissions.transform)
+        {
+            if (child.name == lastMissionSelected)
+            {
+                //Debug.Log(child.name);
+                child.GetComponent<MissionRepeatCounter>().IncreaseRepeatCount(lastMissionSelected);
+            }
+        }
+
+        // Loading relevant mission scene
         SceneManager.LoadScene(lastMissionSelected);
     }
 }
