@@ -158,6 +158,7 @@ public class ConfirmedCharacterInfoList : MonoBehaviour
             PlayerPrefs.SetString(character + charInfo + "trait", "null");
             PlayerPrefs.SetString(character + charInfo + "field", "null");
         }
+        //Debug.Log("All character stats are reset.");
     }
 
     // TO BE IMPROVED when the training system has been coded.
