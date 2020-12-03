@@ -52,6 +52,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI reputationText;
     public TextMeshProUGUI experienceText;
     public TextMeshProUGUI moneyText;
+    public TextMeshProUGUI Pass_Fail;
+    public TextMeshProUGUI Comment;
 
 
     private void Awake()
@@ -140,14 +142,47 @@ public class GameManager : MonoBehaviour
 
     public void DetermineMissionSuccess()   // eventually this will display (at least) two different text -- one for pass, one for fail
     {
+        CalculateFailureProbability();
+        CheckTaskCompleted();
+
         int failureProbabilityScore = UnityEngine.Random.Range(1, 101);    //assuming that 0-100 have equally chances of being selected
-        if (failureProbabilityScore <= failureProbability)
+        if (failureProbabilityScore >= failureProbability)
         {
-            Debug.Log("You FAILED, Loser!");
+            if (CompletedtasksRatioPenalty >= 0.85f)
+            {
+                Pass_Fail.text = "Hello Elon, the mission was completed successfully. But I think you already knew that.";
+            }
+            else if (CompletedtasksRatioPenalty < 0.85f && CompletedtasksRatioPenalty >= 0.7f)
+            {
+                Pass_Fail.text = "The mission was completed successfully almost perfect";
+            }
+            else if (CompletedtasksRatioPenalty == 0.5f)
+            {
+                Pass_Fail.text = "The mission was completed successfully but some improvements could have been made.";
+            }
+            else if (CompletedtasksRatioPenalty == 0.15f)
+            {
+                Pass_Fail.text = "I don't know how but your employer is happy with your work, they must be worst than you. Do not get cocky though, you've just been lucky.";
+            }
         }
         else
         {
-            Debug.Log("You lucky bastard.");
+            if (CompletedtasksRatioPenalty >= 0.85f)
+            {
+                Pass_Fail.text = "Unfortunately you have failed the mission, even the best of works have a small chance of failing. You might have more luck next time.";
+            }
+            else if (CompletedtasksRatioPenalty < 0.85f && CompletedtasksRatioPenalty >= 0.7f)
+            {
+                Pass_Fail.text = "You tried so hard and got so far, but in the end it didn't really matter. You failed my friend.";
+            }
+            else if (CompletedtasksRatioPenalty == 0.5f)
+            {
+                Pass_Fail.text = "I guess this should not come as a surprise but the mission had a high chance of failing, and it did. Work harder net time.";
+            }
+            else if (CompletedtasksRatioPenalty == 0.15f)
+            {
+                Pass_Fail.text = "Should I really tell you that you have failed. I mean, might aswell just send an apple to space, it would definitely be more useful than this shit.";
+            }
         }
     }
 
@@ -192,64 +227,64 @@ public class GameManager : MonoBehaviour
         {
             if(failureProbability <= 20.0f)
             {
-                Debug.Log("did a good job Motherfucker");
+                Comment.text = "Did a good job Motherfucker, continue like this in your next mission to become successful";
             }
             else if (failureProbability == 40.0f)
             {
-                Debug.Log("did a meh job Motherfucker");
+                Comment.text = "Did a meh job Motherfucker, try to be more careful when assigning a task to a member of your team, remember that a character's stats will affect how well a task is completed";
             }
             else if (failureProbability == 60.0f)
             {
-                Debug.Log("did a bad job Motherfucker");
+                Comment.text = "Did a bad job Motherfucker, try to be more careful when assigning a task to a member of your team, remember that a character's stats will affect how well a task is completed";
             }
             else if (failureProbability == 85.0f)
             {
-                Debug.Log("that was baaaaaaaaddddd");
+                Comment.text = "That was baaaaaaaaddddd, try to be really more careful when assigning a task to a member of your team, remember that a character's stats will affect how well a task is completed";
             }
         }
         else if (CompletedtasksRatioPenalty < 0.85f && CompletedtasksRatioPenalty >= 0.7f)
         {
             if (failureProbability <= 20.0f)
             {
-                Debug.Log("did a meh job Motherfucker");
+                Comment.text = "Did a meh job Motherfucker, try to be more careful when assigning a task to a member of your team, remember that a character's stats will affect how well a task is completed. If you manage to time everything so to complete all the tasks to have a greater chance of succeding";
             }
             else if (failureProbability == 40.0f)
             {
-                Debug.Log("did a bad job Motherfucker");
+                Comment.text = "Did a bad job Motherfucker, try to be more careful when assigning a task to a member of your team, remember that a character's stats will affect how well a task is completed. Try to complete more tasks";
             }
             else if (failureProbability == 60.0f)
             {
-                Debug.Log("that was baaaaaaaaddddd");
+                Comment.text = "That was baaaaaaaaddddd, try to be more careful when assigning a task to a member of your team, remember that a character's stats will affect how well a task is completed. Try to complete more tasks";
             }
             else if (failureProbability == 85.0f)
             {
-                Debug.Log("WTF are you serious, this was shit");
+                Comment.text = "WTF are you serious, this was shit, try to be more careful when assigning a task to a member of your team, remember that a character's stats will affect how well a task is completed. Try to complete more tasks";
             }
         }
         else if (CompletedtasksRatioPenalty == 0.5f)
         {
             if (failureProbability <= 20.0f)
             {
-                Debug.Log("that was baaaaaaaaddddd");
+                Comment.text = "that was baaaaaaaaddddd, try to be more careful when assigning a task to a member of your team, remember that a character's stats will affect how well a task is completed. The amount of tasks you have completed Is definitely not enought to garantee a high quality product";
             }
             else if (failureProbability == 40.0f)
             {
-                Debug.Log("WTF are you serious, this was shit");
+                Comment.text = "WTF are you serious, this was shit, try to be more careful when assigning a task to a member of your team, remember that a character's stats will affect how well a task is completed. The amount of tasks you have completed Is definitely not enought to garantee a high quality product";
             }
             else if (failureProbability >= 60.0f)
             {
-                Debug.Log("yooo this was the worst shit I have ever seen in my life");
+                Comment.text = "yooo this was the worst shit I have ever seen in my life, try to be more careful when assigning a task to a member of your team, remember that a character's stats will affect how well a task is completed. The amount of tasks you have completed Is definitely not enought to garantee a high quality product";
             }
         }
         else if (CompletedtasksRatioPenalty == 0.15f)
         {
             if (failureProbability <= 20.0f)
             {
-                Debug.Log("WTF are you serious, this was shit");
+                Comment.text = "WTF are you serious, this was shit. Well you should really try to assign the tasks better or at least assign some tasks at all.";
             }
             else if (failureProbability >= 40.0f)
             {
-                Debug.Log("yooo this was the worst shit I have ever seen in my life");
+                Comment.text = "yooo this was the worst shit I have ever seen in my life. Are you actually planning to fail.";
             }
         }
     }
