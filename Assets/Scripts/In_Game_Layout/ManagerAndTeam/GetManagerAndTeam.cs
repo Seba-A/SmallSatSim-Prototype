@@ -58,7 +58,12 @@ public class GetManagerAndTeam : MonoBehaviour
         else
         {
             GetCharacterInfo();
-            charInfoPanel.GetComponent<ConfirmedCharacterInfoList>().LoadCharacterInfo("Manager");
+
+            string[] charGeneralName = { "Manager", "Team Member 1", "Team Member 2", "Team Member 3", "Team Member 4" };
+            foreach (string character in charGeneralName)
+            {
+                charInfoPanel.GetComponent<ConfirmedCharacterInfoList>().LoadCharacterInfo(character);
+            }
         }
     }
 
