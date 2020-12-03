@@ -159,4 +159,28 @@ public class ConfirmedCharacterInfoList : MonoBehaviour
             PlayerPrefs.SetString(character + charInfo + "field", "null");
         }
     }
+
+    public void UpdateCharacterInfo(string charName, int valueToUpdate)
+    {
+        // updating the correct character
+        switch (charName)
+        {
+            case "Manager":
+                managerInfo.speed += valueToUpdate;
+                break;
+            case "Team Member 1":
+                teamMemberInfo[0].speed += valueToUpdate;
+                Debug.Log(teamMemberInfo[0].speed);
+                break;
+            case "Team Member 2":
+                teamMemberInfo[1].speed += valueToUpdate;
+                break;
+            case "Team Member 3":
+                teamMemberInfo[2].speed += valueToUpdate;
+                break;
+            case "Team Member 4":
+                teamMemberInfo[3].speed += valueToUpdate;
+                break;
+        }
+    }
 }
