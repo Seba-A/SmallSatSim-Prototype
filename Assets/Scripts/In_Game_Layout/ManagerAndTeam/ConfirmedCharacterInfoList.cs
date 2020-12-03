@@ -18,116 +18,127 @@ public class ConfirmedCharacterInfoList : MonoBehaviour
     public CharacterInfo[] teamInfoList;
 
     // PlayerPref Keys for Manager and Team Gameobjects
-    private readonly string selectedManager = "SelectedManager";
-    private readonly string[] selectedMembers = new string[4] { "SelectedMember1", "SelectedMember2", "SelectedMember3", "SelectedMember4" };
+    //private readonly string selectedManager = "SelectedManager";
+    //private readonly string[] selectedMembers = new string[4] { "SelectedMember1", "SelectedMember2", "SelectedMember3", "SelectedMember4" };
 
     // PlayerPref Keys for Character Info
     private readonly string charInfo = "_info_";
 
     // PlayerPref Keys for Character Roles
-    private readonly string primaryRole = " PrimaryRoleOption";
-    private readonly string secondaryRole = " SecondaryRoleOption";
+    //private readonly string primaryRole = " PrimaryRoleOption";
+    //private readonly string secondaryRole = " SecondaryRoleOption";
 
-    public void GetCharacterInfo(string charName)
+    public void LoadCharacterInfo(string charName)
     {
-        CharacterInfo charToGet = null;
+        CharacterInfo charToLoad = null;
 
+        // Taking start game data from CharInfoPanel
         switch (charName)
         {
             case "Manager":
-                charToGet = managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedManagerInfo;
+                charToLoad = managerInfo;
                 break;
             case "Team Member 1":
-                charToGet = managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[0];
+                charToLoad = teamMemberInfo[0];
                 break;
             case "Team Member 2":
-                charToGet = managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[1];
+                charToLoad = teamMemberInfo[1];
                 break;
             case "Team Member 3":
-                charToGet = managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[2];
+                charToLoad = teamMemberInfo[2];
                 break;
             case "Team Member 4":
-                charToGet = managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[3];
+                charToLoad = teamMemberInfo[3];
                 break;
         }
 
-        charToGet.speed = PlayerPrefs.GetInt(charName + charInfo + "speed");
-        charToGet.quality = PlayerPrefs.GetInt(charName + charInfo + "quality");
-        charToGet.relationship = PlayerPrefs.GetInt(charName + charInfo + "relationship");
-        charToGet.focus = PlayerPrefs.GetInt(charName + charInfo + "focus");
-        charToGet.creativity = PlayerPrefs.GetInt(charName + charInfo + "creativity");
+        // Loading Data from PlayerPrefs
+        charToLoad.speed = PlayerPrefs.GetInt(charName + charInfo + "speed");
+        charToLoad.quality = PlayerPrefs.GetInt(charName + charInfo + "quality");
+        charToLoad.relationship = PlayerPrefs.GetInt(charName + charInfo + "relationship");
+        charToLoad.focus = PlayerPrefs.GetInt(charName + charInfo + "focus");
+        charToLoad.creativity = PlayerPrefs.GetInt(charName + charInfo + "creativity");
 
-        charToGet.trait = PlayerPrefs.GetString(charName + charInfo + "trait");
-        charToGet.field = PlayerPrefs.GetString(charName + charInfo + "field");
+        charToLoad.trait = PlayerPrefs.GetString(charName + charInfo + "trait");
+        charToLoad.field = PlayerPrefs.GetString(charName + charInfo + "field");
 
+        // Updating loaded data to relevant character -- in both CharInfoPanel and ManagerAndTeam
         switch (charName)
         {
             case "Manager":
-                managerInfo = charToGet;
+                managerInfo = charToLoad;
+                managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedManagerInfo = charToLoad;
                 break;
             case "Team Member 1":
-                teamMemberInfo[0] = charToGet;
+                teamMemberInfo[0] = charToLoad;
+                managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[0] = charToLoad;
                 break;
             case "Team Member 2":
-                teamMemberInfo[1] = charToGet;
+                teamMemberInfo[1] = charToLoad;
+                managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[1] = charToLoad;
                 break;
             case "Team Member 3":
-                teamMemberInfo[2] = charToGet;
+                teamMemberInfo[2] = charToLoad;
+                managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[2] = charToLoad;
                 break;
             case "Team Member 4":
-                teamMemberInfo[3] = charToGet;
+                teamMemberInfo[3] = charToLoad;
+                managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[3] = charToLoad;
                 break;
         }
     }
 
-    public void UpdateCharacterInfo(string charName)
+    public void SaveCharacterInfo(string charName)
     {
-        CharacterInfo charToUpdate = null;
+        CharacterInfo charToSave = null;
 
+        // Taking most recent data from CharInfoPanel
         switch (charName)
         {
             case "Manager":
-                charToUpdate = managerInfo;
+                charToSave = managerInfo;
                 break;
             case "Team Member 1":
-                charToUpdate = teamMemberInfo[0];
+                charToSave = teamMemberInfo[0];
                 break;
             case "Team Member 2":
-                charToUpdate = teamMemberInfo[1];
+                charToSave = teamMemberInfo[1];
                 break;
             case "Team Member 3":
-                charToUpdate = teamMemberInfo[2];
+                charToSave = teamMemberInfo[2];
                 break;
             case "Team Member 4":
-                charToUpdate = teamMemberInfo[3];
+                charToSave = teamMemberInfo[3];
                 break;
         }
 
-        PlayerPrefs.SetInt(charName + charInfo + "speed", charToUpdate.speed);
-        PlayerPrefs.SetInt(charName + charInfo + "quality", charToUpdate.quality);
-        PlayerPrefs.SetInt(charName + charInfo + "relationship", charToUpdate.relationship);
-        PlayerPrefs.SetInt(charName + charInfo + "focus", charToUpdate.focus);
-        PlayerPrefs.SetInt(charName + charInfo + "creativity", charToUpdate.creativity);
+        // Saving Data to PlayerPrefs
+        PlayerPrefs.SetInt(charName + charInfo + "speed", charToSave.speed);
+        PlayerPrefs.SetInt(charName + charInfo + "quality", charToSave.quality);
+        PlayerPrefs.SetInt(charName + charInfo + "relationship", charToSave.relationship);
+        PlayerPrefs.SetInt(charName + charInfo + "focus", charToSave.focus);
+        PlayerPrefs.SetInt(charName + charInfo + "creativity", charToSave.creativity);
 
-        PlayerPrefs.SetString(charName + charInfo + "trait", charToUpdate.trait);
-        PlayerPrefs.SetString(charName + charInfo + "field", charToUpdate.field);
+        PlayerPrefs.SetString(charName + charInfo + "trait", charToSave.trait);
+        PlayerPrefs.SetString(charName + charInfo + "field", charToSave.field);
 
+        // Updating relevant character in ManagerAndTeam to most recent data
         switch (charName)
         {
             case "Manager":
-                managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedManagerInfo = charToUpdate;
+                managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedManagerInfo = charToSave;
                 break;
             case "Team Member 1":
-                managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[0] = charToUpdate;
+                managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[0] = charToSave;
                 break;
             case "Team Member 2":
-                managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[1] = charToUpdate;
+                managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[1] = charToSave;
                 break;
             case "Team Member 3":
-                managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[2] = charToUpdate;
+                managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[2] = charToSave;
                 break;
             case "Team Member 4":
-                managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[3] = charToUpdate;
+                managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[3] = charToSave;
                 break;
         }
     }

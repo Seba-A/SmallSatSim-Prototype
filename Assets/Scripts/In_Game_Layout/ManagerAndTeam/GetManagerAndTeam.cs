@@ -23,9 +23,17 @@ public class GetManagerAndTeam : MonoBehaviour
     private readonly string selectedManager = "SelectedManager";
     private readonly string[] selectedMembers = new string[4];
 
-    // Start is called before the first frame update
-    void Start()
+    private readonly string countLoadsToHome = "NumberOfLoadsToHomeScene";
+
+    private void Awake()
     {
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("In_Game_Home"))
+        {
+            Debug.Log(PlayerPrefs.GetInt(countLoadsToHome));
+            PlayerPrefs.SetInt(countLoadsToHome, PlayerPrefs.GetInt(countLoadsToHome) + 1);
+            Debug.Log(PlayerPrefs.GetInt(countLoadsToHome));
+        }
+
         // defining Keys for storing team members' name
         for (int i = 0; i < 4; i++)
         {
@@ -34,17 +42,24 @@ public class GetManagerAndTeam : MonoBehaviour
 
         charInfoPanel = GameObject.Find("Canvas").transform.Find("Character Info Panel").gameObject;
         myTeamStats = charInfoPanel.transform.Find("CharStats Panel").gameObject;
+    }
 
+    // Start is called before the first frame update
+    void Start()
+    {
         GetMyManager();
         GetMyTeam();
         //Debug.Log("Selected manager and team members successfully imported to " + SceneManager.GetActiveScene().name);
 
-        GetCharacterInfo();
-    }
-
-    private void Awake()
-    {
-        
+        if (PlayerPrefs.GetInt(countLoadsToHome) == 1 && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("In_Game_Home"))
+        {
+            GetCharacterInfo();
+        }
+        else
+        {
+            GetCharacterInfo();
+            charInfoPanel.GetComponent<ConfirmedCharacterInfoList>().LoadCharacterInfo("Manager");
+        }
     }
 
     private void GetMyManager()
@@ -53,7 +68,7 @@ public class GetManagerAndTeam : MonoBehaviour
 
         confirmedManager = Instantiate(managerList[managerInt], myManager.transform.position, myManager.transform.rotation);
         confirmedManager.name = confirmedManager.name.Substring(0, confirmedManager.name.Length - 7);
-        //Debug.Log("The confirmed manager is: " + confirmedManager.name);
+        Debug.Log("The confirmed manager is: " + confirmedManager.name);
 
         confirmedManager.transform.SetParent(myManager.transform);
 
@@ -84,18 +99,18 @@ public class GetManagerAndTeam : MonoBehaviour
             {
                 if (element.name == teamString[i])
                 {
-                    confirmTeamInt[i] = System.Array.IndexOf(teamMemberList, element);
+                    confirmTeamInt[i] = Array.IndexOf(teamMemberList, element);
                     //Debug.Log(confirmTeamInt);
                 }
             }
 
             confirmedTeam[i] = teamMemberList[confirmTeamInt[i]];
-            confirmedTeam[i].name = confirmedTeam[i].name.Substring(0, confirmedTeam[i].name.Length - 7);
             //Debug.Log("Member " + i + " of name " + confirmedTeam[i].name + " is now added to the team.");
         }
     }
 
-    public void GetCharacterInfo()
+    // only use it for first time loading into In_Game_Home Scene
+    private void GetCharacterInfo()
     {
         // Get Manager Info
         int managerInt = PlayerPrefs.GetInt(selectedManager);

@@ -10,7 +10,9 @@ public class TeamConfirmation : MonoBehaviour
 
     public GameObject selectionTeamManager;
     [SerializeField] private int teamMembers;
-    
+
+    private readonly string countLoadsToHome = "NumberOfLoadsToHomeScene";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,8 @@ public class TeamConfirmation : MonoBehaviour
 
     public void ConfirmTeamComposition()
     {
+        PlayerPrefs.SetInt(countLoadsToHome, 0);
+        Debug.Log("number of loads to home reset to zero.");
         SceneManager.LoadScene("In_Game_Home");
     }
 }

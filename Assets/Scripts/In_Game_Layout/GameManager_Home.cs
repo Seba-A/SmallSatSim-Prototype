@@ -85,6 +85,8 @@ public class GameManager_Home : MonoBehaviour
     // improve to work for all missions
     public void Mission1()
     {
+        GameObject.Find("Canvas").transform.Find("Character Info Panel").GetComponent<ConfirmedCharacterInfoList>().SaveCharacterInfo("Manager");
+        Debug.Log("Character stats saved.");
         SceneManager.LoadScene("Mission 1");
     }
 }
