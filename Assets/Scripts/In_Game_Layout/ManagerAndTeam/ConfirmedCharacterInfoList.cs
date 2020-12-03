@@ -22,6 +22,7 @@ public class ConfirmedCharacterInfoList : MonoBehaviour
     //private readonly string[] selectedMembers = new string[4] { "SelectedMember1", "SelectedMember2", "SelectedMember3", "SelectedMember4" };
 
     // PlayerPref Keys for Character Info
+    private readonly string[] charGeneralName = { "Manager", "Team Member 1", "Team Member 2", "Team Member 3", "Team Member 4" };
     private readonly string charInfo = "_info_";
 
     // PlayerPref Keys for Character Roles
@@ -140,6 +141,22 @@ public class ConfirmedCharacterInfoList : MonoBehaviour
             case "Team Member 4":
                 managerAndTeam.GetComponent<GetManagerAndTeam>().confirmedTeamInfo[3] = charToSave;
                 break;
+        }
+    }
+
+    public void ResetCharacterInfo()
+    {
+        // Resetting Data saved in PlayerPrefs
+        foreach (string character in charGeneralName)
+        {
+            PlayerPrefs.SetInt(character + charInfo + "speed", 0);
+            PlayerPrefs.SetInt(character + charInfo + "quality", 0);
+            PlayerPrefs.SetInt(character + charInfo + "relationship", 0);
+            PlayerPrefs.SetInt(character + charInfo + "focus", 0);
+            PlayerPrefs.SetInt(character + charInfo + "creativity", 0);
+
+            PlayerPrefs.SetString(character + charInfo + "trait", "null");
+            PlayerPrefs.SetString(character + charInfo + "field", "null");
         }
     }
 }

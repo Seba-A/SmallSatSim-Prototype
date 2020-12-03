@@ -18,11 +18,19 @@ public class GameManager_Home : MonoBehaviour
     private int repeatMissionCount = 0;
     private float repeatMissionPenalty = 1.0f;
 
+    private readonly string countLoadsToHome = "NumberOfLoadsToHomeScene";
+
     // Start is called before the first frame update
     void Start()
     {
         OverallExperienceScore = 0;
         OverallReputationScore = 0;
+
+        if (PlayerPrefs.GetInt(countLoadsToHome) == 1 && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("In_Game_Home"))
+        {
+            GameObject.Find("Canvas").transform.Find("Character Info Panel").GetComponent<ConfirmedCharacterInfoList>().ResetCharacterInfo();
+            Debug.Log("All character stats saved are reset.");
+        }
 
         UpdateTheScore();
     }
@@ -85,9 +93,15 @@ public class GameManager_Home : MonoBehaviour
     // improve to work for all missions
     public void Mission1()
     {
-        GameObject.Find("Canvas").transform.Find("Character Info Panel").GetComponent<ConfirmedCharacterInfoList>().SaveCharacterInfo("Manager");
-        Debug.Log("Character stats saved.");
+        string[] charGeneralName = { "Manager", "Team Member 1", "Team Member 2", "Team Member 3", "Team Member 4" };
+        foreach (string character in charGeneralName)
+        {
+            GameObject.Find("Canvas").transform.Find("Character Info Panel").GetComponent<ConfirmedCharacterInfoList>().SaveCharacterInfo(character);
+        }
+        //Debug.Log("Character stats saved.");
+
         SceneManager.LoadScene("Mission 1");
     }
 }
+
 

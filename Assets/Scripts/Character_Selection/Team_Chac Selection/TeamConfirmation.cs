@@ -36,7 +36,7 @@ public class TeamConfirmation : MonoBehaviour
     public void ConfirmTeamComposition()
     {
         PlayerPrefs.SetInt(countLoadsToHome, 0);
-        Debug.Log("number of loads to home reset to zero.");
+        //Debug.Log("number of loads to home reset to zero.");
         SceneManager.LoadScene("In_Game_Home");
     }
 }

@@ -29,9 +29,9 @@ public class GetManagerAndTeam : MonoBehaviour
     {
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("In_Game_Home"))
         {
-            Debug.Log(PlayerPrefs.GetInt(countLoadsToHome));
+            //Debug.Log(PlayerPrefs.GetInt(countLoadsToHome));
             PlayerPrefs.SetInt(countLoadsToHome, PlayerPrefs.GetInt(countLoadsToHome) + 1);
-            Debug.Log(PlayerPrefs.GetInt(countLoadsToHome));
+            //Debug.Log(PlayerPrefs.GetInt(countLoadsToHome));
         }
 
         // defining Keys for storing team members' name
@@ -68,7 +68,7 @@ public class GetManagerAndTeam : MonoBehaviour
 
         confirmedManager = Instantiate(managerList[managerInt], myManager.transform.position, myManager.transform.rotation);
         confirmedManager.name = confirmedManager.name.Substring(0, confirmedManager.name.Length - 7);
-        Debug.Log("The confirmed manager is: " + confirmedManager.name);
+        //Debug.Log("The confirmed manager is: " + confirmedManager.name);
 
         confirmedManager.transform.SetParent(myManager.transform);
 

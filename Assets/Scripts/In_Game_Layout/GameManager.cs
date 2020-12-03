@@ -256,6 +256,13 @@ public class GameManager : MonoBehaviour
 
     public void BackToHome()
     {
+        string[] charGeneralName = { "Manager", "Team Member 1", "Team Member 2", "Team Member 3", "Team Member 4" };
+        foreach (string character in charGeneralName)
+        {
+            GameObject.Find("Canvas").transform.Find("Character Info Panel").GetComponent<ConfirmedCharacterInfoList>().SaveCharacterInfo(character);
+        }
+        //Debug.Log("Character stats saved.");
+
         SceneManager.LoadScene("In_Game_Home");
     }
 
