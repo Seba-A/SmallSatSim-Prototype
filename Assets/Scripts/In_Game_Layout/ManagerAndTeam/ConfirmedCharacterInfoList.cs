@@ -160,6 +160,7 @@ public class ConfirmedCharacterInfoList : MonoBehaviour
         }
     }
 
+    // TO BE IMPROVED when the training system has been coded.
     public void UpdateCharacterInfo(string charName, int valueToUpdate)
     {
         // updating the correct character
@@ -182,5 +183,7 @@ public class ConfirmedCharacterInfoList : MonoBehaviour
                 teamMemberInfo[3].speed += valueToUpdate;
                 break;
         }
+
+        // ^ improve it to add on other charStats. (now is just speed)
     }
 }

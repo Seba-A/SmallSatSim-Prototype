@@ -69,10 +69,11 @@ public class GetManagerAndTeam : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Space))
         {
             charInfoPanel.GetComponent<ConfirmedCharacterInfoList>().UpdateCharacterInfo("Team Member 1", 200);
-        }
+        }*/
     }
 
     private void GetMyManager()

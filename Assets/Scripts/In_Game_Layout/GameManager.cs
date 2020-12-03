@@ -46,6 +46,18 @@ public class GameManager : MonoBehaviour
     public int numberOfTasks;
     private float CompletedtasksRatioPenalty;
 
+    public TextMeshProUGUI reputationText;
+    public TextMeshProUGUI experienceText;
+    public TextMeshProUGUI moneyText;
+
+
+    private void Awake()
+    {
+        Debug.Log("Resetting Company and Product Stats...");
+        this.GetComponent<UpdateCompanyStats>().ResetCompanyStats();
+        this.GetComponent<UpdateProductStats>().ResetProductStats();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -241,27 +253,50 @@ public class GameManager : MonoBehaviour
 
     public void CalculateReputation()
     {
-        reputationScore_Mission1 = (int)((idealReputation * (1 - (failureProbability/100))) * CheckTaskCompleted());
+        reputationScore_Mission1 = (int)((idealReputation * (1 - (CalculateFailureProbability() / 100))) * CheckTaskCompleted());
     }
 
     public void CalculateExperience()
     {
-        experienceScore_Mission1 = (int)((idealExperience * (1 - (failureProbability / 100))) * CheckTaskCompleted());
+        experienceScore_Mission1 = (int)((idealExperience * (1 - (CalculateFailureProbability() / 100))) * CheckTaskCompleted());
     }
 
     public void MoneyGained()
     {
-        money_Mission1 = (idealMoney * (1 - (failureProbability / 100))) * CheckTaskCompleted();
+        money_Mission1 = (float)((idealMoney * (1 - (CalculateFailureProbability() / 100))) * CheckTaskCompleted());
+    }
+
+    public void DisplayCompanyStats()
+    {
+        //Debug.Log("failureProb: " + CalculateFailureProbability());
+        //Debug.Log("task ratio: " + CheckTaskCompleted());
+        //Debug.Log("rep: " + idealReputation + " and exp: " + idealExperience + " and money: " + idealMoney);
+
+        CalculateReputation();
+        CalculateExperience();
+        MoneyGained();
+
+        reputationText.text = "Overall Reputation: " + reputationScore_Mission1;
+        experienceText.text = "Overall Experience: " + experienceScore_Mission1;
+        moneyText.text = "Money: " + money_Mission1.ToString();
     }
 
     public void BackToHome()
     {
+        // Save Character Stats gained
         string[] charGeneralName = { "Manager", "Team Member 1", "Team Member 2", "Team Member 3", "Team Member 4" };
         foreach (string character in charGeneralName)
         {
             GameObject.Find("Canvas").transform.Find("Character Info Panel").GetComponent<ConfirmedCharacterInfoList>().SaveCharacterInfo(character);
         }
         //Debug.Log("Character stats saved.");
+
+        // Save Product Stats gained
+        this.GetComponent<UpdateProductStats>().SaveProductStats();
+        
+        // Save Company Stats gained
+        this.GetComponent<UpdateCompanyStats>().SaveCompanyStats();
+        Debug.Log("Company Stats gained are saved.");
 
         SceneManager.LoadScene("In_Game_Home");
     }

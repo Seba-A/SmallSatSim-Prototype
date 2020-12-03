@@ -18,13 +18,22 @@ public class GameManager_Home : MonoBehaviour
     private int repeatMissionCount = 0;
     private float repeatMissionPenalty = 1.0f;
 
+    public TextMeshProUGUI confirmMissionText;
+    public string lastMissionSelected;
+
+    // PlayerPrefs Keys
     private readonly string countLoadsToHome = "NumberOfLoadsToHomeScene";
+    public readonly string lastMissionPlayed = "LastMissionPlayed";
+
+    private readonly string[] companyStatsName = { "reputation", "experience", "money" };
+    private readonly string companyStats = "_companyStats_";
 
     // Start is called before the first frame update
     void Start()
     {
         OverallExperienceScore = 0;
         OverallReputationScore = 0;
+        Debug.Log("number of times Home Scene is accessed: " + PlayerPrefs.GetInt(countLoadsToHome));
 
         if (PlayerPrefs.GetInt(countLoadsToHome) == 1 && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("In_Game_Home"))
         {
@@ -33,36 +42,52 @@ public class GameManager_Home : MonoBehaviour
         }
 
         UpdateTheScore();
+
+        if (PlayerPrefs.GetInt(countLoadsToHome) > 1)
+        {
+            AddToOverallReputation(PlayerPrefs.GetString(lastMissionPlayed));
+            AddToOverallExperience(PlayerPrefs.GetString(lastMissionPlayed));
+            MoneyGained(PlayerPrefs.GetString(lastMissionPlayed));
+        }
     }
 
     //timer
     public void Update()
     {
         UpdateTheScore();
+
     }
 
     //set the score of each progress bar to 0 at the satr of the game
     private void UpdateTheScore()
     {
-        OverallExperience.GetComponent<ProgressBar>().current = OverallReputationScore;
+        OverallExperience.GetComponent<ProgressBar>().current = OverallExperienceScore;
         OverallReputation.GetComponent<ProgressBar>().current = OverallReputationScore;
     }
 
-    public void AddToOverallReputation()
+    public void DisplaySelectedMission(string missionSelected)
     {
-        int reputationScore_Mission1 = 1;
+        confirmMissionText.text = "Confirm " + missionSelected + "?";
+    }
+
+    public void AddToOverallReputation(string missionSceneName)
+    {
+        int reputationScore_Mission1 = PlayerPrefs.GetInt(missionSceneName + companyStats + "reputation");
+        //Debug.Log(reputationScore_Mission1);
         OverallReputationScore += (int)(reputationScore_Mission1 * GetMissionPenalty(repeatMissionCount));
     }
 
-    public void AddToOverallExperience()
+    public void AddToOverallExperience(string missionSceneName)
     {
-        int experienceScore_Mission1 = 1;
+        int experienceScore_Mission1 = PlayerPrefs.GetInt(missionSceneName + companyStats + "experience");
+        //Debug.Log(experienceScore_Mission1);
         OverallExperienceScore += (int)(experienceScore_Mission1 * GetMissionPenalty(repeatMissionCount));
     }
 
-    public void MoneyGained()
+    public void MoneyGained(string missionSceneName)
     {
-        int money_Mission1 = 1;
+        float money_Mission1 = PlayerPrefs.GetFloat(missionSceneName + companyStats + "money");
+        //Debug.Log(money_Mission1);
         OverallMoney += (int)(money_Mission1 * GetMissionPenalty(repeatMissionCount));
     }
 
@@ -90,8 +115,7 @@ public class GameManager_Home : MonoBehaviour
         return repeatMissionPenalty;
     }
 
-    // improve to work for all missions
-    public void Mission1()
+    public void LoadMission()
     {
         string[] charGeneralName = { "Manager", "Team Member 1", "Team Member 2", "Team Member 3", "Team Member 4" };
         foreach (string character in charGeneralName)
@@ -100,7 +124,7 @@ public class GameManager_Home : MonoBehaviour
         }
         //Debug.Log("Character stats saved.");
 
-        SceneManager.LoadScene("Mission 1");
+        SceneManager.LoadScene(lastMissionSelected);
     }
 }
 

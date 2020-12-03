@@ -3806,6 +3806,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 471019186}
+        m_MethodName: DisplayCompanyStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &380596490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5954,6 +5965,8 @@ GameObject:
   m_Component:
   - component: {fileID: 471019185}
   - component: {fileID: 471019186}
+  - component: {fileID: 471019188}
+  - component: {fileID: 471019187}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5987,10 +6000,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e774aa6cba9838f4ea7dcfb4c527dfaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  experienceScore_Mission1: 0
-  reputationScore_Mission1: 0
-  money_Mission1: 0
-  TimeOfMission_Minutes: 1
+  experienceScore_Mission1: 100000
+  reputationScore_Mission1: 100000
+  money_Mission1: 100000
+  TimeOfMission_Minutes: 10
   ExtendTimerOf_Minutes: 1
   MaxNumberOfPopUp: 7
   MinNumberOfPopUp: 3
@@ -6012,7 +6025,35 @@ MonoBehaviour:
   finishMissionButton: {fileID: 1042279143}
   idealOverallProductScore: 75
   CompletedTasks: []
-  numberOfTasks: 0
+  numberOfTasks: 10
+  reputationText: {fileID: 894389143}
+  experienceText: {fileID: 581229770}
+  moneyText: {fileID: 560349076}
+--- !u!114 &471019187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471019184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6e4d1f47965411aa8adc3d09bec63c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionProductStats: 0000000000000000000000000000000000000000
+--- !u!114 &471019188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471019184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530f3427b06c24840af95c2b30cbbb7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &475191203
 GameObject:
   m_ObjectHideFlags: 0
@@ -16479,6 +16520,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 471019186}
         m_MethodName: Time_Zero
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 471019186}
+        m_MethodName: DisplayCompanyStats
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1404,7 +1404,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 471019186}
-        m_MethodName: Mission1
+        m_MethodName: LoadMission
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1761,6 +1761,7 @@ GameObject:
   - component: {fileID: 346125914}
   - component: {fileID: 346125913}
   - component: {fileID: 346125912}
+  - component: {fileID: 346125915}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1830,7 +1831,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 346125913}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 652463183}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 346125915}
+        m_MethodName: GetSelectedMissionName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &346125913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,6 +1891,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 346125910}
   m_CullTransparentMesh: 0
+--- !u!114 &346125915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346125910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238c037b84e2646bdb87135cbf4bd628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &379820838
 GameObject:
   m_ObjectHideFlags: 0
@@ -2538,6 +2573,7 @@ GameObject:
   - component: {fileID: 449990226}
   - component: {fileID: 449990225}
   - component: {fileID: 449990224}
+  - component: {fileID: 449990227}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2607,7 +2643,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 449990225}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 652463183}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 449990227}
+        m_MethodName: GetSelectedMissionName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &449990225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2645,6 +2703,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449990222}
   m_CullTransparentMesh: 0
+--- !u!114 &449990227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449990222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238c037b84e2646bdb87135cbf4bd628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &451806331
 GameObject:
   m_ObjectHideFlags: 0
@@ -2912,6 +2982,8 @@ GameObject:
   m_Component:
   - component: {fileID: 471019185}
   - component: {fileID: 471019186}
+  - component: {fileID: 471019188}
+  - component: {fileID: 471019187}
   m_Layer: 0
   m_Name: GameManager_Home
   m_TagString: Untagged
@@ -2950,6 +3022,33 @@ MonoBehaviour:
   OverallExperienceScore: 0
   OverallReputationScore: 0
   OverallMoney: 0
+  confirmMissionText: {fileID: 1385987686}
+  lastMissionPlayed: 
+--- !u!114 &471019187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471019184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6e4d1f47965411aa8adc3d09bec63c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missionProductStats: 0000000000000000000000000000000000000000
+--- !u!114 &471019188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471019184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530f3427b06c24840af95c2b30cbbb7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &483049967
 GameObject:
   m_ObjectHideFlags: 0
@@ -3812,6 +3911,7 @@ GameObject:
   - component: {fileID: 612693541}
   - component: {fileID: 612693540}
   - component: {fileID: 612693539}
+  - component: {fileID: 612693542}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3881,7 +3981,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 612693540}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 652463183}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 612693542}
+        m_MethodName: GetSelectedMissionName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &612693540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3919,6 +4041,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612693537}
   m_CullTransparentMesh: 0
+--- !u!114 &612693542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612693537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238c037b84e2646bdb87135cbf4bd628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &624948972
 GameObject:
   m_ObjectHideFlags: 0
@@ -7711,6 +7845,7 @@ GameObject:
   - component: {fileID: 1037158258}
   - component: {fileID: 1037158257}
   - component: {fileID: 1037158256}
+  - component: {fileID: 1037158259}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -7780,7 +7915,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1037158257}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 652463183}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1037158259}
+        m_MethodName: GetSelectedMissionName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1037158257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7818,6 +7975,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037158254}
   m_CullTransparentMesh: 0
+--- !u!114 &1037158259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1037158254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238c037b84e2646bdb87135cbf4bd628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1079480342
 GameObject:
   m_ObjectHideFlags: 0
@@ -14075,6 +14244,7 @@ GameObject:
   - component: {fileID: 1950574756}
   - component: {fileID: 1950574755}
   - component: {fileID: 1950574754}
+  - component: {fileID: 1950574757}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -14156,6 +14326,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1950574757}
+        m_MethodName: GetSelectedMissionName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1950574755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14193,6 +14374,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950574752}
   m_CullTransparentMesh: 0
+--- !u!114 &1950574757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950574752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238c037b84e2646bdb87135cbf4bd628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1965998266
 GameObject:
   m_ObjectHideFlags: 0
