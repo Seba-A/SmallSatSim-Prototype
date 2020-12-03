@@ -292,16 +292,19 @@ public class GameManager : MonoBehaviour
     public void CalculateReputation()
     {
         reputationScore_Mission = (int)((idealReputation * (1 - (CalculateFailureProbability() / 100))) * CheckTaskCompleted() * GetMissionPenalty(PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + repeatMissionCount)));
+        //Debug.Log(idealReputation);
     }
 
     public void CalculateExperience()
     {
         experienceScore_Mission = (int)((idealExperience * (1 - (CalculateFailureProbability() / 100))) * CheckTaskCompleted() * GetMissionPenalty(PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + repeatMissionCount)));
+        //Debug.Log(idealExperience);
     }
 
     public void MoneyGained()
     {
         money_Mission = (float)((idealMoney * (1 - (CalculateFailureProbability() / 100))) * CheckTaskCompleted() * GetMissionPenalty(PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + repeatMissionCount)));
+        //Debug.Log(idealMoney);
     }
 
     private float GetMissionPenalty(int missionCount)

@@ -105,5 +105,9 @@ public class TimerBar : MonoBehaviour
         Time.timeScale = 1f;
 
         TimeButtons.gameObject.SetActive(true);
+
+        gameManager.idealExperience = (int)((float)gameManager.idealExperience * 0.7f);
+        gameManager.idealReputation = (int)((float)gameManager.idealReputation * 0.7f);
+        gameManager.idealMoney = (int)((float)gameManager.idealMoney * 0.7f);
     }
 }
