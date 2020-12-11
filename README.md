@@ -33,3 +33,9 @@ For free 3D models to download, refer to https://clara.io/library
 
 *********************
 
+Similar game in the market: https://theirregularcorporation.com/game/mars-horizon/
+
+*********************
+
+
+
