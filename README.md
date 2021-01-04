@@ -27,6 +27,8 @@ If an error occured saying 'refusing to merge unrelated histories', refer to htt
 
 Note: Double check with the lead programmer that the master branch is up to date and does not get overwritten with a blank Unity project.
 
+More info on working with changes: https://github.com/github-for-unity/Unity/blob/master/docs/using/working-with-changes.md
+
 *********************
 
 For free 3D models to download, refer to https://clara.io/library
